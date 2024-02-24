@@ -8,7 +8,7 @@
 </head>
 <body>
         <!-- HEADER -->
-    <header class="container-fluid bg-dark justify-content-center align-items-center text-light">
+    <header class="header container-fluid bg-dark justify-content-center align-items-center text-light">
         <div class="row justify-content-center align-items-center">  <!-- LOGO -->
             <a href="#" class=" col-1 navbar-brand">
                 <img src="img/logo2.png" alt=""  height="40">
@@ -56,35 +56,30 @@
         </div>
     </header>
              <!-- BODY -->
-    <div id="body" class="container-fluid" >
-        <div class="row justify-content-center align-items-center">
-            <!--  COLUMN FOR ITEMS-->
-            <div class="col-md-10 col-lg-6 align-items-center">
-                <div class="row d-lg-none">
-                    <div class="container introText">
-                        <div class="row text-center">
-                            <div class="col">
-                                <p class="font-weight-bold text-uppercase">Finally here</p>
-                            </div>
-                        </div>
-                        <div class="row text-center">
-                            <div class="col">
-                                <p class="font-weight-bold text-uppercase">Best shop</p>
-                            </div>
-                        </div>
-                        <div class="row text-center">
-                            <div class="col">
-                                <p class="font-weight-bold">Get new T-shirts and Hoodies</p>
-                            </div>
-                        </div>
-                        <div class="row text-center">
-                            <div class="col">
-                                <p class="font-weight-bold">Fast delivery and Cheap</p>
-                            </div>
-                        </div>
-                    </div>
+        <!-- SECTION ROW-1 -->
+    <section class="bg-dark p-5 text-light text-center">
+        <div class="container-fluid">
+            <div class="row d-md-flex align-items-center">
+                <div class="col-lg-4 col-sm-11 col-md-6 text-start">
+                    <h1 class="headline">Welcome to <span class="text-warning">TeeTe Clothing</span></h1>
+                    <h3><span class="text-warning">T-shirts</span></h3>
+                    <h3><span class="text-warning">Sweatshirts</span></h3>
+                    <p class="lead my-4">
+                        Discover the perfect blend of style and affordability with
+                        our collection of trendy t-shirts and cozy sweatshirts. Enjoy fast delivery and
+                        unbeatable prices as you shop your favorite looks today!
+                    </p>
                 </div>
-                <div class="row">
+                <div class="col-lg-8 d-none d-md-block col-md-6 justify-content-end" >
+                    <img src="img/intro.png" class="img-fluid d-none d-md-block" alt="homepage-img" width="1000">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container-fluid text-dark">
+            <div class="row align-items-center">
+                <div class="col-md-12 col-lg-8">
                     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active c-item">
@@ -105,35 +100,56 @@
                         </button>
                     </div>
                 </div>
-            </div>
-            <!-- COLUMN FOR PICTURE AND TEXT INTRO PAGE -->
-            <div class="col-8  col-lg-6 d-none d-lg-block">
-                <div class="container introText">
-                    <div class="row text-center">
-                        <div class="col">
-                            <p class="font-weight-bold text-uppercase">Finally here</p>
-                        </div>
-                    </div>
-                    <div class="row text-center">
-                        <div class="col">
-                            <p class="font-weight-bold text-uppercase">Best shop</p>
-                        </div>
-                    </div>
-                    <div class="row text-center">
-                        <div class="col">
-                            <p class="font-weight-bold">Get new T-shirts and Hoodies</p>
-                        </div>
-                    </div>
-                    <div class="row text-center">
-                        <div class="col">
-                            <p class="font-weight-bold">Fast delivery and Cheap</p>
-                        </div>
-                    </div>
+                <div class="col-lg-4 d-none d-lg-block text-end pe-5 ">
+                    <h2><span class="text-warning fw-bold">Cheap</span></h2>
+                    <h2><span class="text-warning fw-bold">Elegant</span></h2>
+                    <h2><span class="text-warning fw-bold">Top-Quality</span></h2>
+                    <p class="lead md-4 fw-bold">
+                        Step into comfort and style with our versatile range of shirts. Whether you prefer
+                        the laid-back vibe of a tee or the coziness of a sweatshirt, find your perfect match
+                        here. Explore our curated collection and redefine casual fashion today
+                    </p>
                 </div>
-                <img src="img/intro.png" class="img-fluid d-none d-md-block" alt="homepage-img">
             </div>
         </div>
-    </div>
+    </section>
+    <section>
+        <div class="container-fluid text-dark">
+            <div class="row align-items-center">
+                <div class="col-lg-4 d-none d-lg-block text-start ps-5">
+                    <h2><span class="text-warning fw-bold">Cozy</span></h2>
+                    <h2><span class="text-warning fw-bold">Warm</span></h2>
+                    <h2><span class="text-warning fw-bold">Comfy</span></h2>
+                    <p class="lead md-4 fw-bold">
+                        Embrace warmth and fashion with our collection of hoodies. From chilly mornings to
+                        cozy evenings, our hoodies offer both comfort and style. Explore our diverse selection
+                        and elevate your wardrobe with ease and flair!
+                    </p>
+                </div>
+                <div class="col-md-12 col-lg-8">
+                    <div id="carouselExampleControl2" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active c-item">
+                                <img class="d-block w-100 c-img" src="img/hoodie1.png" alt="First slide">
+                            </div>
+                            <div class="carousel-item c-item">
+                                <img class="d-block w-100 c-img" src="img/hoodie2.png" alt="Second slide">
+                            </div>
+                            <div class="carousel-item c-item">
+                                <img class="d-block w-100 c-img" src="img/hoodie3.png" alt="Third slide">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControl2" data-bs-slide="prev">
+                            <img src="img/prev_icon.jpg" width="40" alt="icon">
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControl2" data-bs-slide="next">
+                            <img src="img/next_icon.jpg" width="40" alt="icon">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
          <!-- FOOTER  -->
     <footer class="container-fluid bg-dark text-light align-items-center">
         <div class="row justify-content-around align-items-center">
@@ -168,9 +184,5 @@
 
     <script src="js/own_js.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
-    <script>
-        <!--  PRINT CARDS WITH PRODUCTS ... ZATEDY NOT WORKING-->
-        //();
-    </script>
 </body>
 </html>

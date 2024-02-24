@@ -18,12 +18,11 @@
     padding-bottom:50px;
     min-height:900px;
 }
-.introText{
-    font-size: 40px;
-    font-family: Courier, monospace;
-    font-weight: bold;
-    color:black;
+.headline{
+    font-size:50px;
 }
-.carousel-control-next-icon{
-    color: black;
+@media(min-width:1100px){
+    .headline{
+        font-size:60px;
+    }
 }
