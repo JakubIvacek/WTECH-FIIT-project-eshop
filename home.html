@@ -59,44 +59,118 @@
     <div id="body" class="container-fluid" >
         <div class="row justify-content-center align-items-center">
             <!--  COLUMN FOR ITEMS-->
-            <div class="col-md-4  col-lg-6 align-items-center" id="cardContainer">
-
+            <div class="col-md-10 col-lg-6 align-items-center">
+                <div class="row d-lg-none">
+                    <div class="container introText">
+                        <div class="row text-center">
+                            <div class="col">
+                                <p class="font-weight-bold text-uppercase">Finally here</p>
+                            </div>
+                        </div>
+                        <div class="row text-center">
+                            <div class="col">
+                                <p class="font-weight-bold text-uppercase">Best shop</p>
+                            </div>
+                        </div>
+                        <div class="row text-center">
+                            <div class="col">
+                                <p class="font-weight-bold">Get new T-shirts and Hoodies</p>
+                            </div>
+                        </div>
+                        <div class="row text-center">
+                            <div class="col">
+                                <p class="font-weight-bold">Fast delivery and Cheap</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active c-item">
+                                <img class="d-block w-100 c-img" src="img/shirt5.jpg" alt="First slide">
+                            </div>
+                            <div class="carousel-item c-item">
+                                <img class="d-block w-100 c-img" src="img/shirt3.jpg" alt="Second slide">
+                            </div>
+                            <div class="carousel-item c-item">
+                                <img class="d-block w-100 c-img" src="img/shirt4.jpg" alt="Third slide">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                            <img src="img/prev_icon.jpg" width="40" alt="icon">
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                            <img src="img/next_icon.jpg" width="40" alt="icon">
+                        </button>
+                    </div>
+                </div>
             </div>
             <!-- COLUMN FOR PICTURE AND TEXT INTRO PAGE -->
-            <div class="col-8  col-lg-6 ">
-                <img src="img/1000x900.png" class="img-fluid d-none d-md-block" alt="homepage-img">
+            <div class="col-8  col-lg-6 d-none d-lg-block">
+                <div class="container introText">
+                    <div class="row text-center">
+                        <div class="col">
+                            <p class="font-weight-bold text-uppercase">Finally here</p>
+                        </div>
+                    </div>
+                    <div class="row text-center">
+                        <div class="col">
+                            <p class="font-weight-bold text-uppercase">Best shop</p>
+                        </div>
+                    </div>
+                    <div class="row text-center">
+                        <div class="col">
+                            <p class="font-weight-bold">Get new T-shirts and Hoodies</p>
+                        </div>
+                    </div>
+                    <div class="row text-center">
+                        <div class="col">
+                            <p class="font-weight-bold">Fast delivery and Cheap</p>
+                        </div>
+                    </div>
+                </div>
+                <img src="img/intro.png" class="img-fluid d-none d-md-block" alt="homepage-img">
             </div>
         </div>
     </div>
          <!-- FOOTER  -->
-    <footer class="row container-fluid bg-dark text-light align-items-center">
-        <p class="col text-center h6 ">© 2024 T-SHIRT </p>
-        <a href="#"  class="col">
-            <img src="img/logo2.png" alt=""  height="40">
-        </a>
-        <nav class="col h4 navbar navbar-dark bg-dark">
-            <div class="container-fluid">
-                <ul class="navbar-nav d-flex flex-row">
-                    <li class="nav-item " style="margin-right: 14px;">
-                        <a href="#" class="nav-link active" aria-current="page">
-                            Home
-                        </a>
-                    </li>
-                    <li class="nav-item mr-8">
-                        <a href="#" class="nav-link">
-                            All Products
-                        </a>
-                    </li>
-                </ul>
+    <footer class="container-fluid bg-dark text-light align-items-center">
+        <div class="row justify-content-around align-items-center">
+            <div class="col-2">
+                <a href="#" >
+                    <img src="img/logo2.png" alt=""  height="40">
+                </a>
             </div>
-        </nav>
+            <div class="col-3">
+                <nav class="h4 navbar navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <ul class="navbar-nav d-flex flex-row">
+                        <li class="nav-item " style="margin-right: 14px;">
+                            <a href="#" class="nav-link active" aria-current="page">
+                                Home
+                            </a>
+                        </li>
+                        <li class="nav-item mr-8">
+                            <a href="#" class="nav-link h6">
+                                All Products
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                </nav>
+            </div>
+        </div>
+        <div class="row">
+            <p class="col text-center h6 ">© 2024 T-SHIRT </p>
+        </div>
     </footer>
 
     <script src="js/own_js.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script>
         <!--  PRINT CARDS WITH PRODUCTS ... ZATEDY NOT WORKING-->
-        printCards();
+        //();
     </script>
 </body>
 </html>

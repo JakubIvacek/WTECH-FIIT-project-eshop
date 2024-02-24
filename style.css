@@ -6,3 +6,24 @@
 .nav-margin{
     margin-right: 14px;
 }
+
+.c-item {
+    height: 800px;
+}
+.c-img {
+    height:100%;
+    object-fit: scale-down;
+}
+#body{
+    padding-bottom:50px;
+    min-height:900px;
+}
+.introText{
+    font-size: 40px;
+    font-family: Courier, monospace;
+    font-weight: bold;
+    color:black;
+}
+.carousel-control-next-icon{
+    color: black;
+}
