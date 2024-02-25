@@ -9,49 +9,60 @@
 <body>
         <!-- HEADER -->
     <header class="header container-fluid bg-dark justify-content-center align-items-center text-light">
-        <div class="row justify-content-center align-items-center">  <!-- LOGO -->
-            <a href="#" class=" col-1 navbar-brand">
-                <img src="img/logo2.png" alt=""  height="40">
-            </a>
-            <div class="col-5 h4 mt-2">                             <!-- NAV -->
+        <div class="row justify-content-center align-items-center d-flex">  <!-- LOGO -->
+            <div class="col-2">
+                <a href="#" class="navbar-brand mt-3">
+                    <img src="img/iconsHomePage/icon.png" alt="" height="85">
+                </a>
+            </div>
+            <div class="col-4 h4 mt-4">                             <!-- NAV -->
                 <nav class=" navbar navbar-dark bg-dark">
-                    <div class="container-fluid">
-                        <ul class="navbar-nav d-flex flex-row">
+                    <div class="container-fluid navSize">
+                        <ul class="navbar-nav d-flex flex-row align-items-center">
                             <li class="nav-item " style="margin-right: 14px;">
                                 <a href="#" class="nav-link active" aria-current="page">
-                                    Home
+                                    <p>
+                                        <span class="text-warning">Home</span>
+                                    </p>
                                 </a>
                             </li>
                             <li class="nav-item mr-8">
                                 <a href="#" class="nav-link">
-                                    All Products
+                                    <p class="customColor">All Products</p>
                                 </a>
                             </li>
                         </ul>
                     </div>
                 </nav>
             </div>
-            <div class="col-4">          <!-- SEARCH -->
-                <div class="input-group " >
-                    <input type="text" class="form-control" placeholder="Enter item to search" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                    <div class="input-group-append">
-                        <button class="btn btn-outline-secondary" type="button">Search</button>
+            <div class="col-xl-5 col-lg-6">
+                <!-- SEARCH -->
+                <div class="row ms-5">
+                    <div class="col-8">
+                        <div class="input-group footerSub footerForm">
+                            <input type="text" class="form-control" placeholder="enter search" aria-label="Search query" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary" type="button">
+                                    <img src="img/iconsHomePage/right-arrow.jpg" alt="icon" width="30px">
+                                </button>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-2 d-flex justify-content-end">  <!-- ICONS -->
-                <ul class="navbar-nav flex-row ">
-                    <li class="nav-item">
-                        <a href="#" class="navbar-brand">
-                            <img src="img/login.png" alt=""  height="32">
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="navbar-brand">
-                            <img src="img/icons8-cart-64.png" alt=""  height="35">
-                        </a>
-                    </li>
-                </ul>
+                    <div class="col-4 justify-content-end">
+                        <ul class="navbar-nav flex-row ">
+                            <li class="nav-item">
+                                <a href="#" class="navbar-brand">
+                                    <img src="img/iconsHomePage/login.png" alt="" height="40">
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="navbar-brand">
+                                    <img src="img/iconsHomePage/icons8-cart-64.png" alt="" height="45">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+               </div>
             </div>
         </div>
     </header>
@@ -70,8 +81,8 @@
                         unbeatable prices as you shop your favorite looks today!
                     </p>
                 </div>
-                <div class="col-lg-8 d-none d-md-block col-md-6 justify-content-end" >
-                    <img src="img/intro.png" class="img-fluid d-none d-md-block" alt="homepage-img" width="1000">
+                <div class=" col-lg-8 d-none d-md-block col-md-6 justify-content-end" >
+                    <img src="img/productsHomePage/intro.png" class="img-fluid d-none d-md-block" alt="homepage-img" width="1000">
                 </div>
             </div>
         </div>
@@ -83,13 +94,13 @@
                     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active c-item">
-                                <img class="d-block w-100 c-img" src="img/shirt5.jpg" alt="First slide">
+                                <img class="d-block w-100 c-img" src="img/productsHomePage/shirt5.jpg" alt="First slide">
                             </div>
                             <div class="carousel-item c-item">
-                                <img class="d-block w-100 c-img" src="img/shirt3.jpg" alt="Second slide">
+                                <img class="d-block w-100 c-img" src="img/productsHomePage/shirt3.jpg" alt="Second slide">
                             </div>
                             <div class="carousel-item c-item">
-                                <img class="d-block w-100 c-img" src="img/shirt4.jpg" alt="Third slide">
+                                <img class="d-block w-100 c-img" src="img/productsHomePage/shirt4.jpg" alt="Third slide">
                             </div>
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -130,13 +141,13 @@
                     <div id="carouselExampleControl2" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active c-item">
-                                <img class="d-block w-100 c-img" src="img/hoodie1.png" alt="First slide">
+                                <img class="d-block w-100 c-img" src="img/productsHomePage/hoodie1.png" alt="First slide">
                             </div>
                             <div class="carousel-item c-item">
-                                <img class="d-block w-100 c-img" src="img/hoodie2.png" alt="Second slide">
+                                <img class="d-block w-100 c-img" src="img/productsHomePage/hoodie2.png" alt="Second slide">
                             </div>
                             <div class="carousel-item c-item">
-                                <img class="d-block w-100 c-img" src="img/hoodie3.png" alt="Third slide">
+                                <img class="d-block w-100 c-img" src="img/productsHomePage/hoodie3.png" alt="Third slide">
                             </div>
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControl2" data-bs-slide="prev">
@@ -151,34 +162,47 @@
         </div>
     </section>
          <!-- FOOTER  -->
-    <footer class="container-fluid bg-dark text-light align-items-center">
-        <div class="row justify-content-around align-items-center">
-            <div class="col-2">
-                <a href="#" >
-                    <img src="img/logo2.png" alt=""  height="40">
-                </a>
-            </div>
-            <div class="col-3">
-                <nav class="h4 navbar navbar-dark bg-dark">
-                <div class="container-fluid">
-                    <ul class="navbar-nav d-flex flex-row">
-                        <li class="nav-item " style="margin-right: 14px;">
-                            <a href="#" class="nav-link active" aria-current="page">
-                                Home
-                            </a>
-                        </li>
-                        <li class="nav-item mr-8">
-                            <a href="#" class="nav-link h6">
-                                All Products
-                            </a>
-                        </li>
-                    </ul>
+    <footer class="container-fluid bg-dark text-light align-items-center pb-5">
+        <div class="row justify-content-evenly">
+            <div class="col-6 ms-5 mt-5">
+                <h1 class="footerBigText"><span class="text-warning">Stay Teeted!</span></h1>
+                <div class="input-group footerSub footerForm">
+                    <input type="text" class="form-control" placeholder="enter your e-mail" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button">
+                            <img src="img/iconsHomePage/right-arrow.jpg" alt="icon" width="30px">
+                        </button>
+                    </div>
                 </div>
-                </nav>
+                <h4 class="mb-5 ms-5">subscribe to our news with your email :)</h4>
+                <h2 class="mb-3"><span class="text-warning">Follow Us</span></h2>
+                <div class="row w-40">
+                    <div class="col mb-5 ms-3">
+                        <img width="30" src="img/iconsHomePage/instagram-white-icon.png" alt="icon">
+                        <img width="30" src="img/iconsHomePage/tiktok-round-white-icon.svg" alt="icon">
+                        <img width="30" src="img/iconsHomePage/threads-white-icon.svg" alt="icon">
+                    </div>
+                </div>
+                <div class="row mt-5 mb-3">
+                    <div class="col">
+                        <img src="img/iconsHomePage/pays.png" alt="icon" width="205">
+                    </div>
+                </div>
+                <h5 class="mb-2">Copyright © 2024 TeeTe</h5>
+                <h5 >Website done by Ivácek and Nagy</h5>
             </div>
-        </div>
-        <div class="row">
-            <p class="col text-center h6 ">© 2024 T-SHIRT </p>
+            <div class="col-4 text-center">
+                <h2 class="mb-3 mt-5"><span class="text-warning">Products</span></h2>
+                <h5>Shirts</h5>
+                <h5 class="mb-5">Sweatshirts</h5>
+                <h2 class="mb-3"><span class="text-warning">Help</span></h2>
+                <h5>Privacy Policy</h5>
+                <h5 class="mb-5">Terms & conditions</h5>
+
+                <h2 class="mb-3"><span class="text-warning">Contact</span></h2>
+                <h5>teete@teete.teete</h5>
+                <h5>+333 333 333</h5>
+            </div>
         </div>
     </footer>
 

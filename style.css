@@ -21,6 +21,50 @@
 .headline{
     font-size:50px;
 }
+#footerForm {
+    background-color: transparent;
+    border: none;
+}
+.customColor{
+    color: #997404;
+}
+.customColor:hover{
+    color: #ffc107;
+}
+.navSize{
+    font-size:37px;
+}
+.footerForm input {
+    font-size:20px;
+    margin-bottom:7px;
+    background-color: transparent;
+    border:None;
+    border-bottom: 2px solid white;
+    color: white;
+    border-radius: 0;
+}
+
+.footerForm input::placeholder {
+    color: white;
+    text-align:end;
+    font-size:20px;
+}
+
+.footerForm button {
+    margin-bottom:7px;
+    background-color: transparent;
+    border: 2px solid white;
+    border-top:None;
+    border-right:None;
+    color: white;
+    border-radius: 0;
+}
+.footerBigText{
+    font-size:70px;
+}
+.footerSub{
+    margin-bottom:15px;
+}
 @media(min-width:1100px){
     .headline{
         font-size:60px;
