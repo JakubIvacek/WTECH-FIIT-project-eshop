@@ -2,32 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Home</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
         <!-- HEADER -->
     <header class="header container-fluid bg-dark justify-content-center align-items-center text-light">
-        <div class="row justify-content-center align-items-center d-flex">  <!-- LOGO -->
+        <div class="row justify-content-center align-items-center d-flex">
             <div class="col-2">
-                <a href="#" class="navbar-brand mt-3">
-                    <img src="img/iconsHomePage/icon.png" alt="" height="85">
+                <a href="home.html" class="navbar-brand mt-3">
+                    <img class="rounded-4" src="img/iconsHomePage/icon.png" alt="" height="85">
                 </a>
             </div>
-            <div class="col-4 h4 mt-4">                             <!-- NAV -->
+            <div class="col-4 h4 mt-4">
                 <nav class=" navbar navbar-dark bg-dark">
                     <div class="container-fluid navSize">
                         <ul class="navbar-nav d-flex flex-row align-items-center">
                             <li class="nav-item " style="margin-right: 14px;">
-                                <a href="#" class="nav-link active" aria-current="page">
+                                <a href="home.html" class="nav-link active" aria-current="page">
                                     <p>
                                         <span class="text-warning">Home</span>
                                     </p>
                                 </a>
                             </li>
                             <li class="nav-item mr-8">
-                                <a href="#" class="nav-link">
+                                <a href="products.html" class="nav-link">
                                     <p class="customColor">All Products</p>
                                 </a>
                             </li>
@@ -36,7 +36,6 @@
                 </nav>
             </div>
             <div class="col-xl-5 col-lg-6">
-                <!-- SEARCH -->
                 <div class="row ms-5">
                     <div class="col-8">
                         <div class="input-group footerSub footerForm">
@@ -52,12 +51,12 @@
                         <ul class="navbar-nav flex-row ">
                             <li class="nav-item">
                                 <a href="#" class="navbar-brand">
-                                    <img src="img/iconsHomePage/login.png" alt="" height="40">
+                                    <img src="img/iconsHomePage/login.png" alt="" height="50">
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="#" class="navbar-brand">
-                                    <img src="img/iconsHomePage/icons8-cart-64.png" alt="" height="45">
+                                    <img src="img/iconsHomePage/icons8-cart-64.png" alt="" height="57">
                                 </a>
                             </li>
                         </ul>
@@ -67,7 +66,6 @@
         </div>
     </header>
              <!-- BODY -->
-        <!-- SECTION ROW-1 -->
     <section class="bg-dark p-5 text-light text-center">
         <div class="container-fluid">
             <div class="row d-md-flex align-items-center">
@@ -82,13 +80,17 @@
                     </p>
                 </div>
                 <div class=" col-lg-8 d-none d-md-block col-md-6 justify-content-end" >
-                    <img src="img/productsHomePage/intro.png" class="img-fluid d-none d-md-block" alt="homepage-img" width="1000">
+                    <img src="img/productsHomePage/intro.png" class="img-fluid d-none d-md-block rounded-5" alt="homepage-img" width="1000">
                 </div>
             </div>
         </div>
     </section>
     <section>
         <div class="container-fluid text-dark">
+            <div class="row text-center">
+                <h1 class="headline2"><span class="text-warning">Featured Products</span></h1>
+                <h1 class="pb-5">items from new collection</h1>
+            </div>
             <div class="row align-items-center">
                 <div class="col-md-12 col-lg-8">
                     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
@@ -112,9 +114,9 @@
                     </div>
                 </div>
                 <div class="col-lg-4 d-none d-lg-block text-end pe-5 ">
-                    <h2><span class="text-warning fw-bold">Cheap</span></h2>
-                    <h2><span class="text-warning fw-bold">Elegant</span></h2>
-                    <h2><span class="text-warning fw-bold">Top-Quality</span></h2>
+                    <h1><span class="text-warning fw-bold">Cheap</span></h1>
+                    <h1><span class="text-warning fw-bold">Elegant</span></h1>
+                    <h1><span class="text-warning fw-bold">Top-Quality</span></h1>
                     <p class="lead md-4 fw-bold">
                         Step into comfort and style with our versatile range of shirts. Whether you prefer
                         the laid-back vibe of a tee or the coziness of a sweatshirt, find your perfect match
@@ -124,13 +126,39 @@
             </div>
         </div>
     </section>
+    <section >
+        <div id="feature" class= "justify-content-center container-fluid bg-dark text-light">
+            <div class="row m-5 justify-content-center padding10">
+                <div class="fe-box">
+                    <div class="row">
+                        <img src="img/iconsHomePage/iconship.png" alt="img">
+                    </div>
+                    <div class="row align-items-end">
+                        <h5 class="bg-white rounded-3  pb-2 pt-2 ps-1 pe-1 text-dark">Free Delivery</h5>
+                    </div>
+                </div>
+                <div class="fe-box ">
+                    <img src="img/iconsHomePage/iconord.png" alt="img">
+                    <h5 class=" rounded-3  p-2  text-dark bg-yellow">Online Orders</h5>
+                </div>
+                <div class="fe-box ">
+                    <img src="img/iconsHomePage/iconpig.png" alt="img">
+                    <h5 class="rounded-3 mt-3 p-2 bg-yellow text-dark">Icons</h5>
+                </div>
+                <div class="fe-box ">
+                    <img src="img/iconsHomePage/iconprom.png" alt="img">
+                    <h5 class="bg-white rounded-3 mt-4 p-2 text-dark">Promotions</h5>
+                </div>
+            </div>
+        </div>
+    </section>
     <section>
         <div class="container-fluid text-dark">
             <div class="row align-items-center">
                 <div class="col-lg-4 d-none d-lg-block text-start ps-5">
-                    <h2><span class="text-warning fw-bold">Cozy</span></h2>
-                    <h2><span class="text-warning fw-bold">Warm</span></h2>
-                    <h2><span class="text-warning fw-bold">Comfy</span></h2>
+                    <h1><span class="text-warning fw-bold">Cozy</span></h1>
+                    <h1><span class="text-warning fw-bold">Warm</span></h1>
+                    <h1><span class="text-warning fw-bold">Comfy</span></h1>
                     <p class="lead md-4 fw-bold">
                         Embrace warmth and fashion with our collection of hoodies. From chilly mornings to
                         cozy evenings, our hoodies offer both comfort and style. Explore our diverse selection
