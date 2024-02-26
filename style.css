@@ -57,11 +57,26 @@
         padding-top:40px;
     }
 }
-@media(max-width:1050px) {
+.smaller{
+    font-size:28px;
+    height:68px;
+}
+@media(min-width:400px) {
     #feature .fe-box {
-        width: 150px;
+        width: 110px;
     }
 }
+@media(min-width: 700px){
+    #feature .fe-box {
+        width: 120px;
+    }
+    .smaller{
+        font-size:40px;
+        height:85px;
+    }
+}
+
+
 @media(min-width:1200px){
     #feature .fe-box{
         width:200px;
