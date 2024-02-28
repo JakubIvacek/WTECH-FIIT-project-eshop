@@ -65,6 +65,88 @@
         </div>
     </div>
 </header>
+<section class="bg-dark text-light text-center pt-5 pb-3">
+    <h1> <span class="text-warning">Check all products </span></h1>
+</section>
+<section>
+    <div class="container-fluid bg-dark">
+        <div class="row">
+            <div class="col-md-4 col-lg-3 bg-dark text-center height1000">
+                <div class="row">
+                    <ul class="navbar-nav d-flex pt-5 ps-4 pb-5">
+                        <li class="pb-3">
+                            <button onclick="changeToShirts()" class="bg-transparent width100">
+                                <span class="text-warning h1 smallerText">T-shirts</span>
+                            </button>
+                        </li>
+                        <li class="pb-3">
+                            <button onclick="changeToSweatshirts()" class="bg-transparent width100">
+                                <span class="text-warning h1 smallerText">Sweatshirts</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button onclick="changeToAll()" class="bg-transparent width100">
+                                <span class="text-warning h1 smallerText">All</span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row ps-3">
+                    <span class="text-warning h1 smallerText">Filter items :</span>
+                    <select class="form-select flex-column" aria-label="Default select example">
+                        <option selected>Filter by color</option>
+                        <option value="1">Black</option>
+                        <option value="2">Red</option>
+                        <option value="3">Blue</option>
+                        <option value="3">White</option>
+                        <option value="3">Green</option>
+                        <option value="3">Brown</option>
+                    </select>
+
+
+                    <button onclick="" class="pt-3 pb-3 bg-transparent width100">
+                        <span class="text-warning h1 smallerText">Filter color</span>
+                    </button>
+                    <label for="priceRange" class="pt-5 form-label h4 text-warning">Price range</label>
+                    <input id="priceRange" type="range" class="h4 text-warning form-range price-range" min="0" max="500" value="0"">
+                    <p class="text-warning h4">Selected Price: <span id="selectedPrice">0</span> €</p>
+                    <button onclick="" class="pt-3 pb-3 bg-transparent width100">
+                        <span class="text-warning h1 smallerText">Filter price</span>
+                    </button>
+
+                    <div class="pt-5">
+                        <select class="form-select flex-column" aria-label="Default select example">
+                            <option selected>Filter by size</option>
+                            <option value="1">S</option>
+                            <option value="2">M</option>
+                            <option value="3">L</option>
+                            <option value="3">XL</option>
+                        </select>
+                        <button onclick="" class="pt-3 pb-3 bg-transparent width100">
+                            <span class="text-warning h1 smallerText">Filter by size</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="height1000 col-8 pt-5 container-fluid justify-content-center" id="cardContainer">
+
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container-fluid bg-dark">
+        <div class="row pt-3 justify-content-center ">
+            <button class="col-1" onclick="prevPage()">
+                <img src="img/prev_icon.jpg" alt="icon" width="30">
+            </button>
+            <h2 class="col-1 text-light text-center" id="pageNum"></h2>
+            <button class="col-1" onclick="nextPage()">
+                <img src="img/next_icon.jpg" alt="icon" width="30">
+            </button>
+        </div>
+    </div>
+</section>
 
 <!-- FOOTER  -->
 <footer class="container-fluid bg-dark text-light align-items-center pb-5">
@@ -113,5 +195,10 @@
 
 <script src="js/own_js.js"></script>
 <script src="js/bootstrap.bundle.min.js"></script>
+<script>
+    createProducts()
+    printCards()
+    writePageNum()
+</script>
 </body>
 </html>

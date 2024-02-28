@@ -14,6 +14,13 @@
     height:100%;
     object-fit: scale-down;
 }
+.card_bg{
+    box-shadow: 20px 20px 30px #997404;
+    border-radius: 4px;
+}
+.card_bg:hover{
+    box-shadow: 20px 20px 50px #ffc107;
+}
 #feature .fe-box{
     margin: 20px;
     width: 180px;
@@ -51,11 +58,23 @@
     font-size:100px;
     padding-top:60px;
 }
+.smallerText{
+    font-size:40px;
+}
 @media(max-width:900px){
     .headline2{
         font-size:70px;
         padding-top:40px;
     }
+    .smallerText{
+        font-size: 22px;
+    }
+}
+.width100{
+    width: 100%;
+}
+.height1000{
+    min-height: 970px;
 }
 .smaller{
     font-size:28px;
