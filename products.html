@@ -39,7 +39,7 @@
             <div class="row ms-5">
                 <div class="col-8">
                     <div class="input-group footerSub footerForm">
-                        <input type="text" class="form-control" placeholder="enter search" aria-label="Search query" aria-describedby="basic-addon2">
+                        <input id="formSearch" type="text" class="form-control" placeholder="enter search" aria-label="Search query" aria-describedby="basic-addon2">
                         <div class="input-group-append">
                             <button class="btn btn-outline-secondary" type="button">
                                 <img src="img/iconsHomePage/right-arrow.jpg" alt="icon" width="30px">
@@ -91,41 +91,71 @@
                         </li>
                     </ul>
                 </div>
-                <div class="row ps-3">
-                    <span class="text-warning h1 smallerText">Filter items :</span>
-                    <select class="form-select flex-column" aria-label="Default select example">
-                        <option selected>Filter by color</option>
-                        <option value="1">Black</option>
-                        <option value="2">Red</option>
-                        <option value="3">Blue</option>
-                        <option value="3">White</option>
-                        <option value="3">Green</option>
-                        <option value="3">Brown</option>
-                    </select>
-
-
-                    <button onclick="" class="pt-3 pb-3 bg-transparent width100">
-                        <span class="text-warning h1 smallerText">Filter color</span>
-                    </button>
+                <span class=" smaller text-warning">Filter size</span>
+                <div class="row ps-5 pt-3">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="checkS">
+                        <label class="form-check-label text-warning h5" for="checkS">
+                            S
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="checkM">
+                        <label class="form-check-label text-warning h5" for="checkM">
+                            M
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="checkL">
+                        <label class="form-check-label text-warning h5" for="checkL">
+                            L
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="checkXL">
+                        <label class="form-check-label text-warning h5" for="checkXL">
+                            XL
+                        </label>
+                    </div>
+                    <span class=" smaller text-warning">Filter color</span>
+                    <div class="row ps-5 pt-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="checkBlack">
+                            <label class="form-check-label text-warning h5" for="checkBlack">
+                                BLACK
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="checkWhite">
+                            <label class="form-check-label text-warning h5" for="checkWhite">
+                                WHITE
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="checkBlue">
+                            <label class="form-check-label text-warning h5" for="checkBlue">
+                                BLUE
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="checkRed">
+                            <label class="form-check-label text-warning h5" for="checkRed">
+                                RED
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="checkOther">
+                            <label class="form-check-label text-warning h5" for="checkOther">
+                                Other
+                            </label>
+                        </div>
+                    </div>
                     <label for="priceRange" class="pt-5 form-label h4 text-warning">Price range</label>
                     <input id="priceRange" type="range" class="h4 text-warning form-range price-range" min="0" max="500" value="0">
-                    <p class="text-warning h4">Selected Price: <span id="selectedPrice">0</span> €</p>
+                    <p class="text-warning h4">Range - 0€ - <span id="selectedPrice">0</span> €</p>
                     <button onclick="" class="pt-3 pb-3 bg-transparent width100">
                         <span class="text-warning h1 smallerText">Filter price</span>
                     </button>
-
-                    <div class="pt-5">
-                        <select class="form-select flex-column" aria-label="Default select example">
-                            <option selected>Filter by size</option>
-                            <option value="1">S</option>
-                            <option value="2">M</option>
-                            <option value="3">L</option>
-                            <option value="3">XL</option>
-                        </select>
-                        <button onclick="" class="pt-3 pb-3 bg-transparent width100">
-                            <span class="text-warning h1 smallerText">Filter by size</span>
-                        </button>
-                    </div>
                 </div>
             </div>
             <div class="height1000 col-8 pt-5 container-fluid justify-content-center" id="cardContainer">
@@ -154,7 +184,7 @@
         <div class="col-6 ms-5 mt-5">
             <h1 class="footerBigText"><span class="text-warning">Stay Teeted!</span></h1>
             <div class="input-group footerSub footerForm">
-                <input type="text" class="form-control" placeholder="enter your e-mail" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                <input id="formEmail" type="text" class="form-control" placeholder="enter your e-mail" aria-label="Recipient's username" aria-describedby="basic-addon2">
                 <div class="input-group-append">
                     <button class="btn btn-outline-secondary" type="button">
                         <img src="img/iconsHomePage/right-arrow.jpg" alt="icon" width="30px">
