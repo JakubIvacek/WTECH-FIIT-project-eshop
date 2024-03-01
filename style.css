@@ -121,9 +121,15 @@
     .mobileBigger{
         font-size:30px;
     }
+    .mobileBiggerSmall{
+        font-size:25px;
+    }
     .mobileBiggerHeadline{
         font-size:40px;
     }
+}
+a{
+    text-decoration: none;
 }
 @media(min-width: 700px){
     #feature .fe-box {

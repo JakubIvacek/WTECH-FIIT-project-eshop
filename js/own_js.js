@@ -8,32 +8,33 @@ let basicColors=["Black","White","Red","Blue"]
 let price_filter = 0;
 
 class Product{
-    constructor(imageSrc, objectName, objectPrice, objectColor,  objectType, objectSize) {
+    constructor(imageSrc, objectName, objectPrice, objectColor,  objectType, objectSizes) {
         this.imageSrc = imageSrc;
         this.objectName = objectName
         this.objectPrice = objectPrice
         this.objectColor = objectColor
         this.objectType = objectType
-        this.objectSize = objectSize
+        this.objectSizes = objectSizes
     }
 }
 
 function createCard(imageSrc, objectName, objectPrice, objectColor, objectSize) {
     return `
             <li style="padding: 10px;">
-                <div class="card card_bg rounded-2" style="width: 18rem; height: 30rem;">
-                    <img class="card-img-top img-fluid" src="${imageSrc}" height="200px" alt="Card image cap">
-                    <div class="card-body bg-dark text-warning fw-bold">
-                        <div class="card-header">
-                              <p class="card-text">${objectName}</p>
+                <a href="javascript:void(0)" class="noUnderline" onclick="redirectToProductCloseup('${objectName}')">
+                <div class="card card_bg rounded-2" style="width: 18rem; height: 33rem;">
+                    <img class="card-img-top img-fluid" src="${imageSrc}" height="180px" alt="Product image shows here">
+                    <div class="card-body  text-warning fw-bold">
+                        <div class="card-header bg-transparent border-0">
+                              <p class="mobileBigger text-dark no-underline">${objectName}</p>
                         </div>
-                            <ul class="list-group list-group-flush bg-dark text-warning">
-                            <li class="list-group-item">Price: ${objectPrice} €</li>
-                            <li class="list-group-item">Color: ${objectColor}</li>
-                            <li class="list-group-item">Size: ${objectSize}</li>
-                        </ul>
+                            <ul class="list-group list-group-flush border-0 mobileBiggerSmall">                     
+                            <li class="list-group-item border-0 no-underline">Size: ${objectSize}</li>
+                             <li class="list-group-item border-0 ">Price: ${objectPrice} €</li>
+                        </ul>     
                     </div>
                 </div>
+                </a>
             </li>
         `;
 }
@@ -66,8 +67,8 @@ function writePageNum(){
 
 function createProducts(){
     for(let i = 1; i <= 34; i++){
-        products.push(new Product("img/productsHomePage/shirt3.jpg",  "Card " + i,i * 10, "Black","t-shirt", "L"))
-        products.push(new Product("img/productsHomePage/hoodie1.png",  "Card " + i,i * 10, "White","sweatshirt", "M"))
+        products.push(new Product("img/productsHomePage/shirt3.jpg",  "Card " + i,i * 10, "Black","t-shirt", ["S","L"]))
+        products.push(new Product("img/productsHomePage/hoodie1.png",  "Card " + i,i * 10, "White","sweatshirt", ["M","XL"]))
 
     }
 }
@@ -76,20 +77,40 @@ function getCards(type, cardsHTML){
     let start = page;
     for (let i = 0; i < products.length; i++){
         if ((products[i].objectType === type || type === "all") && // FILTER PRODUCT TYPE
-            (size_filters.length === 0 || size_filters.includes(products[i].objectSize)) && // FILTER SIZE
-            (color_filters.length === 0 || color_filters.includes(products[i].objectColor) || (color_filters.includes("Other")
-                && (!basicColors.includes(products[i].objectColor) || color_filters.includes(products[i].objectColor)))) // FILTER COLOR
-                &&  (price_filter === 0 || price_filter >= products[i].objectPrice)) // FILTER PRICE
+            filterSize(products[i]) && filterColor(products[i])
+            &&  (price_filter === 0 || price_filter >= products[i].objectPrice)) // FILTER PRICE
 
             {
             if (count >= (start* 12) && count <= (start*12) + 11) {
                 cardsHTML += createCard(products[i].imageSrc, products[i].objectName,
-                    products[i].objectPrice, products[i].objectColor, products[i].objectSize)
+                    products[i].objectPrice, products[i].objectColor, products[i].objectSizes)
             }
             count++;
         }
     }
     return cardsHTML
+}
+
+function filterSize(product){
+    if(size_filters.length === 0)
+        return true
+    else {
+        for(let i=0;i<product.objectSizes.length;i++){
+            if(size_filters.includes(product.objectSizes[i]))
+                return true
+
+        }
+    }
+    return false
+}
+function filterColor(product){
+    if(color_filters.length === 0)
+        return true
+    else if(color_filters.includes(product.objectColor))
+        return true
+    else if((color_filters.includes("Other") && (!basicColors.includes(product.objectColor) || color_filters.includes(product.objectColor))))
+        return true
+    else return false
 }
 function printCards(){
     let cardsHTML = '<ul class="list-unstyled d-flex flex-wrap">';
@@ -129,7 +150,7 @@ function changeToAll(){
 // PRICE FILTERING
 function updateSelectedPrice() {
     document.getElementById('selectedPrice').textContent = document.getElementById('priceRange').value;
-
+    page=0
 }
 
 // Event listener for the range input change event
@@ -243,4 +264,7 @@ function removeFromListColor(stringToRemove){
     if (index !== -1) {
         color_filters.splice(index, 1);
     }
+}
+function redirectToProductCloseup(productName) {
+    window.location.href = `productCloseup.html?productName=${productName}`;
 }
