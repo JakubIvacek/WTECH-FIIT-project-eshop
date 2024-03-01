@@ -22,7 +22,7 @@ function createCard(imageSrc, objectName, objectPrice, objectColor, objectSize) 
     return `
             <li style="padding: 10px;">
                 <a href="javascript:void(0)" class="noUnderline" onclick="redirectToProductCloseup('${objectName}')">
-                <div class="card card_bg rounded-2" style="width: 18rem; height: 33rem;">
+                <div class="card card_bg rounded-2" style="width: 16rem; height: 33rem;">
                     <img class="card-img-top img-fluid" src="${imageSrc}" height="180px" alt="Product image shows here">
                     <div class="card-body  text-warning fw-bold">
                         <div class="card-header bg-transparent border-0">
@@ -108,12 +108,10 @@ function filterColor(product){
         return true
     else if(color_filters.includes(product.objectColor))
         return true
-    else if((color_filters.includes("Other") && (!basicColors.includes(product.objectColor) || color_filters.includes(product.objectColor))))
-        return true
-    else return false
+    else return (color_filters.includes("Other") && (!basicColors.includes(product.objectColor) || color_filters.includes(product.objectColor)));
 }
 function printCards(){
-    let cardsHTML = '<ul class="list-unstyled d-flex flex-wrap">';
+    let cardsHTML = '<ul class="list-unstyled d-flex flex-wrap justify-content-center">';
     cardsHTML = getCards(product, cardsHTML)
     cardsHTML += '</ul>';
     const cardContainer = document.getElementById('cardContainer');

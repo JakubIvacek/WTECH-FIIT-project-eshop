@@ -19,15 +19,18 @@
     border-radius: 4px;
 }
 .card_bg:hover{
-    box-shadow: 20px 20px 50px #ffc107;
+    box-shadow: 30px 40px 50px black;
 }
 #feature .fe-box{
     margin: 20px;
-    width: 180px;
+    width: 200px;
     text-align: center;
     padding: 25px 15px;
     box-shadow: 20px 20px 30px #997404;
     border-radius: 4px;
+}
+.heightLimit{
+    width: 90%;
 }
 #feature .fe-box:hover{
     box-shadow: 20px 20px 50px #ffc107;
@@ -101,46 +104,31 @@
     min-height: 970px;
 }
 .smaller{
-    font-size:38px;
-    height:68px;
-}
-.mobileBiggerHeadline{
-    font-size:60px;
-    font-weight: bold;
-    text-decoration: none
+    height: 150px;
 }
 .mobileBiggerLink{
-    font-size:40px;
-    font-weight: bold;
-    text-decoration: none
+    font-size:55px;
+    text-decoration: underline;
 }
-@media(min-width:400px) {
-    #feature .fe-box {
-        width: 110px;
-    }
-    .mobileBigger{
-        font-size:30px;
-    }
-    .mobileBiggerSmall{
-        font-size:25px;
-    }
-    .mobileBiggerHeadline{
-        font-size:40px;
-    }
+#feature .fe-box {
+    width: 110px;
+}
+.mobileBigger{
+    font-size:37px;
+}
+.mobileBiggerSmall{
+    font-size:30px;
+}
+.mobileBiggerHeadline{
+    font-size:45px;
+}
+
+.headline2{
+    font-size:60px;
 }
 a{
     text-decoration: none;
 }
-@media(min-width: 700px){
-    #feature .fe-box {
-        width: 120px;
-    }
-    .smaller{
-        font-size:40px;
-        height:85px;
-    }
-}
-
 
 @media(min-width:1200px){
     #feature .fe-box{
@@ -150,18 +138,17 @@ a{
         font-size:70px;
         padding-top:40px;
     }
-}
-@media(max-width:670px){
-    .headline2{
+    .headline{
         font-size:60px;
-    }
-    .mobileBiggerLink{
-        font-size:30px;
     }
 }
 .check{
-    width:25px;
-    height:25px;
+    width:17px;
+    height:17px;
+}
+.biggerForm{
+    height: 45px;
+    font-size:22px;
 }
 .borderAll{
     border-width:15px;
@@ -187,7 +174,7 @@ a{
     font-size:37px;
 }
 .footerForm input {
-    font-size:20px;
+    font-size:30px;
     margin-bottom:7px;
     background-color: transparent;
     border:None;
@@ -195,11 +182,10 @@ a{
     color: white;
     border-radius: 0;
 }
-
 .footerForm input::placeholder {
     color: white;
     text-align:end;
-    font-size:20px;
+    font-size:30px;
 }
 .footerForm button {
     margin-bottom:7px;
@@ -216,8 +202,6 @@ a{
 .footerSub{
     margin-bottom:15px;
 }
-@media(min-width:1100px){
-    .headline{
-        font-size:60px;
-    }
+.specialSize{
+    font-size:35px;
 }

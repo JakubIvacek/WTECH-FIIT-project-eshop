@@ -10,7 +10,7 @@
 <!-- HEADER -->
 <header class="header container-fluid bg-dark justify-content-center align-items-center text-light">
     <div class="row justify-content-center align-items-center d-flex">
-        <div class="col-2">
+        <div class="col-3 mt-3">
             <a href="home.html" class="navbar-brand mt-3">
                 <img class="rounded-4 smaller" src="img/iconsHomePage/icon.png" alt="" height="85">
             </a>
@@ -19,15 +19,15 @@
             <nav class=" navbar navbar-dark bg-dark">
                 <div class="container-fluid navSize">
                     <ul class="navbar-nav d-flex flex-row align-items-center">
-                        <li class="nav-item " style="margin-right: 14px;">
+                        <li class="nav-item" style="margin-right: 14px;">
                             <a href="home.html" class="nav-link" aria-current="page">
                                 <p class="customColor mobileBiggerLink">Home</p>
                             </a>
                         </li>
                         <li class="nav-item mr-8">
-                            <a href="products.html" class="nav-link active">
+                            <a href="products.html" class="nav-link">
                                 <p class="mobileBiggerLink text-warning">
-                                    All Products
+                                    Products
                                 </p>
                             </a>
                         </li>
@@ -42,7 +42,7 @@
                         <input id="formSearch" type="text" class="form-control" placeholder="enter search" aria-label="Search query" aria-describedby="basic-addon2">
                         <div class="input-group-append">
                             <button class="btn btn-outline-secondary" type="button">
-                                <img src="img/iconsHomePage/right-arrow.jpg" alt="icon" width="30px">
+                                <img src="img/iconsHomePage/right-arrow.jpg" alt="icon" width="40px">
                             </button>
                         </div>
                     </div>
@@ -50,13 +50,13 @@
                 <div class="col-4 justify-content-end">
                     <ul class="navbar-nav flex-row ">
                         <li class="nav-item">
-                            <a href="#" class="navbar-brand">
-                                <img src="img/iconsHomePage/login.png" alt="" height="50">
+                            <a href="login.html" class="navbar-brand">
+                                <img src="img/iconsHomePage/login.png" alt="" height="60">
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="#" class="navbar-brand">
-                                <img src="img/iconsHomePage/icons8-cart-64.png" alt="" height="57">
+                                <img src="img/iconsHomePage/icons8-cart-64.png" alt="" height="69">
                             </a>
                         </li>
                     </ul>
@@ -65,107 +65,124 @@
         </div>
     </div>
 </header>
-<section class="bg-dark text-light text-start pt-5 pb-3">
-    <p class="ps-5 text-warning mobileBiggerHeadline">All products </p>
-    <p class="p-3 ps-5 w-75 lead my-4 mobileBigger"> Explore our diverse selection of top-quality products from trusted brands.
-        Whether you're shopping for yourself or searching for the perfect gift, our intuitive filters make
-        the browsing experience effortless and enjoyable. Begin your journey towards discovering the ideal
-        item that suits your preferences and needs. Happy shopping! </p>
-    <div class="row">
-        <ul class="navbar-nav flex-row ps-4 pb-1 text-center">
-            <li class="col-4 borderCss">
-                <a href="#" onclick="changeToShirts()" class="mobileBiggerLink customColor bg-transparent width100">
-                    T-shirts
-                </a>
-            </li>
-            <li class="col-4 borderCss">
-                <a href="#" onclick="changeToSweatshirts()" class="mobileBiggerLink customColor bg-transparent width100">
-                    Sweatshirts
-                </a>
-            </li>
-            <li class="col-4 borderCss border-end-0">
-                <a href="#" onclick="changeToAll()" class="bg-transparent width100 border-end-0 mobileBiggerLink customColor">
-                    All
-                </a>
-            </li>
-        </ul>
+<section class="bg-dark text-light pt-5 pb-3">
+    <div class="row align-items-end pe-3">
+        <div class="col-6  ">
+            <ul class=" navbar-nav justify-content-between ps-4 pb-1 text-start ps-5">
+                <li class="">
+                    <a href="#" onclick="changeToAll()" class=" fw-bold bg-transparent width100 border-end-0 mobileBiggerLink customColor specialSize">
+                        All
+                    </a>
+                </li>
+                <li class="">
+                    <a href="#" onclick="changeToShirts()" class="fw-bold mobileBiggerLink specialSize customColor bg-transparent ">
+                        T-shirts
+                    </a>
+                </li>
+                <li class="">
+                    <a href="#" onclick="changeToSweatshirts()" class="fw-bold mobileBiggerLink specialSize customColor bg-transparent width100">
+                        Sweatshirts
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-6 d-flex justify-content-end align-items-end">
+            <select class="w-50 text-dark md-4 fw-bold biggerForm form-select" aria-label="Default select example">
+                <option selected>Select Sort</option>
+                <option value="1">Price Lowest-Highest</option>
+                <option value="2">Price Highest-Lowest</option>
+                <option value="3">Alphabetical by name A-Z</option>
+            </select>
+        </div>
     </div>
 </section>
 <section>
     <div class="container-fluid">
-        <div class="row text-start align-items-center border-bottom border-dark border-4">
+        <div class="row text-start align-items-top border-bottom border-dark border-4">
             <div class="col-4">
-                <p class="mobileBiggerHeadline  text-dark lead md-4 fw-bold">Filter size</p>
-                <div class="form-check text-start align-items-center">
-                    <input class="form-check-input check" type="checkbox" value="" id="checkS">
-                    <label class="ps-3 form-check-label md-4 fw-bold h3" for="checkS">
-                        S
-                    </label>
-                </div>
-                <div class="form-check text-start align-items-center">
-                    <input class="form-check-input check" type="checkbox" value="" id="checkM">
-                    <label class="ps-3 form-check-label md-4 fw-bold h3" for="checkM">
-                        M
-                    </label>
-                </div>
-                <div class="form-check text-start align-items-center">
-                    <input class="form-check-input check" type="checkbox" value="" id="checkL">
-                    <label class="ps-3 form-check-label md-4 fw-bold h3" for="checkL">
-                        L
-                    </label>
-                </div>
-                <div class="form-check text-start align-items-center">
-                    <input class="form-check-input check" type="checkbox" value="" id="checkXL">
-                    <label class="ps-3 form-check-label md-4 fw-bold h3" for="checkXL">
-                        XL
-                    </label>
+                <div class="row">
+                    <p class="form-label mobileBigger  text-dark lead md-4 fw-bold">Price range</p>
+                    <div class="col-3">
+                        <div class="form-check text-start align-items-center">
+                            <input class="form-check-input check" type="checkbox" value="" id="checkS">
+                            <label class=" form-check-label fw-bold h5" for="checkS">
+                                S
+                            </label>
+                        </div>
+                        <div class="form-check text-start align-items-center">
+                            <input class="form-check-input check" type="checkbox" value="" id="checkM">
+                            <label class="form-check-label  fw-bold h5" for="checkM">
+                                M
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-3 justify-content-start">
+                        <div class="form-check text-start align-items-center">
+                            <input class="form-check-input check" type="checkbox" value="" id="checkL">
+                            <label class=" form-check-label  fw-bold h5" for="checkL">
+                                L
+                            </label>
+                        </div>
+                        <div class="form-check text-start align-items-center">
+                            <input class="form-check-input check" type="checkbox" value="" id="checkXL">
+                            <label class=" form-check-label fw-bold h5" for="checkXL">
+                                XL
+                            </label>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <div class="col-4 ">
-                <p class="mobileBiggerHeadline  text-dark lead md-4 fw-bold">Filter color</p>
-                <div class="form-check  text-start align-items-center">
-                    <input class="form-check-input check" type="checkbox" value="" id="checkBlack">
-                    <label class="form-check-label ps-3 md-4 fw-bold h3" for="checkBlack">
-                        BLACK
-                    </label>
-                </div>
-                <div class="form-check  text-start align-items-center">
-                    <input class="form-check-input check" type="checkbox" value="" id="checkWhite">
-                    <label class="form-check-label ps-3 md-4 fw-bold h3" for="checkWhite">
-                        WHITE
-                    </label>
-                </div>
-                <div class="form-check  text-start align-items-center">
-                    <input class="form-check-input check" type="checkbox" value="" id="checkBlue">
-                    <label class="form-check-label ps-3 md-4 fw-bold h3" for="checkBlue">
-                        BLUE
-                    </label>
-                </div>
-                <div class="form-check  text-start align-items-center">
-                    <input class="form-check-input check" type="checkbox" value="" id="checkRed">
-                    <label class="form-check-label ps-3 md-4 fw-bold h3" for="checkRed">
-                        RED
-                    </label>
-                </div>
-                <div class="form-check  text-start align-items-center">
-                    <input class="form-check-input check" type="checkbox" value="" id="checkOther">
-                    <label class="form-check-label ps-3 md-4 fw-bold h3" for="checkOther">
-                        Other
-                    </label>
+                <p class="form-label mobileBigger  text-dark lead md-4 fw-bold">Color</p>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-check  text-start align-items-center">
+                            <input class="form-check-input check" type="checkbox" value="" id="checkBlack">
+                            <label class="form-check-label ps-3 fw-bold h5" for="checkBlack">
+                                Black
+                            </label>
+                        </div>
+                        <div class="form-check  text-start align-items-center">
+                            <input class="form-check-input check" type="checkbox" value="" id="checkWhite">
+                            <label class="form-check-label ps-3 fw-bold h5" for="checkWhite">
+                                White
+                            </label>
+                        </div>
+                        <div class="form-check  text-start align-items-center">
+                            <input class="form-check-input check" type="checkbox" value="" id="checkBlue">
+                            <label class="form-check-label ps-3 fw-bold h5" for="checkBlue">
+                                Blue
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-check  text-start align-items-center">
+                            <input class="form-check-input check" type="checkbox" value="" id="checkRed">
+                            <label class="form-check-label ps-3 fw-bold h5" for="checkRed">
+                                Red
+                            </label>
+                        </div>
+                        <div class="form-check  text-start align-items-center">
+                            <input class="form-check-input check" type="checkbox" value="" id="checkOther">
+                            <label class="form-check-label ps-3  fw-bold h5" for="checkOther">
+                                Other
+                            </label>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-4 ps-2 pe-2">
-                <label for="priceRange" class="form-label mobileBiggerHeadline  text-dark lead md-4 fw-bold">Price range</label>
-                <input id="priceRange" type="range" class="h4 text-warning form-range price-range" min="0" max="500" value="0">
+            <div class="col-4 ps-2 pe-2 pt-2 pb-3">
+                <label for="priceRange"></label>
+                <input id="priceRange" type="range" class="h5 text-warning form-range price-range" min="0" max="500" value="0">
                 <p class="text-dark md-4 fw-bold h3">Range - 0€ - <span id="selectedPrice">0</span> €</p>
                 <button onclick="filterPrice()" class="pt-3 pb-3 bg-transparent width100 borderCssDark">
                     <span class="text-dark md-4 fw-bold h3">Filter price</span>
                 </button>
             </div>
         </div>
-        <div class="row">
-            <div class="border-dark height1000 col-12 container-fluid justify-content-center" id="cardContainer">
+        <div class="row justify-content-center ">
+            <div class="border-dark height1000 col-12"  id="cardContainer">
 
             </div>
         </div>
@@ -194,12 +211,12 @@
                 <input id="formEmail" type="text" class="form-control" placeholder="enter your e-mail" aria-label="Recipient's username" aria-describedby="basic-addon2">
                 <div class="input-group-append">
                     <button class="btn btn-outline-secondary" type="button">
-                        <img src="img/iconsHomePage/right-arrow.jpg" alt="icon" width="30px">
+                        <img src="img/iconsHomePage/right-arrow.jpg" alt="icon" width="40px">
                     </button>
                 </div>
             </div>
-            <h4 class="mb-5 ms-5 mobileBigger">subscribe to our news with your email :)</h4>
-            <h2 class="mb-3 mobileBiggerLink text-warning">Follow Us</h2>
+            <h4 class="mb-4 ms-5 mobileBiggerSmall">subscribe to our news with your email :)</h4>
+            <h2 class="mb-3 mobileBigger text-warning">Follow Us</h2>
             <div class="row w-40">
                 <div class="col mb-5 ms-3">
                     <img width="30" src="img/iconsHomePage/instagram-white-icon.png" alt="icon">
@@ -207,25 +224,25 @@
                     <img width="30" src="img/iconsHomePage/threads-white-icon.svg" alt="icon">
                 </div>
             </div>
-            <div class="row mt-5 mb-3">
+            <div class="row mt-3 mb-3">
                 <div class="col">
                     <img src="img/iconsHomePage/pays.png" alt="icon" width="205">
                 </div>
             </div>
-            <h5 class="mb-2 mobileBigger">Copyright © 2024 TeeTe</h5>
+            <h5 class="mb-2 mobileBiggerSmall">Copyright © 2024 TeeTe</h5>
             <h5 >Website done by Ivácek and Nagy</h5>
         </div>
         <div class="col-4 text-center">
-            <h2 class="mb-3 mt-5 mobileBiggerLink">Products</h2>
-            <h5 class="mobileBigger">T-shirts</h5>
-            <h5 class="mb-5 mobileBigger">Sweatshirts</h5>
-            <h2 class="mb-3 mobileBiggerLink">Help</h2>
-            <h5 class="mobileBigger">Privacy Policy</h5>
-            <h5 class="mb-5 mobileBigger">Terms & conditions</h5>
+            <h2 class="mb-3 mt-5 morbileBigger text-warning">Products</h2>
+            <h5 class="mobileBiggerSmall">T-shirts</h5>
+            <h5 class="mb-5 mobileBiggerSmall">Sweatshirts</h5>
+            <h2 class="mb-3 mobileBigger text-warning">Help</h2>
+            <h5 class="mobileBiggerSmall">Privacy Policy</h5>
+            <h5 class="mb-5 mobileBiggerSmall">Terms & conditions</h5>
 
-            <h2 class="mb-3 mobileBiggerLink text-warning">Contact</h2>
-            <h5 class="mobileBigger">teete@teete.tee</h5>
-            <h5 class="mobileBigger">+333 333 333</h5>
+            <h2 class="mb-3 mobileBigger text-warning">Contact</h2>
+            <h5 class="mobileBiggerSmall">teete@teete.tee</h5>
+            <h5 class="mobileBiggerSmall">+333 333 333</h5>
         </div>
     </div>
 </footer>
