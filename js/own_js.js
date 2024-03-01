@@ -4,6 +4,8 @@ let products=[];
 let color="all"
 let size_filters=[];
 let color_filters=[];
+let basicColors=["Black","White","Red","Blue"]
+let price_filter = 0;
 
 class Product{
     constructor(imageSrc, objectName, objectPrice, objectColor,  objectType, objectSize) {
@@ -39,6 +41,10 @@ function nextPage(){
     page+=1;
     printCards()
     writePageNum()
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 }
 
 function prevPage(){
@@ -46,6 +52,10 @@ function prevPage(){
         page-=1;
         printCards()
         writePageNum()
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
     }
 }
 
@@ -56,8 +66,8 @@ function writePageNum(){
 
 function createProducts(){
     for(let i = 1; i <= 34; i++){
-        products.push(new Product("img/productsHomePage/shirt3.jpg",  "Card " + i,99, "Black","t-shirt", "L"))
-        products.push(new Product("img/productsHomePage/hoodie1.png",  "Card " + i,99, "White","sweatshirt", "M"))
+        products.push(new Product("img/productsHomePage/shirt3.jpg",  "Card " + i,i * 10, "Black","t-shirt", "L"))
+        products.push(new Product("img/productsHomePage/hoodie1.png",  "Card " + i,i * 10, "White","sweatshirt", "M"))
 
     }
 }
@@ -67,9 +77,12 @@ function getCards(type, cardsHTML){
     for (let i = 0; i < products.length; i++){
         if ((products[i].objectType === type || type === "all") && // FILTER PRODUCT TYPE
             (size_filters.length === 0 || size_filters.includes(products[i].objectSize)) && // FILTER SIZE
-            (color_filters.length === 0 || color_filters.includes(products[i].objectColor) || (color_filters.includes("Other") && !color_filters.includes(products[i].objectColor)))) // FILTER COLOR
-        {
-            if (count >= (start* 8) && count <= (start*8) + 7) {
+            (color_filters.length === 0 || color_filters.includes(products[i].objectColor) || (color_filters.includes("Other")
+                && (!basicColors.includes(products[i].objectColor) || color_filters.includes(products[i].objectColor)))) // FILTER COLOR
+                &&  (price_filter === 0 || price_filter >= products[i].objectPrice)) // FILTER PRICE
+
+            {
+            if (count >= (start* 12) && count <= (start*12) + 11) {
                 cardsHTML += createCard(products[i].imageSrc, products[i].objectName,
                     products[i].objectPrice, products[i].objectColor, products[i].objectSize)
             }
@@ -84,6 +97,12 @@ function printCards(){
     cardsHTML += '</ul>';
     const cardContainer = document.getElementById('cardContainer');
     cardContainer.innerHTML = cardsHTML;
+}
+
+function filterPrice(){
+    price_filter = document.getElementById('priceRange').value;
+    printCards()
+
 }
 
 function changeToShirts(){
@@ -110,6 +129,7 @@ function changeToAll(){
 // PRICE FILTERING
 function updateSelectedPrice() {
     document.getElementById('selectedPrice').textContent = document.getElementById('priceRange').value;
+
 }
 
 // Event listener for the range input change event
