@@ -15,11 +15,12 @@
     object-fit: scale-down;
 }
 .card_bg{
-    box-shadow: 20px 20px 30px #997404;
-    border-radius: 4px;
+    box-shadow: 20px 20px 30px black;
+    border-radius: 10px;
+    border:none;
 }
 .card_bg:hover{
-    box-shadow: 30px 40px 50px black;
+    box-shadow: 30px 40px 50px #997404;
 }
 #feature .fe-box{
     margin: 20px;
@@ -204,4 +205,11 @@ a{
 }
 .specialSize{
     font-size:35px;
+}
+.text-start{
+    color:white;
+}
+.categoriesHover:hover{
+    box-shadow:10px 10px 14px #ffc107;;
+    border-radius: 4px;
 }

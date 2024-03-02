@@ -68,26 +68,39 @@
 <section class="bg-dark text-light pt-5 pb-3">
     <div class="row align-items-end pe-3">
         <div class="col-6  ">
-            <ul class=" navbar-nav justify-content-between ps-4 pb-1 text-start ps-5">
-                <li class="">
-                    <a href="#" onclick="changeToAll()" class=" fw-bold bg-transparent width100 border-end-0 mobileBiggerLink customColor specialSize">
-                        All
-                    </a>
-                </li>
-                <li class="">
-                    <a href="#" onclick="changeToShirts()" class="fw-bold mobileBiggerLink specialSize customColor bg-transparent ">
-                        T-shirts
-                    </a>
-                </li>
-                <li class="">
-                    <a href="#" onclick="changeToSweatshirts()" class="fw-bold mobileBiggerLink specialSize customColor bg-transparent width100">
-                        Sweatshirts
-                    </a>
-                </li>
-            </ul>
+            <div class="collapse" id="navbarToggleExternalContent">
+                <div class="bg-dark p-4">
+                    <ul class=" navbar-nav justify-content-between ps-4 pb-1 text-start ps-5">
+                        <li class="">
+                            <a href="#" onclick="changeToAll()" class=" fw-bold bg-transparent width100 border-end-0 mobileBiggerLink customColor text-warning specialSize">
+                                All
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="#" onclick="changeToShirts()" class="fw-bold mobileBiggerLink specialSize customColor text-warning bg-transparent ">
+                                T-shirts
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="#" onclick="changeToSweatshirts()" class="fw-bold mobileBiggerLink specialSize customColor text-warning bg-transparent width100">
+                                Sweatshirts
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <nav class="navbar navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <button class="navbar-toggler pt-2 categoriesHover borderCss" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon mb-2"></span>
+                        <span class="h3 text-start">Categories</span>
+                    </button>
+
+                </div>
+            </nav>
         </div>
         <div class="col-6 d-flex justify-content-end align-items-end">
-            <select class="w-50 text-dark md-4 fw-bold biggerForm form-select" aria-label="Default select example">
+            <select class="w-50 text-dark md-4 fw-bold biggerForm form-select" id="selectOrder" aria-label="Default select example">
                 <option selected>Select Sort</option>
                 <option value="1">Price Lowest-Highest</option>
                 <option value="2">Price Highest-Lowest</option>
@@ -98,86 +111,41 @@
 </section>
 <section>
     <div class="container-fluid">
-        <div class="row text-start align-items-top border-bottom border-dark border-4">
-            <div class="col-4">
-                <div class="row">
-                    <p class="form-label mobileBigger  text-dark lead md-4 fw-bold">Price range</p>
-                    <div class="col-3">
-                        <div class="form-check text-start align-items-center">
-                            <input class="form-check-input check" type="checkbox" value="" id="checkS">
-                            <label class=" form-check-label fw-bold h5" for="checkS">
-                                S
-                            </label>
-                        </div>
-                        <div class="form-check text-start align-items-center">
-                            <input class="form-check-input check" type="checkbox" value="" id="checkM">
-                            <label class="form-check-label  fw-bold h5" for="checkM">
-                                M
-                            </label>
+        <div class="row text-start align-items-center">
+            <div class="col-8">
+                <div class="row ps-3">
+                    <div class="row">
+                        <p class="form-label  h1 text-dark  fw-bold">FILTERS</p>
+                    </div>
+                    <div class="col-6 align-items-start">
+                        <div class="row">
+                            <select class="w75 text-dark md-4 fw-bold biggerForm form-select" id="selectSize" aria-label="Default select example">
+                                <option selected>Select Size</option>
+                                <option value="1">S</option>
+                                <option value="2">M</option>
+                                <option value="3">L</option>
+                                <option value="4">XL</option>
+                            </select>
                         </div>
                     </div>
-                    <div class="col-3 justify-content-start">
-                        <div class="form-check text-start align-items-center">
-                            <input class="form-check-input check" type="checkbox" value="" id="checkL">
-                            <label class=" form-check-label  fw-bold h5" for="checkL">
-                                L
-                            </label>
-                        </div>
-                        <div class="form-check text-start align-items-center">
-                            <input class="form-check-input check" type="checkbox" value="" id="checkXL">
-                            <label class=" form-check-label fw-bold h5" for="checkXL">
-                                XL
-                            </label>
-                        </div>
+                    <div class="col-6">
+                        <select class="w75 text-dark md-4 fw-bold biggerForm form-select" id="selectColor" aria-label="Default select example">
+                            <option selected>Select Color</option>
+                            <option value="1">Black</option>
+                            <option value="2">Red</option>
+                            <option value="3">White</option>
+                            <option value="4">Blue</option>
+                            <option value="5">Other</option>
+                        </select>
                     </div>
                 </div>
             </div>
-
             <div class="col-4 ">
-                <p class="form-label mobileBigger  text-dark lead md-4 fw-bold">Color</p>
-                <div class="row">
-                    <div class="col-6">
-                        <div class="form-check  text-start align-items-center">
-                            <input class="form-check-input check" type="checkbox" value="" id="checkBlack">
-                            <label class="form-check-label ps-3 fw-bold h5" for="checkBlack">
-                                Black
-                            </label>
-                        </div>
-                        <div class="form-check  text-start align-items-center">
-                            <input class="form-check-input check" type="checkbox" value="" id="checkWhite">
-                            <label class="form-check-label ps-3 fw-bold h5" for="checkWhite">
-                                White
-                            </label>
-                        </div>
-                        <div class="form-check  text-start align-items-center">
-                            <input class="form-check-input check" type="checkbox" value="" id="checkBlue">
-                            <label class="form-check-label ps-3 fw-bold h5" for="checkBlue">
-                                Blue
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="form-check  text-start align-items-center">
-                            <input class="form-check-input check" type="checkbox" value="" id="checkRed">
-                            <label class="form-check-label ps-3 fw-bold h5" for="checkRed">
-                                Red
-                            </label>
-                        </div>
-                        <div class="form-check  text-start align-items-center">
-                            <input class="form-check-input check" type="checkbox" value="" id="checkOther">
-                            <label class="form-check-label ps-3  fw-bold h5" for="checkOther">
-                                Other
-                            </label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4 ps-2 pe-2 pt-2 pb-3">
                 <label for="priceRange"></label>
                 <input id="priceRange" type="range" class="h5 text-warning form-range price-range" min="0" max="500" value="0">
-                <p class="text-dark md-4 fw-bold h3">Range - 0€ - <span id="selectedPrice">0</span> €</p>
-                <button onclick="filterPrice()" class="pt-3 pb-3 bg-transparent width100 borderCssDark">
-                    <span class="text-dark md-4 fw-bold h3">Filter price</span>
+                <p class="text-dark md-4 fw-bold h4">Range - 0€ - <span id="selectedPrice">0</span> €</p>
+                <button onclick="filterPrice()" class="pt-2 pb-2 bg-transparent width100 borderCssDark">
+                    <span class="text-dark md-4 fw-bold h4">Filter price</span>
                 </button>
             </div>
         </div>
@@ -190,14 +158,22 @@
 </section>
 <section>
     <div class="container-fluid bg-dark">
-        <div class="row pt-3 justify-content-center ">
-            <button class="col-1" onclick="prevPage()">
-                <img src="img/prev_icon.jpg" alt="icon" width="30">
-            </button>
-            <h2 class="col-1 text-light text-center" id="pageNum"></h2>
-            <button class="col-1" onclick="nextPage()">
-                <img src="img/next_icon.jpg" alt="icon" width="30">
-            </button>
+        <div class="row pt-3 justify-content-center">
+            <div class="col-2 text-end align-items-center">
+                <button class="bg-transparent border-0" onclick="prevPage()">
+                    <img src="img/prev_icon.jpg" alt="icon" width="35" class="pe-1 mb-2">
+                    <span class="text-white h3">Back</span>
+                </button>
+            </div>
+            <div class="col-2 text-start align-items-center">
+                <button class="bg-transparent border-0" onclick="nextPage()">
+                    <span class="text-white h3 pe-1">Next</span>
+                    <img src="img/next_icon.jpg" alt="icon" width="32" class="mb-2">
+                </button>
+            </div>
+        </div>
+        <div class="row text-center">
+            <h3 class="text-light" id="pageNum"></h3>
         </div>
     </div>
 </section>
