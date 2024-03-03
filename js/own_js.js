@@ -23,8 +23,8 @@ function createCard(imageSrc, objectName, objectPrice, objectColor, objectSize) 
     return `
             <li style="padding: 10px;">
                 <a href="javascript:void(0)" class="noUnderline" onclick="redirectToProductCloseup('${objectName}')">
-                <div class="card card_bg rounded-2" style="width: 16rem; height: 31rem;">
-                    <img class="card-img-top img-fluid" src="${imageSrc}" height="180px" alt="Product image shows here">
+                <div class="card card_bg rounded-2 heightCard">
+                    <img class="card-img-top img-fluid" src="${imageSrc}" alt="Product image shows here">
                     <div class="card-body  text-warning fw-bold">
                         <div class="card-header bg-transparent border-0">
                               <p class="mobileBigger text-dark no-underline">${objectName}</p>
@@ -63,13 +63,14 @@ function prevPage(){
 
 function writePageNum(){
     const cardContainer = document.getElementById('pageNum');
-    cardContainer.innerHTML = "-> "+(page + 1) + " " + (page + 2) + " " + (page + 3)
+    cardContainer.innerHTML = "<span class='fw-bold mobileBigger text-warning'>"+ (page + 1) +"</span>"  + " " + (page + 2) + " " + (page + 3)
 }
 
 function createProducts(){
-    for(let i = 1; i <= 34; i++){
-        products.push(new Product("img/productsHomePage/shirt3.jpg",  "Card " + i,(35 - i) * 10, "Black","t-shirt", ["S","L"]))
-        products.push(new Product("img/productsHomePage/hoodie1.png",  "Card " + i,(35 - i) * 10, "White","sweatshirt", ["M","XL"]))
+    // TU sa z db bude brat info
+    for(let i = 1; i <= 20; i++){
+        products.push(new Product("img/productsHomePage/shirt3.jpg",  "Card " + i * 5,(35 - i) * 10, "Black","t-shirt", ["S","L"]))
+        products.push(new Product("img/productsHomePage/hoodie1.png",  "Card " + i + i * 7,(35 - i) * 10, "White","sweatshirt", ["M","XL"]))
 
     }
 }
@@ -79,22 +80,18 @@ function getCards(type, cardsHTML){
     //ORDERING PRODUCTS IF NEEDED
     let products_sorted = [];
     if (order === "LH") {
-        console.log("LH")
         products_sorted = products.sort((a, b) => a.objectPrice - b.objectPrice);
 
     } else if (order === "HL") {
-        console.log("HL")
         products_sorted = products.sort((a, b) => b.objectPrice - a.objectPrice);
 
     } else if (order === "AB") {
-        console.log("AB")
         products_sorted= products.sort((a, b) => {
             if (a.objectName < b.objectName) return -1;
             if (a.objectName > b.objectName) return 1;
             return 0;
         });
     } else if (order === "none") {
-        console.log("none")
         products_sorted = products;
     }
     products_sorted.forEach(product => {
@@ -103,6 +100,7 @@ function getCards(type, cardsHTML){
     //FILTER PRODUCTS IN ORDER IF NEEDED
     let products_filtered=[]
     for (let i = 0; i < products_sorted.length; i++){
+        console.log(products[i].objectName)
         if ((products_sorted[i].objectType === type || type === "all") && // FILTER PRODUCT TYPE
             (size_filter === "none" || products_sorted[i].objectSizes.includes(size_filter)) && (products_sorted[i].objectColor === color_filter || color_filter === "none")
             &&  (price_filter === 0 || price_filter >= products_sorted[i].objectPrice)) // FILTER PRICE

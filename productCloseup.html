@@ -8,7 +8,7 @@
 </head>
 <body>
 <!-- HEADER -->
-<header class="header container-fluid bg-dark justify-content-center align-items-center text-light">
+<header class="header container-fluid bg-dark justify-content-center align-items-center text-light pb-3 ">
     <div class="row justify-content-center align-items-center d-flex">
         <div class="col-3 mt-3">
             <a href="home.html" class="navbar-brand mt-3">
@@ -65,8 +65,26 @@
         </div>
     </div>
 </header>
-<section id="body">
+<section id="cardBody" class="justify-content-center">
 
+</section>
+<section>
+    <div class="container-fluid row justify-content-center">
+        <div class="col-4">
+            <a href="#" class="text-dark">
+            <button type="button" class="btn btn-warning btn-lg fw-bold w-100">
+                <span class="biggerInput fw-bold">Add to cart</span>
+            </button>
+            </a>
+        </div>
+        <div class="col-4">
+            <a href="products.html" class="text-dark">
+                <button type="button" class="btn btn-lg fw-bold w-100">
+                    <span class="biggerInput fw-bold">Back</span>
+                </button>
+            </a>
+        </div>
+    </div>
 </section>
 <!-- FOOTER  -->
 <footer class="container-fluid bg-dark text-light align-items-center pb-5">
@@ -113,8 +131,9 @@
     </div>
 </footer>
 <script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/own_js_product.js"></script>
 <script>
-
+        getProductName()
 </script>
 </body>
 </html>
