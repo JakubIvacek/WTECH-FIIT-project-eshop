@@ -193,7 +193,9 @@ a{
 .mobileBigger{
     font-size:37px;
 }
-
+.paddingStart{
+    padding-left:100px;
+}
 .mobileBiggerHeadline{
     font-size:45px;
 }
@@ -201,7 +203,7 @@ a{
     font-size: 35px;
 }
 .mobileBiggerCloseup{
-    font-size: 35px;
+    font-size: 30px;
 }
 .biggerInput{
     width: 50%;
@@ -218,6 +220,23 @@ a{
 }
 #feature .fe-box{
     width: 200px;
+}
+.adminRow{
+
+    min-height: 1300px;
+}
+.card2{
+    width:10rem;
+    height:13rem;
+    background-color: white;
+}
+.card_bg2{
+    box-shadow: 20px 20px 30px black;
+    border-radius: 10px;
+    border:none;
+}
+.card_bg2:hover{
+    box-shadow: 30px 40px 50px #997404;
 }
 /* FOR MOBILES MEDIAS  */
 @media only screen and (max-width: 1000px) {
@@ -264,6 +283,11 @@ a{
     #feature .fe-box{
         width: 200px;
     }
+    .card2{
+        height:20rem;
+        width:15rem;
+    }
+
 
 }
 /* FOR SMALL SCREENS  */
@@ -281,7 +305,7 @@ a{
         font-size:37px;
     }
     .mobileBiggerCloseup{
-        font-size: 35px;
+        font-size: 30px;
     }
     .smaller{
         width:90px;
@@ -301,6 +325,5 @@ a{
     #feature .fe-box{
         width: 140px;
     }
-
 }
 

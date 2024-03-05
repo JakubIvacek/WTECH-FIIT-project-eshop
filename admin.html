@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- HEADER -->
+<header class="header container-fluid bg-dark justify-content-center align-items-center text-light pb-3 ">
+    <div class="row justify-content-center align-items-center d-flex">
+        <div class="col-3 mt-3">
+            <a href="home.html" class="navbar-brand mt-3">
+                <img class="rounded-4 smaller" src="img/iconsHomePage/icon.png" alt="" height="85">
+            </a>
+        </div>
+        <div class="col-4 h4 mt-4">
+            <nav class=" navbar navbar-dark bg-dark">
+                <div class="container-fluid navSize">
+                    <ul class="navbar-nav d-flex flex-row align-items-center">
+                        <li class="nav-item " style="margin-right: 14px;">
+                            <a href="home.html" class="nav-link" aria-current="page">
+                                <p class="customColor mobileBiggerLink">Home</p>
+                            </a>
+                        </li>
+                        <li class="nav-item mr-8">
+                            <a href="products.html" class="nav-link active">
+                                <p class="mobileBiggerLink customColor">
+                                    Products
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="col-xl-5 col-lg-6">
+            <div class="row ms-5">
+                <div class="col-8">
+                    <div class="input-group footerSub footerForm">
+                        <input id="formSearch" type="text" class="form-control" placeholder="enter search" aria-label="Search query" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button">
+                                <img src="img/iconsHomePage/right-arrow.jpg" alt="icon" width="40px">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 justify-content-end">
+                    <ul class="navbar-nav flex-row ">
+                        <li class="nav-item">
+                            <a href="login.html" class="navbar-brand">
+                                <img src="img/iconsHomePage/login.png" alt="" height="60">
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="navbar-brand">
+                                <img src="img/iconsHomePage/icons8-cart-64.png" alt="" height="69">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+    <section>
+        <div class="container-fluid">
+            <div class="row-12 d-xl-flex flex-xl-row">
+                <div class="col-lg-12 col-xl-6" style="min-height: 60rem">
+                    <div class="row h-50 bg-light">
+                        <div class="col-12">
+                            <p class="mobileBigger fw-bold">Admin panel || Add product</p>
+                            <div class="input-group mb-3 w-75 biggerInput">
+                                <input type="text" class="form-control biggerInput" placeholder="enter name here" aria-label="Username" aria-describedby="basic-addon1">
+                            </div>
+                            <div class="input-group mb-3 w-75 biggerInput">
+                                <input type="text" class="form-control biggerInput" placeholder="enter price here" aria-label="Username" aria-describedby="basic-addon2">
+                            </div>
+                            <div class="row align-items-center">
+                                <div class="col-4 ps-3 h3">
+                                    <p class="mobileBigger fw-bold">Select Sizes</p>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input bigger-checkbox" type="checkbox" id="flexSwitchCheckDefault1">
+                                        <label class="form-check-label" for="flexSwitchCheckDefault1">S</label>
+                                    </div>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input bigger-checkbox" type="checkbox" id="flexSwitchCheckDefault2">
+                                        <label class="form-check-label" for="flexSwitchCheckDefault2">M</label>
+                                    </div>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input bigger-checkbox" type="checkbox" id="flexSwitchCheckDefault3">
+                                        <label class="form-check-label" for="flexSwitchCheckDefault3">L</label>
+                                    </div>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input bigger-checkbox" type="checkbox" id="flexSwitchCheckDefault4">
+                                        <label class="form-check-label" for="flexSwitchCheckDefault4">XL</label>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <p class="mobileBigger fw-bold">Select Color</p>
+                                    <select class="w75 text-dark md-4 fw-bold biggerForm form-select productsBigger" id="selectColor" aria-label="Default select example">
+                                        <option selected>Select Color</option>
+                                        <option value="1">Black</option>
+                                        <option value="2">Red</option>
+                                        <option value="3">White</option>
+                                        <option value="4">Blue</option>
+                                        <option value="5">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <p class="mobileBigger fw-bold">Add pictures</p>
+                            <div class="d-flex ps-3">
+                                <div class="btn btn-primary btn-rounded">
+                                    <label class="form-label text-white m-1" for="customFile2">Choose file</label>
+                                    <input type="file" class="form-control d-none" id="customFile2" onchange="validateSelectedImages(event, 'selectedAvatar')" accept="image/*" multiple />
+                                </div>
+                            </div>
+                            <div id="infoimg" class="mobileBiggerSmall text-danger"></div>
+                        </div>
+                    </div>
+                    <div class="row bg-light">
+                        <p class="mobileBigger fw-bold"> Choose item to update</p>
+                        <div class="container-fluid w-100 " id="productBody">
+
+                        </div>
+                        <div class="container-fluid">
+                            <div class="row pt-3 justify-content-center">
+                                <div class="col-2 text-end align-items-center">
+                                    <button class="bg-transparent border-0" onclick="prevPage()">
+                                        <img src="img/prev_icon.jpg" alt="icon" width="35" class="pe-1 mb-2">
+                                        <span class="text-dark h3">Back</span>
+                                    </button>
+                                </div>
+                                <div class="col-2 text-start align-items-center">
+                                    <button class="bg-transparent border-0" onclick="nextPage()">
+                                        <span class="text-dark h3 pe-1">Next</span>
+                                        <img src="img/next_icon.jpg" alt="icon" width="32" class="mb-2">
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="row text-center">
+                                <h3 class="text-dark" id="pageNum"></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12 col-xl-6 bg-light" style="height: 90rem">
+                    <div class="row-12 ps-3">
+                        <p class="mobileBigger fw-bold">Modify selected product</p>
+                    </div>
+                    <div class="row-12">
+                        <div class="col w-75 ps-3 justify-content-center">
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control biggerInput" placeholder="enter new name here" aria-label="Username" aria-describedby="pName">
+                            </div>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control biggerInput" placeholder="enter price here" aria-label="Username" aria-describedby="pPrice">
+                            </div>
+                            <div class="row align-items-center">
+                                <div class="col w-50 h3">
+                                    <p class="mobileBigger fw-bold">Select New Sizes </p>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault5">
+                                        <label class="form-check-label" for="flexSwitchCheckDefault5">S</label>
+                                    </div>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault6">
+                                        <label class="form-check-label" for="flexSwitchCheckDefault6">M</label>
+                                    </div>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault7">
+                                        <label class="form-check-label" for="flexSwitchCheckDefault7">L</label>
+                                    </div>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault8">
+                                        <label class="form-check-label" for="flexSwitchCheckDefault8">XL</label>
+                                    </div>
+                                </div>
+                                <div class="col w-50">
+                                    <button type="button" class="mb-3 btn btn-warning text-dark mobileBiggerSmall fw-bold">Update Product</button>
+                                    <button type="button" class="btn btn-secondary bg-dark mobileBiggerSmall fw-bold" data-dismiss="modal">Delete Product</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row-12">
+                        <div class="container paddingStart" id="cardBody">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+<!-- FOOTER  -->
+<footer class="container-fluid bg-dark text-light align-items-center pb-5">
+    <div class="row justify-content-evenly">
+        <div class="col-6 ms-5 mt-5">
+            <h1 class="footerBigText"><span class="text-warning">Stay Teeted!</span></h1>
+            <div class="input-group footerSub footerForm">
+                <input id="formEmail" type="text" class="form-control" placeholder="enter your e-mail" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button">
+                        <img src="img/iconsHomePage/right-arrow.jpg" alt="icon" width="40px">
+                    </button>
+                </div>
+            </div>
+            <h4 class="mb-4 ms-5 mobileBiggerSmall">subscribe to our news with your email :)</h4>
+            <h2 class="mb-3 mobileBigger text-warning">Follow Us</h2>
+            <div class="row w-40">
+                <div class="col mb-5 ms-3">
+                    <img width="30" src="img/iconsHomePage/instagram-white-icon.png" alt="icon">
+                    <img width="30" src="img/iconsHomePage/tiktok-round-white-icon.svg" alt="icon">
+                    <img width="30" src="img/iconsHomePage/threads-white-icon.svg" alt="icon">
+                </div>
+            </div>
+            <div class="row mt-3 mb-3">
+                <div class="col">
+                    <img src="img/iconsHomePage/pays.png" alt="icon" width="205">
+                </div>
+            </div>
+            <h5 class="mb-2 mobileBiggerSmall">Copyright © 2024 TeeTe</h5>
+            <h5 >Website done by Ivácek and Nagy</h5>
+        </div>
+        <div class="col-4 text-center">
+            <h2 class="mb-3 mt-5 morbileBigger text-warning">Products</h2>
+            <h5 class="mobileBiggerSmall">T-shirts</h5>
+            <h5 class="mb-5 mobileBiggerSmall">Sweatshirts</h5>
+            <h2 class="mb-3 mobileBigger text-warning">Help</h2>
+            <h5 class="mobileBiggerSmall">Privacy Policy</h5>
+            <h5 class="mb-5 mobileBiggerSmall">Terms & conditions</h5>
+
+            <h2 class="mb-3 mobileBigger text-warning">Contact</h2>
+            <h5 class="mobileBiggerSmall">teete@teete.tee</h5>
+            <h5 class="mobileBiggerSmall">+333 333 333</h5>
+        </div>
+    </div>
+</footer>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/admin_js.js"></script>
+<script>
+    printProducts()
+    writePageNum()
+</script>
+</html>

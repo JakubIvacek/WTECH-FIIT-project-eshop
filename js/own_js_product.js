@@ -66,20 +66,20 @@ function createCard(imageSrc, objectName, objectPrice, objectColor, objectSize, 
             <div class="row">
                  <div class="card-body text-warning fw-bold">
                         <div class="card-header bg-transparent border-0">
-                            <p class="mobileBiggerHeadline text-dark no-underline fw-bold ps-5">${objectName}</p>
+                            <p class="mobileBigger text-dark no-underline fw-bold ps-4">${objectName}</p>
                         </div>
-                        <ul class="ps-4 list-group list-group-flush border-0 mobileBiggerCloseup mobileBiggerCloseup2">                     
+                        <ul class="ps-2 list-group list-group-flush border-0 mobileBiggerCloseup mobileBiggerCloseup2">                     
                             <li class="list-group-item border-0 no-underline">Sizes : ${objectSize}</li>
                             <li class="list-group-item border-0">Price : ${objectPrice} € </li>
                         </ul>     
                     </div>
             </div>
-            <div class="container row pb-3 ps-5 sizeSelectInput">
+            <div class="container row pb-3 ps-4 sizeSelectInput">
                 
         ` +  setSizesProduct(object) +"        </div>\n        </div> ";
 }
 function setSizesProduct(product){
-    let string = "<select class=\" w75 text-dark md-4 fw-bold biggerForm form-select biggerInput\"  id=\"sizeSelectInput\" aria-label=\"Default select example\">                 <option selected>Select Size</option>     "
+    let string = "<select class=\"border-0 border-bottom border-end border-black border-5 w75 text-dark md-4 fw-bold biggerForm form-select biggerInput \"  id=\"sizeSelectInput\" aria-label=\"Default select example\">                 <option selected>Select Size</option>     "
     for (let i=0;i<product.objectSizes.length;i++){
         string += " <option value='"+ i + "'>" + product.objectSizes[i] + "</option>"
     }
@@ -113,6 +113,4 @@ function getProductName(){
     const cardContainer = document.getElementById('cardBody');
 
     cardContainer.innerHTML = productCard
-
-
 }
