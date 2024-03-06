@@ -210,13 +210,16 @@ a{
     font-size:30px;
     height:60px;
 }
+.maxWidth{
+    width:180px;
+}
 .productsBigger{
     font-size:30px;
     height: 63px;
 }
 .heightCard{
-    height:800px;
-    width:500px;
+    height:600px;
+    width:300px;
 }
 #feature .fe-box{
     width: 200px;
@@ -277,8 +280,8 @@ a{
         height:100rem;
     }
     .heightCard{
-        height:800px;
-        width:500px;
+        height:600px;
+        width:300px;
     }
     #feature .fe-box{
         width: 200px;

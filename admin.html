@@ -66,58 +66,74 @@
     </div>
 </header>
     <section>
-        <div class="container-fluid">
+        <div class="container-fluid bg-light">
             <div class="row-12 d-xl-flex flex-xl-row">
-                <div class="col-lg-12 col-xl-6" style="min-height: 60rem">
-                    <div class="row h-50 bg-light">
+                <div class="col-lg-12 col-xl-6">
+                    <div class="row h-50 bg-light" style="min-height: 60rem">
                         <div class="col-12">
                             <p class="mobileBigger fw-bold">Admin panel || Add product</p>
                             <div class="input-group mb-3 w-75 biggerInput">
-                                <input type="text" class="form-control biggerInput" placeholder="enter name here" aria-label="Username" aria-describedby="basic-addon1">
+                                <input id="nameInput" type="text" class="form-control biggerInput" placeholder="enter name here" aria-label="Username" aria-describedby="basic-addon1">
                             </div>
                             <div class="input-group mb-3 w-75 biggerInput">
-                                <input type="text" class="form-control biggerInput" placeholder="enter price here" aria-label="Username" aria-describedby="basic-addon2">
+                                <input id="priceInput" type="text" class="form-control biggerInput" placeholder="enter price here" aria-label="Username" aria-describedby="basic-addon2">
                             </div>
                             <div class="row align-items-center">
                                 <div class="col-4 ps-3 h3">
                                     <p class="mobileBigger fw-bold">Select Sizes</p>
                                     <div class="form-check form-switch">
-                                        <input class="form-check-input bigger-checkbox" type="checkbox" id="flexSwitchCheckDefault1">
-                                        <label class="form-check-label" for="flexSwitchCheckDefault1">S</label>
+                                        <input class="form-check-input bigger-checkbox formSize" type="checkbox" id="SwitchS">
+                                        <label class="form-check-label" for="SwitchS">S</label>
                                     </div>
                                     <div class="form-check form-switch">
-                                        <input class="form-check-input bigger-checkbox" type="checkbox" id="flexSwitchCheckDefault2">
-                                        <label class="form-check-label" for="flexSwitchCheckDefault2">M</label>
+                                        <input class="form-check-input bigger-checkbox formSize" type="checkbox" id="SwitchM">
+                                        <label class="form-check-label" for="SwitchM">M</label>
                                     </div>
                                     <div class="form-check form-switch">
-                                        <input class="form-check-input bigger-checkbox" type="checkbox" id="flexSwitchCheckDefault3">
-                                        <label class="form-check-label" for="flexSwitchCheckDefault3">L</label>
+                                        <input class="form-check-input bigger-checkbox formSize" type="checkbox" id="SwitchL">
+                                        <label class="form-check-label" for="SwitchL">L</label>
                                     </div>
                                     <div class="form-check form-switch">
-                                        <input class="form-check-input bigger-checkbox" type="checkbox" id="flexSwitchCheckDefault4">
-                                        <label class="form-check-label" for="flexSwitchCheckDefault4">XL</label>
+                                        <input class="form-check-input bigger-checkbox formSize" type="checkbox" id="SwitchXL">
+                                        <label class="form-check-label" for="SwitchXL">XL</label>
                                     </div>
                                 </div>
                                 <div class="col-6">
                                     <p class="mobileBigger fw-bold">Select Color</p>
                                     <select class="w75 text-dark md-4 fw-bold biggerForm form-select productsBigger" id="selectColor" aria-label="Default select example">
                                         <option selected>Select Color</option>
-                                        <option value="1">Black</option>
-                                        <option value="2">Red</option>
-                                        <option value="3">White</option>
-                                        <option value="4">Blue</option>
-                                        <option value="5">Other</option>
+                                        <option value="Black">Black</option>
+                                        <option value="Red">Red</option>
+                                        <option value="White">White</option>
+                                        <option value="Blue">Blue</option>
+                                        <option value="Other">Other</option>
                                     </select>
+                                    <div class="form-check form-switch h3">
+                                        <input class="form-check-input bigger-checkbox formType" type="checkbox" id="SwitchTSHIRT">
+                                        <label class="form-check-label" for="SwitchTSHIRT">T-shirt</label>
+                                    </div>
+                                    <div class="form-check form-switch h3">
+                                        <input class="form-check-input bigger-checkbox formType" type="checkbox" id="SwitchHOODIE">
+                                        <label class="form-check-label" for="SwitchHOODIE">Sweatshirt</label>
+                                    </div>
                                 </div>
                             </div>
                             <p class="mobileBigger fw-bold">Add pictures</p>
                             <div class="d-flex ps-3">
-                                <div class="btn btn-primary btn-rounded">
+                                <div class="btn btn-primary btn-rounded mobileBiggerSmall fw-bold">
                                     <label class="form-label text-white m-1" for="customFile2">Choose file</label>
                                     <input type="file" class="form-control d-none" id="customFile2" onchange="validateSelectedImages(event, 'selectedAvatar')" accept="image/*" multiple />
                                 </div>
+                                <div class=" btn btn-warning mobileBiggerSmall fw-bold" onclick="addProduct()">
+                                    Add product
+                                </div>
                             </div>
                             <div id="infoimg" class="mobileBiggerSmall text-danger"></div>
+                            <div class="row">
+                                <div id="imgdiv0" class="col-4"></div>
+                                <div id="imgdiv1" class="col-4"></div>
+                                <div id="imgdiv2" class="col-4"></div>
+                            </div>
                         </div>
                     </div>
                     <div class="row bg-light">
@@ -151,41 +167,84 @@
                         <p class="mobileBigger fw-bold">Modify selected product</p>
                     </div>
                     <div class="row-12">
-                        <div class="col w-75 ps-3 justify-content-center">
+                        <div class="col-8 ps-3 justify-content-center">
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control biggerInput" placeholder="enter new name here" aria-label="Username" aria-describedby="pName">
+                                <input id="nameInputModify" type="text" class="form-control biggerInput" placeholder="enter new name here" aria-label="Username" aria-describedby="pName">
                             </div>
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control biggerInput" placeholder="enter price here" aria-label="Username" aria-describedby="pPrice">
+                                <input id="priceInputModify" type="text" class="form-control biggerInput" placeholder="enter new price here" aria-label="Username" aria-describedby="pPrice">
                             </div>
                             <div class="row align-items-center">
                                 <div class="col w-50 h3">
                                     <p class="mobileBigger fw-bold">Select New Sizes </p>
                                     <div class="form-check form-switch">
-                                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault5">
-                                        <label class="form-check-label" for="flexSwitchCheckDefault5">S</label>
+                                        <input class="form-check-input formSizeModify" type="checkbox" id="SwitchSM">
+                                        <label class="form-check-label" for="SwitchSM">S</label>
                                     </div>
                                     <div class="form-check form-switch">
-                                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault6">
-                                        <label class="form-check-label" for="flexSwitchCheckDefault6">M</label>
+                                        <input class="form-check-input formSizeModify" type="checkbox" id="SwitchMM">
+                                        <label class="form-check-label" for="SwitchMM">M</label>
                                     </div>
                                     <div class="form-check form-switch">
-                                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault7">
-                                        <label class="form-check-label" for="flexSwitchCheckDefault7">L</label>
+                                        <input class="form-check-input formSizeModify" type="checkbox" id="SwitchLM">
+                                        <label class="form-check-label" for="SwitchLM">L</label>
                                     </div>
                                     <div class="form-check form-switch">
-                                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault8">
-                                        <label class="form-check-label" for="flexSwitchCheckDefault8">XL</label>
+                                        <input class="form-check-input formSizeModify" type="checkbox" id="SwitchXLM">
+                                        <label class="form-check-label" for="SwitchXLM">XL</label>
                                     </div>
                                 </div>
                                 <div class="col w-50">
-                                    <button type="button" class="mb-3 btn btn-warning text-dark mobileBiggerSmall fw-bold">Update Product</button>
-                                    <button type="button" class="btn btn-secondary bg-dark mobileBiggerSmall fw-bold" data-dismiss="modal">Delete Product</button>
+                                    <button onclick="updateProduct()" type="button" class="mb-3 btn btn-warning text-dark mobileBiggerSmall fw-bold">Update Product</button>
+                                    <button onclick="deleteProduct()" type="button" class="btn btn-secondary bg-dark mobileBiggerSmall fw-bold" data-dismiss="modal">Delete Product</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="row-12">
+                        <p class="mobileBigger ps-3 fw-bold">Product details</p>
+                        <p id="productInfo" class="mobileBiggerSmall  ps-3">
+
+                        </p>
+                        <p id="productPrice" class="mobileBiggerSmall  ps-3">
+
+                        </p>
+                        <p id="productSizes" class="mobileBiggerSmall  ps-3">
+
+                        </p>
+                        <p class="mobileBigger ps-3 fw-bold">Product images</p>
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-4" id="imgDiv3">
+                                </div>
+                                <div class="col-4" id="imgDiv4">
+
+                                </div>
+                                <div class="col-4" id="imgDiv5">
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="btn btn-primary btn-rounded mobileBiggerSmall fw-bold">
+                                        <label class="form-label text-white m-1" for="customFile4">Choose file</label>
+                                        <input type="file" class="form-control d-none" id="customFile4" onchange="changeImg1(event, 'selectedAvatar',0)" accept="image/*" />
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="btn btn-primary btn-rounded mobileBiggerSmall fw-bold">
+                                        <label class="form-label text-white m-1" for="customFile5">Choose file</label>
+                                        <input type="file" class="form-control d-none" id="customFile5" onchange="changeImg1(event, 'selectedAvatar',1)" accept="image/*" multiple />
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="btn btn-primary btn-rounded mobileBiggerSmall fw-bold">
+                                        <label class="form-label text-white m-1" for="customFile6">Choose file</label>
+                                        <input type="file" class="form-control d-none" id="customFile6" onchange="changeImg1(event, 'selectedAvatar',2)" accept="image/*" multiple />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="container paddingStart" id="cardBody">
 
                         </div>
@@ -242,6 +301,7 @@
 <script src="js/bootstrap.bundle.min.js"></script>
 <script src="js/admin_js.js"></script>
 <script>
+    createProducts()
     printProducts()
     writePageNum()
 </script>
