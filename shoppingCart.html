@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>ProductCloseup</title>
+    <title>Shopping Cart</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <!-- HEADER -->
-<header class="header container-fluid bg-dark justify-content-center align-items-center text-light pb-3 ">
+<header class="header container-fluid bg-dark justify-content-center align-items-center text-light pb-3">
     <div class="row justify-content-center align-items-center d-flex">
         <div class="col-3 mt-3">
             <a href="home.html" class="navbar-brand mt-3">
@@ -25,7 +25,7 @@
                             </a>
                         </li>
                         <li class="nav-item mr-8">
-                            <a href="products.html" class="nav-link customColor">
+                            <a href="products.html" class="nav-link">
                                 <p class="mobileBiggerLink text-warning">
                                     Products
                                 </p>
@@ -55,7 +55,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="shoppingCart.html" class="navbar-brand">
+                            <a href="#" class="navbar-brand">
                                 <img src="img/iconsHomePage/icons8-cart-64.png" alt="" height="69">
                             </a>
                         </li>
@@ -65,63 +65,42 @@
         </div>
     </div>
 </header>
+
 <section id="cardBody" class="justify-content-center">
-
+    <!-- Your shopping cart items display -->
 </section>
-<section>
-    <div class="container-fluid row justify-content-center pb-3">
-        <div class="col-4">
-            <a href="#" class="">
-                <button class="bg-warning btn btn-warning btn-lg fw-bold w-100" type="button" data-toggle="modal" data-target="#exampleModal">
-                    <span class="biggerInput fw-bold">Add to cart</span>
-                </button>
-            </a>
 
-            <!-- Modal -->
-            <div class="modal p-5" id="exampleModal" tabindex="-1" role="dialog">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <p class="modal-title h2 fw-bold">Select product count</p>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <p class="h2 fw-bold">How many to add to the cart</p>
-                            <div class="input-group mb-3">
-                                <label for="dd"></label><select class="custom-select biggerInput border-0 border-bottom border-end border-black border-4" id="dd">
-                                    <option selected>select here</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="4">5</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <!-- Add to cart button -->
-                            <button id="addToCartBtn" class="bg-warning btn btn-warning btn-lg fw-bold w-100" type="button">
-                                <span class="biggerInput fw-bold">Add to cart</span>
-                            </button>
-                            <button type="button" class="btn btn-secondary bg-dark mobileBiggerSmall fw-bold" data-dismiss="modal">Back</button>
-                        </div>
+<section class="container">
+    <div class="row justify-content-center pb-3">
+        <div class="col-6">
+            <!-- Button to continue as guest -->
+            <button class="btn btn-lg fw-bold w-100 bg-warning text-dark" onclick="showGuestForm()">Continue as Guest</button>
+
+            <!-- Guest information form -->
+            <div id="guestForm" style="display: none;">
+                <h2 class="mt-4">Guest Information</h2>
+                <form>
+                    <div class="mb-3">
+                        <label for="guestName" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="guestName" placeholder="Enter your name">
                     </div>
-                </div>
+                    <div class="mb-3">
+                        <label for="guestAddress" class="form-label">Address</label>
+                        <input type="text" class="form-control" id="guestAddress" placeholder="Enter your address">
+                    </div>
+                    <div class="mb-3">
+                        <label for="guestContact" class="form-label">Contact</label>
+                        <input type="text" class="form-control" id="guestContact" placeholder="Enter your contact number">
+                    </div>
+                    <!-- Add more fields as needed -->
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
             </div>
-
-        </div>
-        <div class="col-4">
-            <a href="products.html" class="">
-                <button type="button" class="btn btn-lg fw-bold w-100 bg-dark text-white" >
-                    <span class="biggerInput fw-bold">Back</span>
-                </button>
-            </a>
         </div>
     </div>
 </section>
-<!-- FOOTER  -->
+
+<!-- FOOTER -->
 <footer class="container-fluid bg-dark text-light align-items-center pb-5">
     <div class="row justify-content-evenly">
         <div class="col-6 ms-5 mt-5">
@@ -165,13 +144,13 @@
         </div>
     </div>
 </footer>
+
 <script src="js/bootstrap.bundle.min.js"></script>
-<script src="js/own_js_product.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script>
-        getProductName()
+    function showGuestForm() {
+        document.getElementById('guestForm').style.display = 'block';
+    }
 </script>
 </body>
 </html>
