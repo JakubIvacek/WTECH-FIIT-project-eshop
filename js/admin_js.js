@@ -39,7 +39,7 @@ function createCard(imageSrcs, objectName, objectPrice, objectColor, objectSize)
             <li style="padding: 10px;">
                 <a href="javascript:void(0)" class="noUnderline" onclick="redirectToProductModify('${objectName}')">
                 <div class="card2 card_bg2 rounded-2 heightCard2">
-                    <img class="card-img-top " width="100px" src="${imageSrcs[0]}" alt="Product image shows here">
+                    <img class="card-img-top " width="100px" src="${imageSrcs[0]}" alt="Product image here">
                     <div class="card-body  text-warning fw-bold">
                         <div class="card-header bg-transparent border-0">
                               <p class="mobileBiggerSmall text-dark no-underline">${objectName}</p>
@@ -75,19 +75,16 @@ function printProducts(){
     cardContainer.innerHTML = cardsHTML;
 
 }
-function redirectToProductCloseup(productName) {
-    
-}
 
 function validateSelectedImages(event, targetId) {
     let input = event.target;
     let files = input.files;
-    var imagesCount = 0;
-    var imgDivs = ["imgdiv0", "imgdiv1", "imgdiv2"]
+    let imagesCount = 0;
+    let imgDivs = ["imgdiv0", "imgdiv1", "imgdiv2"]
 
-    for (var i = 0; i < files.length; i++) {
-        var file = files[i];
-        var reader = new FileReader();
+    for (let i = 0; i < files.length; i++) {
+        let file = files[i];
+        let reader = new FileReader();
         if (files) {
             let count = i;
             const fileReader = new FileReader();
@@ -97,78 +94,19 @@ function validateSelectedImages(event, targetId) {
                 imageSrcArray.push(this.result)
             });
         }
-        // Check if the file type is an image
-        if (files[i].type.match('image.*')) {
-            imagesCount++;
-        } else {
-            // If a non-image file is found, display an error message
-            displayErrorMessage("Please select only image files.");
-            input.value = ''; // Clear the selected files
-            return;
-        }
     }
-    var infoDiv = document.getElementById('infoimg');
+    let infoDiv = document.getElementById('infoimg');
 
     if (imagesCount !== 3) {
-        displayErrorMessage("Please select 3 images.");
+        let infoDiv = document.getElementById('infoimg');
+        infoDiv.innerHTML = "Please select 3 images.";
         input.value = ''; // Clear the selected files
     } else {
         infoDiv.innerHTML = ""; // Clear any previous message
-        displaySelectedImage(event, targetId);
+        document.getElementById('infoimg').innerHTML = "3 images choosen"
     }
 }
 
-function displaySelectedImage(event, targetId) {
-    document.getElementById('infoimg').innerHTML = "3 images choosen"
-}
-
-function displayErrorMessage(message) {
-    var infoDiv = document.getElementById('infoimg');
-    infoDiv.innerHTML = message;
-}
-
-function createCardModify(imageSrcs, objectName, objectPrice, objectColor, objectSize) {
-    return `
-           <a href="javascript:void(0)" class="noUnderline">
-                <div class="card card_bg rounded-2 heightCard">
-                    <div id="productCarousel" class="carousel slide " data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                            <!-- First slide -->
-                            <div class="carousel-item active">
-                                <img src="${imageSrcs[0]}" class="d-block img-fluid" alt="First slide">
-                            </div>
-                            <!-- Second slide -->
-                            <div class="carousel-item">
-                                <img src="${imageSrcs[1]}" class="d-block img-fluid" alt="Second slide">
-                            </div>
-                             <!-- Second slide -->
-                            <div class="carousel-item">
-                                <img src="${imageSrcs[2]}" class="d-block img-fluid" alt="Second slide">
-                            </div>
-                        </div>
-                        <!-- Carousel controls -->
-                        <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
-                            <img src="img/prev_icon.jpg" width="40" alt="icon">
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
-                            <img src="img/next_icon.jpg" width="40" alt="icon">
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    </div>
-                    <div class="card-body  text-warning fw-bold">
-                        <div class="card-header bg-transparent border-0">
-                              <p class="mobileBigger text-dark no-underline">${objectName}</p>
-                        </div>
-                            <ul class="list-group list-group-flush border-0 mobileBiggerSmall">                     
-                            <li class="list-group-item border-0 no-underline">Size: ${objectSize}</li>
-                             <li class="list-group-item border-0 ">Price: ${objectPrice} €</li>
-                        </ul>     
-                    </div>
-                </div>
-           </a>
-        `;
-}
 function redirectToProductModify(productName) {
     let productCard = ""
     let productChoosen
@@ -182,7 +120,6 @@ function redirectToProductModify(productName) {
     document.getElementById("productInfo").innerHTML = "Name : " + productChoosen.objectName
     document.getElementById("productPrice").innerHTML = " Price : " + productChoosen.objectPrice
     document.getElementById("productSizes").innerHTML = " Sizes : " + productChoosen.objectSizes
-
     document.getElementById("imgDiv3").innerHTML = '<img src="' + productChoosen.imageSrc[0] + '" alt="choosen uploaded img" class="img-fluid maxWidth"/>';
     document.getElementById("imgDiv4").innerHTML = '<img src="' +  productChoosen.imageSrc[1] + '" alt="choosen uploaded img" class="img-fluid maxWidth"/>';
     document.getElementById("imgDiv5").innerHTML = '<img src="' +  productChoosen.imageSrc[2] + '" alt="choosen uploaded img" class="img-fluid maxWidth"/>';
@@ -191,6 +128,7 @@ function redirectToProductModify(productName) {
     const cardContainer = document.getElementById('cardBody');
     cardContainer.innerHTML = productCard
 }
+
 function deleteProduct(){
     let new_products = []
     for(let i=0;i<products.length;i++){
@@ -199,7 +137,9 @@ function deleteProduct(){
         }
     }
     products = new_products
+    document.getElementById("infoUpdate").innerHTML= "product deleted"
 }
+
 function updateProduct() {
     let name = document.getElementById("nameInputModify").value
     let price = document.getElementById("priceInputModify").value
@@ -229,6 +169,7 @@ function updateProduct() {
             products[i].objectSizes = sizes
         }
     }
+    document.getElementById("infoUpdate").innerHTML= "product updated"
     redirectToProductModify(productSelectedName)
 }
 
@@ -285,7 +226,6 @@ function addProduct(){
         type = "t-shirt"
     else if(checkedCheckboxes[0] === "SwitchHOODIE")
         type = "sweatshirt"
-    // TU PRIDAVANIE DO DBS TODO
     products.push(new Product(imageSrcArray, name, price, color,type,sizes  ))
     document.getElementById("infoimg").innerHTML= "product added"
     imageSrcArray = []

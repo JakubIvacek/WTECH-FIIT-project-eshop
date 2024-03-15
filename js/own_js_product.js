@@ -20,47 +20,39 @@ function createCard(imageSrc, objectName, objectPrice, objectColor, objectSize, 
                         <div class="carousel-inner">
                             <!-- First slide -->
                             <div class="carousel-item active">
-                                <img src="${imageSrc}" class="d-block w-100" alt="First slide">
+                                <img src="${imageSrc[0]}" class="d-block w-100" alt="product image first slide">
                             </div>
                             <!-- Second slide -->
                             <div class="carousel-item">
-                                <img src="${imageSrc}" class="d-block w-100" alt="Second slide">
+                                <img src="${imageSrc[1]}" class="d-block w-100" alt="product image second slide">
                             </div>
-                            <!-- Add more slides for additional images as needed -->
+                            <!-- Second slide -->
+                            <div class="carousel-item">
+                                <img src="${imageSrc[2]}" class="d-block w-100" alt="product image third slide">
+                            </div>
                         </div>
                         <!-- Carousel controls -->
                         <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
-                            <img src="img/prev_icon.jpg" width="40" alt="icon">
+                            <img src="img/prev_icon.jpg" width="40" alt="icon left arrow">
                             <span class="visually-hidden">Previous</span>
                         </button>
                         <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
-                            <img src="img/next_icon.jpg" width="40" alt="icon">
+                            <img src="img/next_icon.jpg" width="40" alt="icon right arrow">
                             <span class="visually-hidden">Next</span>
                         </button>
                     </div>
                 </div>
-                <div class="row-xl-12 d-none d-xl-block">
-                    <ul class="d-flex flex-row align-items-end" style="list-style:none">
-                            <li>
-                                  <img src="${imageSrc}" class="d-block img-fluid" alt="First slide">    
-                              </li>
-                               <li>
-                                  <img src="${imageSrc}" class="d-block img-fluid w-75" alt="First slide">
-                               </li>
-                    </ul>                 
-                </div>
                 <div class="row-xl-12 d-none d-xl-block d-flex flex-row">
-                    <ul class="d-flex flex-row align-items-end" style="list-style:none">
-                        <li>
-                            <img src="${imageSrc}" class="d-block w-75" alt="First slide"> 
-                        </li>
-                        <li>
-                            <img src="${imageSrc}" class="d-block w-75" alt="First slide">        
-                        </li>
-                        <li>
-                            <img src="${imageSrc}" class="d-block w-75" alt="First slide">      
-                        </li>
-                    </ul>           
+                    <ul class="d-flex flex-row list-unstyled">
+                    <li>
+                         <img src="${imageSrc[0]}" class="d-block img-fluid" alt="product first image"> 
+                    </li>
+                    <li>
+                        <img src="${imageSrc[1]}" class="d-block w-50" alt="product second image"> 
+                        <img src="${imageSrc[2]}" class="d-block w-50" alt="product third image">         
+                    </li>
+                    
+                    </ul>
                 </div>
             </div>
             <div class="row">
@@ -87,10 +79,10 @@ function setSizesProduct(product){
     return string
 }
 function createProducts(){
-    // TU sa z db bude brat info get products
-    for(let i = 1; i <= 34; i++){
-        products.push(new Product("img/productsHomePage/shirt3.jpg",  "Card " + i * 5,(35 - i) * 10, "Black","t-shirt", ["S","L"]))
-        products.push(new Product("img/productsHomePage/hoodie1.png",  "Card " + i + i * 7,(35 - i) * 10, "White","sweatshirt", ["M","XL"]))
+    // TU sa z db bude brat info
+    for(let i = 1; i <= 32; i++){
+        products.push(new Product(["img/productsHomePage/shirt3.jpg", "img/productsHomePage/shirt3.jpg", "img/productsHomePage/shirt3.jpg"],  "Card " + i * 5,(35 - i) * 10, "Black","t-shirt", ["S","L"]))
+        products.push(new Product(["img/productsHomePage/hoodie1.png", "img/productsHomePage/hoodie1.png", "img/productsHomePage/hoodie1.png"],  "Card " + i + i * 7,(35 - i) * 10, "White","sweatshirt", ["M","XL"]))
 
     }
 }

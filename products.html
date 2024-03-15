@@ -55,7 +55,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="shoppingCart.html" class="navbar-brand">
+                            <a href="#" class="navbar-brand">
                                 <img src="img/iconsHomePage/icons8-cart-64.png" alt="" height="69">
                             </a>
                         </li>
@@ -66,8 +66,8 @@
     </div>
 </header>
 <section class="bg-dark text-light pt-5 pb-3">
-    <div class="row align-items-end pe-3 align-items-center">
-        <div class="col-7  ">
+    <div class="row align-items-end pe-3">
+        <div class="col-6  ">
             <div class="collapse" id="navbarToggleExternalContent">
                 <div class="bg-dark p-4">
                     <ul class=" navbar-nav justify-content-between ps-4 pb-1 text-start ps-5">
@@ -91,17 +91,17 @@
             </div>
             <nav class="navbar navbar-dark bg-dark">
                 <div class="container-fluid">
-                    <button class="navbar-toggler pt-2 categoriesHover borderCss productsBigger" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler pt-2 categoriesHover borderCss" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon mb-2"></span>
-                        <span class="text-start ">Categories</span>
+                        <span class="h3 text-start">Categories</span>
                     </button>
 
                 </div>
             </nav>
         </div>
-        <div class="col-5 d-flex justify-content-end align-items-end">
-            <select class=" text-dark md-4 fw-bold form-select productsBigger " id="selectOrder" aria-label="Default select example">
-                <option selected>select sort</option>
+        <div class="col-6 d-flex justify-content-end align-items-end">
+            <select class="w-50 text-dark md-4 fw-bold biggerForm form-select" id="selectOrder" aria-label="Default select example">
+                <option selected>Select Sort</option>
                 <option value="1">Price Lowest-Highest</option>
                 <option value="2">Price Highest-Lowest</option>
                 <option value="3">Alphabetical by name A-Z</option>
@@ -115,11 +115,11 @@
             <div class="col-8">
                 <div class="row ps-3">
                     <div class="row">
-                        <p class="form-label  mobileBiggerHeadline text-dark  fw-bold">FILTERS</p>
+                        <p class="form-label  h1 text-dark  fw-bold">FILTERS</p>
                     </div>
                     <div class="col-6 align-items-start">
                         <div class="row">
-                            <select class="w75 text-dark md-4 fw-bold biggerForm form-select productsBigger" id="selectSize" aria-label="Default select example">
+                            <select class="w75 text-dark md-4 fw-bold biggerForm form-select" id="selectSize" aria-label="Default select example">
                                 <option selected>Select Size</option>
                                 <option value="1">S</option>
                                 <option value="2">M</option>
@@ -129,7 +129,7 @@
                         </div>
                     </div>
                     <div class="col-6">
-                        <select class="w75 text-dark md-4 fw-bold biggerForm form-select productsBigger" id="selectColor" aria-label="Default select example">
+                        <select class="w75 text-dark md-4 fw-bold biggerForm form-select" id="selectColor" aria-label="Default select example">
                             <option selected>Select Color</option>
                             <option value="1">Black</option>
                             <option value="2">Red</option>
@@ -143,9 +143,9 @@
             <div class="col-4 ">
                 <label for="priceRange"></label>
                 <input id="priceRange" type="range" class="h5 text-warning form-range price-range" min="0" max="500" value="0">
-                <p class="text-dark md-4 fw-bold mobileBiggerSmall">Range - 0€ - <span id="selectedPrice">0</span> €</p>
+                <p class="text-dark md-4 fw-bold h4">Range - 0€ - <span id="selectedPrice">0</span> €</p>
                 <button onclick="filterPrice()" class="pt-2 pb-2 bg-transparent width100 borderCssDark">
-                    <span class="text-dark md-4 fw-bold mobileBiggerSmall">Filter price</span>
+                    <span class="text-dark md-4 fw-bold h4">Filter price</span>
                 </button>
             </div>
         </div>
@@ -187,7 +187,7 @@
                 <input id="formEmail" type="text" class="form-control" placeholder="enter your e-mail" aria-label="Recipient's username" aria-describedby="basic-addon2">
                 <div class="input-group-append">
                     <button class="btn btn-outline-secondary" type="button">
-                        <img src="img/iconsHomePage/right-arrow.jpg" alt="icon" width="45px">
+                        <img src="img/iconsHomePage/right-arrow.jpg" alt="icon" width="40px">
                     </button>
                 </div>
             </div>
