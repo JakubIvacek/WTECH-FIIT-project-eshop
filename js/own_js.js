@@ -24,7 +24,7 @@ function createCard(imageSrc, objectName, objectPrice, objectColor, objectSize) 
             <li style="padding: 10px;">
                 <a href="javascript:void(0)" class="noUnderline" onclick="redirectToProductCloseup('${objectName}')">
                 <div class="card card_bg rounded-2 heightCard">
-                    <img class="card-img-top img-fluid" src="${imageSrc}" alt="Product image shows here">
+                    <img class="card-img-top img-fluid" src="${imageSrc[0]}" alt="Product image here">
                     <div class="card-body  text-warning fw-bold">
                         <div class="card-header bg-transparent border-0">
                               <p class="mobileBigger text-dark no-underline">${objectName}</p>
@@ -68,9 +68,9 @@ function writePageNum(){
 
 function createProducts(){
     // TU sa z db bude brat info
-    for(let i = 1; i <= 20; i++){
-        products.push(new Product("img/productsHomePage/shirt3.jpg",  "Card " + i * 5,(35 - i) * 10, "Black","t-shirt", ["S","L"]))
-        products.push(new Product("img/productsHomePage/hoodie1.png",  "Card " + i + i * 7,(35 - i) * 10, "White","sweatshirt", ["M","XL"]))
+    for(let i = 1; i <= 32; i++){
+        products.push(new Product(["img/productsHomePage/shirt3.jpg", "img/productsHomePage/shirt3.jpg", "img/productsHomePage/shirt3.jpg"],  "Card " + i * 5,(35 - i) * 10, "Black","t-shirt", ["S","L"]))
+        products.push(new Product(["img/productsHomePage/hoodie1.png", "img/productsHomePage/hoodie1.png", "img/productsHomePage/hoodie1.png"],  "Card " + i + i * 7,(35 - i) * 10, "White","sweatshirt", ["M","XL"]))
 
     }
 }
