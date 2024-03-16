@@ -195,6 +195,14 @@
             passwordError.textContent = "";
         }
 
+        // Validate if password and repeat password are the same
+        if (password !== document.getElementById("repeatPassword").value) {
+            passwordError.textContent = "Passwords do not match.";
+            return false;
+        } else {
+            passwordError.textContent = "";
+        }
+
         // Validate street number
         if (!/^\d+$/.test(streetNumber)) {
             streetNumberError.textContent = "Street number must be a number.";
@@ -211,6 +219,13 @@
             postalCodeError.textContent = "";
         }
 
+        //Validate number
+        if (!/^\d+$/.test(phone)) {
+            phoneError.textContent = "Phone number must be a number.";
+            return false;
+        } else {
+            phoneError.textContent = "";
+        }
         return true;
     }
 </script>

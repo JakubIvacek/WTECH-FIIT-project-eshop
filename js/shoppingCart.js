@@ -1,31 +1,66 @@
-// JavaScript code to handle adding product to the cart
-document.addEventListener("DOMContentLoaded", function() {
-    // Get the add to cart button
-    var addToCartBtn = document.getElementById("addToCartBtn");
 
-    // Add click event listener to the button
-    addToCartBtn.addEventListener("click", function() {
-        // Get product details
-        var productName = document.getElementById("productName").innerText; // Assuming there's an element with id "productName" containing the product name
-        var productPrice = document.getElementById("productPrice").innerText; // Assuming there's an element with id "productPrice" containing the product price
+    // Sample shopping cart items
+    const shoppingCart = [
+    { productName: 'T-shirt', quantity: 2, price: 20, image: 'img/productsHomePage/hoodie1.png' },
+    { productName: 'Sweatshirt', quantity: 1, price: 30, image: 'img/productsHomePage/hoodie1.png' },
+    { productName: 'Sweatshirt', quantity: 1, price: 30, image: 'img/productsHomePage/hoodie1.png' },
+    { productName: 'Sweatshirt', quantity: 1, price: 35, image: 'img/productsHomePage/hoodie1.png' },
+    ];
 
-        // Create an object representing the product
-        var product = {
-            name: productName,
-            price: productPrice,
-            quantity: 1 // Assuming default quantity is 1
-        };
+    function updateCartDisplay() {
+    let cartItemsHtml = '';
+    shoppingCart.forEach((item, index) => {
+    cartItemsHtml += `
+                <div class="card mb-3">
+                    <div class="card-body d-flex justify-content-between align-items-center">
+                        <div class="d-flex align-items-center">
+                            <img src="${item.image}" alt="${item.productName}" class="card-img-top mb-2" style="max-width: 100px;">
+                            <div class="ms-3">
+                                <h5 class="card-title">${item.productName}</h5>
+                                <p class="card-text">Quantity: ${item.quantity}</p>
+                                <p class="card-text">Price: $${item.price}</p>
+                            </div>
+                        </div>
+                        <div>
+                         <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Quantity
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    ${generateQuantityOptions(index)}
+                                </ul>
+                            <button class="btn btn-dark me-2" onclick="removeItem(${index})">Remove</button>
+                            <div class="dropdown">
 
-        // Check if cart already exists in local storage
-        var cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-        // Add product to cart
-        cart.push(product);
-
-        // Store updated cart in local storage
-        localStorage.setItem("cart", JSON.stringify(cart));
-
-        // Optionally, update UI to indicate that the product has been added to cart
-        alert("Product added to cart!");
-    });
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
 });
+
+    document.getElementById('shoppingCartItems').innerHTML = cartItemsHtml;
+}
+
+    // Function to generate quantity options for dropdown menu
+    function generateQuantityOptions(index) {
+    let optionsHtml = '';
+    for (let i = 1; i <= 9; i++) {
+    optionsHtml += `<li><button class="dropdown-item" onclick="changeQuantity(${index}, ${i})">${i}</button></li>`;
+}
+    return optionsHtml;
+}
+
+    // Function to remove item from the shopping cart
+    function removeItem(index) {
+    shoppingCart.splice(index, 1);
+    updateCartDisplay();
+}
+
+    // Function to change quantity of an item in the shopping cart
+    function changeQuantity(index, quantity) {
+    shoppingCart[index].quantity = quantity;
+    updateCartDisplay();
+}
+
+    // When the page loads, update the shopping cart display
+    window.onload = updateCartDisplay;
