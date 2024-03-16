@@ -5,10 +5,23 @@
     <title>Shopping Cart</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* CSS for shopping cart item hover effect */
+        .card.mb-3 {
+            box-shadow: 20px 20px 30px black;
+            border-radius: 10px;
+            border:none;
+        }
+
+        .card.mb-3:hover {
+            box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+
+        }
+    </style>
 </head>
 <body>
 <!-- HEADER -->
-<header class="header container-fluid bg-dark justify-content-center align-items-center text-light pb-3">
+<header class="header container-fluid bg-dark justify-content-center align-items-center text-light">
     <div class="row justify-content-center align-items-center d-flex">
         <div class="col-3 mt-3">
             <a href="home.html" class="navbar-brand mt-3">
@@ -19,7 +32,7 @@
             <nav class=" navbar navbar-dark bg-dark">
                 <div class="container-fluid navSize">
                     <ul class="navbar-nav d-flex flex-row align-items-center">
-                        <li class="nav-item " style="margin-right: 14px;">
+                        <li class="nav-item" style="margin-right: 14px;">
                             <a href="home.html" class="nav-link" aria-current="page">
                                 <p class="customColor mobileBiggerLink">Home</p>
                             </a>
@@ -55,7 +68,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="navbar-brand">
+                            <a href="shoppingCart.html" class="navbar-brand">
                                 <img src="img/iconsHomePage/icons8-cart-64.png" alt="" height="69">
                             </a>
                         </li>
@@ -66,41 +79,20 @@
     </div>
 </header>
 
-<section id="cardBody" class="justify-content-center">
-    <!-- Your shopping cart items display -->
-</section>
+<!-- SHOPPING CART -->
+<!-- SHOPPING CART -->
+<section class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-10">
+            <!-- Shopping cart items display -->
+            <div id="shoppingCartItems" class="d-flex flex-column align-items-center">
+                <!-- Dynamically generated items with card_bg2 class -->
 
-<section class="container">
-    <div class="row justify-content-center pb-3">
-        <div class="col-6">
-            <!-- Button to continue as guest -->
-            <button class="btn btn-lg fw-bold w-100 bg-warning text-dark" onclick="showGuestForm()">Continue as Guest</button>
-
-            <!-- Guest information form -->
-            <div id="guestForm" style="display: none;">
-                <h2 class="mt-4">Guest Information</h2>
-                <form>
-                    <div class="mb-3">
-                        <label for="guestName" class="form-label">Name</label>
-                        <input type="text" class="form-control" id="guestName" placeholder="Enter your name">
-                    </div>
-                    <div class="mb-3">
-                        <label for="guestAddress" class="form-label">Address</label>
-                        <input type="text" class="form-control" id="guestAddress" placeholder="Enter your address">
-                    </div>
-                    <div class="mb-3">
-                        <label for="guestContact" class="form-label">Contact</label>
-                        <input type="text" class="form-control" id="guestContact" placeholder="Enter your contact number">
-                    </div>
-                    <!-- Add more fields as needed -->
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
             </div>
         </div>
     </div>
 </section>
-
-<!-- FOOTER -->
+<!-- FOOTER  -->
 <footer class="container-fluid bg-dark text-light align-items-center pb-5">
     <div class="row justify-content-evenly">
         <div class="col-6 ms-5 mt-5">
@@ -145,12 +137,39 @@
     </div>
 </footer>
 
+
 <script src="js/bootstrap.bundle.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script>
-    function showGuestForm() {
-        document.getElementById('guestForm').style.display = 'block';
+    // Sample shopping cart items
+    const shoppingCart = [
+        { productName: 'T-shirt', quantity: 2, price: 20 },
+        { productName: 'Sweatshirt', quantity: 1, price: 30 },
+        { productName: 'Sweatshirt', quantity: 1, price: 30 },
+        { productName: 'Sweatshirt', quantity: 1, price: 30 },
+
+    ];
+
+    // Function to update shopping cart display
+    function updateCartDisplay() {
+        let cartItemsHtml = '';
+        shoppingCart.forEach(item => {
+            cartItemsHtml += `
+                <div class="card mb-3">
+                    <div class="card-body" class="card card_bg rounded-2 ">
+                        <h5 class="card-title">${item.productName}</h5>
+                        <p class="card-text">Quantity: ${item.quantity}</p>
+                        <p class="card-text">Price: $${item.price}</p>
+                    </div>
+                </div>
+            `;
+        });
+
+        document.getElementById('shoppingCartItems').innerHTML = cartItemsHtml;
     }
+
+    // When the page loads, update the shopping cart display
+    window.onload = updateCartDisplay;
 </script>
 </body>
 </html>
