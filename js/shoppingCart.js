@@ -2,10 +2,10 @@
 let shoppingCart =[];
 // Sample shopping cart items
 shoppingCart = [
-    { productName: 'T-shirt', quantity: 2, price: 20, image: 'img/productsHomePage/hoodie1.png' },
-    { productName: 'Sweatshirt', quantity: 1, price: 30, image: 'img/productsHomePage/hoodie1.png' },
-    { productName: 'Sweatshirt', quantity: 1, price: 30, image: 'img/productsHomePage/hoodie1.png' },
-    { productName: 'Sweatshirt', quantity: 1, price: 35, image: 'img/productsHomePage/hoodie1.png' },
+    { productName: 'T-shirt',ID:12, quantity: 2, price: 20, image: 'img/productsHomePage/hoodie1.png' },
+    { productName: 'Sweatshirt',ID:15622, quantity: 1, price: 30, image: 'img/productsHomePage/hoodie1.png' },
+    { productName: 'Sweatshirt',ID:1642, quantity: 1, price: 30, image: 'img/productsHomePage/hoodie1.png' },
+    { productName: 'Sweatshirt',ID:152, quantity: 1, price: 35, image: 'img/productsHomePage/hoodie1.png' },
     ]
 
 function updateCartDisplay() {
@@ -26,6 +26,8 @@ function updateCartDisplay() {
                         <img src="${item.image}" alt="${item.productName}" class="card-img-top mb-2" style="max-width: 100px;">
                         <div class="ms-3">
                             <h5 class="card-title">${item.productName}</h5>
+                            <p class="card-text">ID: ${item.ID}</p>
+             
                             <p class="card-text">Quantity: ${item.quantity}</p>
                             <p class="card-text">Price: $${item.price*item.quantity}</p>
                         </div>
