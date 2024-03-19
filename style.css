@@ -243,6 +243,16 @@ a{
 }
 .card_bg2:hover{
     box-shadow: 30px 40px 50px #997404;
+
+}
+.card.mb-3 {
+    box-shadow: 20px 20px 30px black;
+    border-radius: 10px;
+    border:none;
+}
+
+.card.mb-3:hover {
+    box-shadow:10px 10px 14px #997404;;
 }
 /* FOR MOBILES MEDIAS  */
 @media only screen and (max-width: 1000px) {

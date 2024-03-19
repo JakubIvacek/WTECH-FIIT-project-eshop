@@ -5,19 +5,7 @@
     <title>Shopping Cart</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* CSS for shopping cart item hover effect */
-        .card.mb-3 {
-            box-shadow: 20px 20px 30px black;
-            border-radius: 10px;
-            border:none;
-        }
 
-        .card.mb-3:hover {
-            box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
-
-        }
-    </style>
 </head>
 <body>
 <!-- HEADER -->
@@ -79,87 +67,17 @@
 </header>
 
 
-<section class="container mt-4">
-    <div class="row justify-content-center">
-        <div class="col-lg-6 ">
-            <!-- Shopping cart items display -->
-                <!-- Sample item -->
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="d-flex align-items-center">
-                                <img src="item_image_url" alt="Item Name" class="card-img-top mb-2" style="max-width: 100px;">
-                                <div class="ms-3">
-                                    <h5 class="card-title">Item Name</h5>
-                                    <p class="card-text">ID: Item ID</p>
-                                    <p class="card-text">Quantity: 1</p>
-                                    <p class="card-text">Price: $XX.XX</p>
-                                </div>
-                            </div>
-                            <div class="d-flex">
-                                <div class="dropdown">
-                                    <button class="btn btn-warning btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                                        Quantity
-                                    </button>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <!-- Dropdown menu options -->
-                                    </ul>
-                                </div>
-                                <button class="btn btn-dark btn-sm ms-2">Remove</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Sample item end -->
-            </div>
-        </div>
-    </div>
-</section>
+<!-- Checkout Section -->
 
-<section class="container mt-4">
-    <div class="row justify-content-center">
-        <div class="col-lg-6 ">
-            <!-- Shopping cart items display -->
-            <!-- Sample item -->
-            <div class="card mb-3">
-                <div class="card-body">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="d-flex align-items-center">
-                            <img src="item_image_url" alt="Item Name" class="card-img-top mb-2" style="max-width: 100px;">
-                            <div class="ms-3">
-                                <h5 class="card-title">Item Name</h5>
-                                <p class="card-text">ID: Item ID</p>
-                                <p class="card-text">Quantity: 1</p>
-                                <p class="card-text">Price: $XX.XX</p>
-                            </div>
-                        </div>
-                        <div class="d-flex">
-                            <div class="dropdown">
-                                <button class="btn btn-warning btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Quantity
-                                </button>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <!-- Dropdown menu options -->
-                                </ul>
-                            </div>
-                            <button class="btn btn-dark btn-sm ms-2">Remove</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Sample item end -->
-        </div>
-    </div>
-</section>
-
-<section class="container mt-4">
-    <div class="row justify-content-center">
-        <div class="col-lg-6">
+<section class="container mt-4 checkout-section">
+    <div class="row justify-content-center align-content-center">
+        <div class="col-md-12">
             <!-- Address Information -->
-            <div class="card mb-3 d-flex justify-content-center">
-                <div class="card-body">
+            <div class="card mb-3">
+                <div class="card-body ">
                     <h5 class="card-title">Address Information</h5>
                     <form>
+                        <!-- Address form inputs -->
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for="firstName" class="form-label">First Name</label>
@@ -207,9 +125,9 @@
         </div>
     </div>
     <div class="row justify-content-center">
-        <div class="col-lg-6">
+        <div class="col-md-12">
             <!-- Payment Options -->
-            <div class="card mb-3 d-flex justify-content-center">
+            <div class="card mb-3">
                 <div class="card-body">
                     <h5 class="card-title">Payment Options</h5>
                     <form>
@@ -253,6 +171,8 @@
         </div>
     </div>
 </section>
+<!-- Checkout Section End -->
+
 <!-- FOOTER  -->
 <footer class="container-fluid bg-dark text-light align-items-center pb-5">
     <div class="row justify-content-evenly">
