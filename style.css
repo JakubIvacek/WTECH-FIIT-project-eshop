@@ -254,6 +254,18 @@ a{
 .card.mb-3:hover {
     box-shadow:10px 10px 14px #997404;;
 }
+
+.profile-section {
+    border: 1px solid #ccc; /* Add border */
+    padding: 20px; /* Add padding */
+    box-shadow: 20px 20px 30px black;
+    border-radius: 10px;
+    transition: all 0.3s ease; /* Add transition for smooth hover effect */
+}
+
+.profile-section:hover {
+    box-shadow:10px 10px 14px #997404;;
+}
 /* FOR MOBILES MEDIAS  */
 @media only screen and (max-width: 1000px) {
     .mobileBiggerSmall {
@@ -303,6 +315,7 @@ a{
         height:20rem;
         width:15rem;
     }
+
 
 
 }
