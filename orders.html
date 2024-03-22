@@ -2,9 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
+    <title>Orders</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+    <style>
+
+    </style>
 </head>
 <body>
 <!-- HEADER -->
@@ -27,7 +30,7 @@
                         <li class="nav-item mr-8">
                             <a href="products.html" class="nav-link active">
                                 <p class="mobileBiggerLink customColor">
-                                Products</p>
+                                    Products</p>
                             </a>
                         </li>
                     </ul>
@@ -38,7 +41,8 @@
             <div class="row ms-5">
                 <div class="col-8">
                     <div class="input-group footerSub footerForm">
-                        <input id="formSearch" type="text" class="form-control" placeholder="enter search" aria-label="Search query" aria-describedby="basic-addon2">
+                        <input id="formSearch" type="text" class="form-control" placeholder="enter search"
+                               aria-label="Search query" aria-describedby="basic-addon2">
                         <div class="input-group-append">
                             <button class="btn btn-outline-secondary" type="button">
                                 <img src="img/iconsHomePage/right-arrow.jpg" alt="icon" width="40px">
@@ -64,27 +68,43 @@
         </div>
     </div>
 </header>
-<!-- LOGIN FORM -->
-<section class="container mt-5">
-    <div class="row justify-content-center align-items-center">
-        <div class="col-xl-4 col-lg-6  profile-section mb-4 ">
 
-                <h2 class="text-center mb-4">Login</h2>
-                <form>
-                    <div class="mb-3">
-                        <label for="username" class="form-label">Username</label>
-                        <input type="text" class="form-control" id="username" placeholder="Enter your username">
+<!-- BODY -->
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <h2 class="text-center mb-4">Your Orders</h2>
+            <div class="profile-section mb-4">
+                <div class="card-body">
+                    <!-- Order 1 -->
+                    <div class="order">
+                        <h5>Order ID: #123456</h5>
+                        <p>Date: January 15, 2024</p>
+                        <ul>
+                            <li>Product 1</li>
+                            <li>Product 2</li>
+                            <!-- Add more products as needed -->
+                        </ul>
+                        <p>Total Price: $100.00</p>
                     </div>
-                    <div class="mb-3">
-                        <label for="password" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="password" placeholder="Enter your password">
-                    </div>
-                    <a href="profile.html" class="btn btn-warning btn-block">Login</a>
-                </form>
-                <p class="text-center mt-3">Don't have an account? <a href="signup.html">Sign Up</a></p>
+                    <!-- Order 2 (if applicable) -->
+                    <!-- <div class="order">
+                        <h5>Order ID: #654321</h5>
+                        <p>Date: January 20, 2024</p>
+                        <ul>
+                            <li>Product 1</li>
+                            <li>Product 2</li>
+                            Add more products as needed
+                        </ul>
+                        <p>Total Price: $150.00</p>
+                    </div> -->
+                    <!-- Add more orders as needed -->
+                </div>
+            </div>
         </div>
     </div>
-</section>
+</div>
+
 
 
 <!-- FOOTER  -->
@@ -93,10 +113,11 @@
         <div class="col-6 ms-5 mt-5">
             <h1 class="footerBigText"><span class="text-warning">Stay Teeted!</span></h1>
             <div class="input-group footerSub footerForm">
-                <input id="formEmail" type="text" class="form-control" placeholder="enter your e-mail" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                <input id="formEmail" type="text" class="form-control" placeholder="enter your e-mail"
+                       aria-label="Recipient's username" aria-describedby="basic-addon2">
                 <div class="input-group-append">
                     <button class="btn btn-outline-secondary" type="button">
-                        <img src="img/iconsHomePage/right-arrow.jpg" alt="icon" width="40px">
+                        <img src="img/iconsHomePage/right-arrow.jpg" alt="icon right arrow" width="40px">
                     </button>
                 </div>
             </div>
@@ -104,18 +125,18 @@
             <h2 class="mb-3 mobileBigger text-warning">Follow Us</h2>
             <div class="row w-40">
                 <div class="col mb-5 ms-3">
-                    <img width="30" src="img/iconsHomePage/instagram-white-icon.png" alt="icon">
-                    <img width="30" src="img/iconsHomePage/tiktok-round-white-icon.svg" alt="icon">
-                    <img width="30" src="img/iconsHomePage/threads-white-icon.svg" alt="icon">
+                    <img width="30" src="img/iconsHomePage/instagram-white-icon.png" alt="icon instagram">
+                    <img width="30" src="img/iconsHomePage/tiktok-round-white-icon.svg" alt="icon tiktok">
+                    <img width="30" src="img/iconsHomePage/threads-white-icon.svg" alt="icon threads">
                 </div>
             </div>
             <div class="row mt-3 mb-3">
                 <div class="col">
-                    <img src="img/iconsHomePage/pays.png" alt="icon" width="205">
+                    <img src="img/iconsHomePage/pays.png" alt="icons payment methods" width="205">
                 </div>
             </div>
             <h5 class="mb-2 mobileBiggerSmall">Copyright © 2024 TeeTe</h5>
-            <h5 >Website done by Ivácek and Nagy</h5>
+            <h5>Website done by Ivácek and Nagy</h5>
         </div>
         <div class="col-4 text-center">
             <h2 class="mb-3 mt-5 morbileBigger text-warning">Products</h2>
@@ -132,5 +153,8 @@
     </div>
 </footer>
 <script src="js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
 </body>
+
 </html>
