@@ -100,9 +100,9 @@ function validateSelectedImages(event, targetId) {
     if (imagesCount !== 3) {
         let infoDiv = document.getElementById('infoimg');
         infoDiv.innerHTML = "Please select 3 images.";
-        input.value = ''; // Clear the selected files
+        input.value = '';
     } else {
-        infoDiv.innerHTML = ""; // Clear any previous message
+        infoDiv.innerHTML = "";
         document.getElementById('infoimg').innerHTML = "3 images choosen"
     }
 }

@@ -214,7 +214,7 @@ a{
     height:60px;
 }
 .maxWidth{
-    width:180px;
+    width:250px;
 }
 .productsBigger{
     font-size:30px;
@@ -232,8 +232,8 @@ a{
     min-height: 1300px;
 }
 .card2{
-    width:10rem;
-    height:13rem;
+    width:14rem;
+    height:19rem;
     background-color: white;
 }
 .card_bg2{
@@ -280,7 +280,7 @@ a{
         font-size:65px;
     }
     .mobileBiggerLink{
-        font-size:70px;
+        font-size:60px;
     }
     .mobileBigger{
         font-size:47px;
@@ -333,7 +333,7 @@ a{
         font-size:45px;
     }
     .mobileBiggerLink{
-        font-size:40px;
+        font-size:50px;
     }
     .mobileBigger{
         font-size:37px;
@@ -358,6 +358,21 @@ a{
     }
     #feature .fe-box{
         width: 140px;
+    }
+    .heightCard{
+        height:550px;
+        width:300px;
+    }
+}
+@media only screen and (max-width: 700px) {
+    .mobileBiggerLink{
+        font-size:32px;
+    }
+    .mobileBigger{
+        font-size:30px;
+    }
+    .mobileBiggerHeadline{
+        font-size:38px;
     }
 }
 
