@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/Wtech/app" isTestSource="false" packagePrefix="App\" />
+      <sourceFolder url="file://$MODULE_DIR$/Wtech/database/factories" isTestSource="false" packagePrefix="Database\Factories\" />
+      <sourceFolder url="file://$MODULE_DIR$/Wtech/database/seeders" isTestSource="false" packagePrefix="Database\Seeders\" />
+      <sourceFolder url="file://$MODULE_DIR$/Wtech/tests" isTestSource="true" packagePrefix="Tests\" />
+      <sourceFolder url="file://$MODULE_DIR$/Wtech/tests/Feature" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/Wtech/tests/Unit" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/brick/math" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/carbonphp/carbon-doctrine-types" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/dflydev/dot-access-data" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/doctrine/inflector" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/doctrine/lexer" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/dragonmantank/cron-expression" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/egulias/email-validator" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/fakerphp/faker" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/filp/whoops" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/fruitcake/php-cors" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/graham-campbell/result-type" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/guzzlehttp/guzzle" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/guzzlehttp/promises" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/guzzlehttp/psr7" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/guzzlehttp/uri-template" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/hamcrest/hamcrest-php" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/laravel/framework" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/laravel/pint" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/laravel/prompts" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/laravel/sail" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/laravel/serializable-closure" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/laravel/tinker" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/league/commonmark" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/league/config" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/league/flysystem" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/league/flysystem-local" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/league/mime-type-detection" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/mockery/mockery" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/monolog/monolog" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/myclabs/deep-copy" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/nesbot/carbon" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/nette/schema" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/nette/utils" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/nikic/php-parser" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/nunomaduro/collision" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/nunomaduro/termwind" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/phar-io/manifest" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/phar-io/version" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/phpoption/phpoption" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/phpunit/php-code-coverage" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/phpunit/php-file-iterator" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/phpunit/php-invoker" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/phpunit/php-text-template" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/phpunit/php-timer" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/phpunit/phpunit" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/psr/clock" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/psr/container" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/psr/event-dispatcher" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/psr/http-client" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/psr/http-factory" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/psr/http-message" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/psr/log" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/psr/simple-cache" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/psy/psysh" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/ralouphie/getallheaders" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/ramsey/collection" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/ramsey/uuid" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/sebastian/cli-parser" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/sebastian/code-unit" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/sebastian/code-unit-reverse-lookup" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/sebastian/comparator" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/sebastian/complexity" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/sebastian/diff" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/sebastian/environment" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/sebastian/exporter" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/sebastian/global-state" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/sebastian/lines-of-code" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/sebastian/object-enumerator" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/sebastian/object-reflector" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/sebastian/recursion-context" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/sebastian/type" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/sebastian/version" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/spatie/backtrace" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/spatie/flare-client-php" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/spatie/ignition" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/spatie/laravel-ignition" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/symfony/clock" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/symfony/console" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/symfony/css-selector" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/symfony/deprecation-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/symfony/error-handler" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/symfony/event-dispatcher" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/symfony/event-dispatcher-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/symfony/finder" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/symfony/http-foundation" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/symfony/http-kernel" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/symfony/mailer" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/symfony/mime" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/symfony/polyfill-ctype" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/symfony/polyfill-intl-grapheme" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/symfony/polyfill-intl-idn" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/symfony/polyfill-intl-normalizer" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/symfony/polyfill-mbstring" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/symfony/polyfill-php72" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/symfony/polyfill-php80" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/symfony/polyfill-php83" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/symfony/polyfill-uuid" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/symfony/process" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/symfony/routing" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/symfony/service-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/symfony/string" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/symfony/translation" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/symfony/translation-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/symfony/uid" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/symfony/var-dumper" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/symfony/yaml" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/theseer/tokenizer" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/tijsverkoyen/css-to-inline-styles" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/vlucas/phpdotenv" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/voku/portable-ascii" />
+      <excludeFolder url="file://$MODULE_DIR$/Wtech/vendor/webmozart/assert" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

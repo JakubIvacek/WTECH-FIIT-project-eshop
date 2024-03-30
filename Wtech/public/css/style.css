@@ -1,0 +1,378 @@
+.box {
+    background-color: #0b5ed7;
+    border: blueviolet;
+    min-height:50px;
+}
+.nav-margin{
+    margin-right: 14px;
+}
+
+.c-item {
+    height: 800px;
+}
+.c-img {
+    height:100%;
+    object-fit: scale-down;
+}
+.card{
+    width:50rem;
+}
+.card_bg{
+    box-shadow: 20px 20px 30px black;
+    border-radius: 10px;
+    border:none;
+}
+.card_bg:hover{
+    box-shadow: 30px 40px 50px #997404;
+}
+#feature .fe-box{
+    margin: 20px;
+
+    text-align: center;
+    padding: 25px 15px;
+    box-shadow: 20px 20px 30px #997404;
+    border-radius: 4px;
+}
+.heightLimit{
+    width: 90%;
+}
+#feature .fe-box:hover{
+    box-shadow: 20px 20px 50px #ffc107;
+}
+.bg-yellow{
+    background-color: #ffc107;
+}
+#feature .fe-box img{
+    width: 100%;
+    margin-bottom: 10px;
+}
+.padding10{
+    padding-bottom: 40px;
+    padding-top: 40px;
+}
+.borderCss{
+    border-color:white;
+    border-width:4px;
+    border-style: solid;
+    border-top:None;
+    border-left:None;
+
+}
+.borderCssDark{
+    border-color:black;
+    border-width:4px;
+    border-style: solid;
+    border-top:None;
+    border-left:None;
+    transition: background-color 0.3s ease;
+
+}
+.borderCssDark:hover{
+    background-color: #45a049;
+
+}
+#feature{
+    width:100%;
+    justify-content: center;
+}
+#body{
+    padding-bottom:50px;
+    min-height:900px;
+}
+.headline{
+    font-size:50px;
+}
+.headline2{
+    font-size:100px;
+    padding-top:60px;
+}
+.smallerText{
+    font-size:40px;
+}
+.iconImg{
+    width:50px;
+}
+.width100{
+    width: 100%;
+}
+.height1000{
+    min-height: 970px;
+}
+.smaller{
+    height: 150px;
+}
+.w70{
+    width:70%;
+}
+.w60{
+    width:60%;
+}
+.w33{
+    width:30%;
+}
+.headline2{
+    font-size:60px;
+}
+a{
+    text-decoration: none;
+}
+.check{
+    width:17px;
+    height:17px;
+}
+.biggerForm{
+    height: 45px;
+    font-size:22px;
+}
+.borderAll{
+    border-width:15px;
+    border-style: solid;
+    border-top:None;
+    border-left:None;
+    border-bottom: None;
+}
+.sectionm1{
+    margin: 40px 0;
+}
+#footerForm {
+    background-color: transparent;
+    border: none;
+}
+.customColor{
+    color: #997404;
+}
+.customColor:hover{
+    color: #ffc107;
+}
+.navSize{
+    font-size:37px;
+}
+.footerForm input {
+    font-size:30px;
+    margin-bottom:7px;
+    background-color: transparent;
+    border:None;
+    border-bottom: 2px solid white;
+    color: white;
+    border-radius: 0;
+}
+.footerForm input::placeholder {
+    color: white;
+    text-align:end;
+    font-size:30px;
+}
+.footerForm button {
+    margin-bottom:7px;
+    background-color: transparent;
+    border: 2px solid white;
+    border-top:None;
+    border-right:None;
+    color: white;
+    border-radius: 0;
+}
+.footerBigText{
+    font-size:70px;
+}
+.footerSub{
+    margin-bottom:15px;
+}
+.specialSize{
+    font-size:35px;
+}
+.text-start{
+    color:white;
+}
+.categoriesHover:hover{
+    box-shadow:10px 10px 14px #ffc107;;
+    border-radius: 4px;
+}
+.mobileBiggerLink{
+    font-size:55px;
+    text-decoration: underline;
+}
+#feature .fe-box {
+    width: 110px;
+}
+.mobileBigger{
+    font-size:37px;
+}
+.paddingStart{
+    padding-left:100px;
+}
+.mobileBiggerHeadline{
+    font-size:45px;
+}
+.mobileBiggerSmall {
+    font-size: 35px;
+}
+.mobileBiggerCloseup{
+    font-size: 30px;
+}
+.biggerInput{
+    width: 50%;
+    font-size:30px;
+    height:60px;
+}
+.maxWidth{
+    width:250px;
+}
+.productsBigger{
+    font-size:30px;
+    height: 63px;
+}
+.heightCard{
+    height:600px;
+    width:300px;
+}
+#feature .fe-box{
+    width: 200px;
+}
+.adminRow{
+
+    min-height: 1300px;
+}
+.card2{
+    width:14rem;
+    height:19rem;
+    background-color: white;
+}
+.card_bg2{
+    box-shadow: 20px 20px 30px black;
+    border-radius: 10px;
+    border:none;
+}
+.card_bg2:hover{
+    box-shadow: 30px 40px 50px #997404;
+
+}
+.card.mb-3 {
+    box-shadow: 20px 20px 30px black;
+    border-radius: 10px;
+    border:none;
+}
+
+.card.mb-3:hover {
+    box-shadow:10px 10px 14px #997404;;
+}
+
+.profile-section {
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 20px 20px 30px black;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.profile-section:hover {
+    box-shadow:10px 10px 14px #997404;;
+}
+
+.shadow-on-check {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+/* FOR MOBILES MEDIAS  */
+@media only screen and (max-width: 1000px) {
+    .mobileBiggerSmall {
+        font-size: 35px;
+    }
+    .mobileBiggerHeadline{
+        font-size:65px;
+    }
+    .mobileBiggerLink{
+        font-size:60px;
+    }
+    .mobileBigger{
+        font-size:47px;
+    }
+    .mobileBiggerCloseup{
+        font-size: 48px;
+    }
+    .mobileBiggerCloseup{
+        font-size: 38px;
+    }
+    .smaller{
+        width:145px;
+        height:135px;
+    }
+    .card{
+        width:60rem;
+    }
+    .biggerInput{
+        font-size:40px;
+        height: 80px;
+    }
+    .productsBigger{
+        font-size:40px;
+        height: 80px;
+    }
+    card{
+        height:100rem;
+    }
+    .heightCard{
+        height:600px;
+        width:300px;
+    }
+    #feature .fe-box{
+        width: 200px;
+    }
+    .card2{
+        height:20rem;
+        width:15rem;
+    }
+
+
+
+}
+/* FOR SMALL SCREENS  */
+@media only screen and (max-width: 900px) {
+    .mobileBiggerSmall {
+        font-size: 25px; /* Font size for tablets and smaller screens */
+    }
+    .mobileBiggerHeadline{
+        font-size:45px;
+    }
+    .mobileBiggerLink{
+        font-size:50px;
+    }
+    .mobileBigger{
+        font-size:37px;
+    }
+    .mobileBiggerCloseup{
+        font-size: 30px;
+    }
+    .smaller{
+        width:90px;
+        height:90px;
+    }
+    .card{
+        width:35rem;
+    }
+    .biggerInput{
+        font-size:30px;
+        height:60px;
+    }
+    .productsBigger{
+        font-size:30px;
+        height: 70px;
+    }
+    #feature .fe-box{
+        width: 140px;
+    }
+    .heightCard{
+        height:550px;
+        width:300px;
+    }
+}
+@media only screen and (max-width: 700px) {
+    .mobileBiggerLink{
+        font-size:32px;
+    }
+    .mobileBigger{
+        font-size:30px;
+    }
+    .mobileBiggerHeadline{
+        font-size:38px;
+    }
+}
+
