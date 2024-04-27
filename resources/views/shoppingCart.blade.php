@@ -5,9 +5,9 @@
     <title>Shopping Cart</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>    <link rel="stylesheet" href="/css/style.css">
 </head>
-<body>
+<body class=" bg-light">
 <header class="header container-fluid bg-dark justify-content-center align-items-center text-light pb-3">
     <div class="row justify-content-center align-items-center d-flex">
         <div class="col-3 mt-3">
@@ -69,17 +69,50 @@
 <!-- SHOPPING CART -->
 <section class="container mt-5">
     <div class="row justify-content-center">
-        <div class="col-lg-8 col-md-10">
+        <div class="col-lg-8 col-md-10" style="min-height: 600px">
             <!-- Shopping cart items display -->
             <div id="shoppingCartItems" class="d-flex flex-column align-items-center">
-                <!-- Dynamically generated items with card_bg2 class -->
+                @if(session('cart'))
+                    @foreach(session('cart') as $id => $details)
+                        <div class="row">
+                            <div class="card mb-3">
+                                <div class="card-body d-flex justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <img src="{{asset($details['imgsrc'])}}" alt="${item.productName}" class="card-img-top mb-1" style="max-width: 100px;">
+                                        <div class="ms-3">
+                                            <h5 class="card-title">{{$details['name']}}</h5>
+                                            <p class="card-text">ID: {{$id}}</p>
 
+                                            <p class="card-text">Quantity: {{$details['count']}}</p>
+                                            <p class="card-text">Size: {{$details['size']}}</p>
+                                            <p class="card-text">Price: {{($details['count'] * $details['price'])}}  €</p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex">
+                                        <div class="input-group mb-3">
+                                            <label for="dd{{$id}}"></label><select onchange="saveQuantity({{$id}})" class="custom-select border-0 border-bottom border-end border-black border-4" id="dd{{$id}}">
+                                                <option selected>select here</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                            </select>
+                                        </div>
+                                        <button class="btn btn-dark btn-sm ms-2" onclick="updateQuantityWithInput({{$id}})">Update</button>
+                                        <button class="btn btn-dark btn-sm ms-2 delete-product" onclick="removeProduct({{$id}})">Remove</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                @endif
             </div>
         </div>
     </div>
 </section>
-
-
 
 <!-- FOOTER  -->
 <footer class="container-fluid bg-dark text-light align-items-center pb-5">
@@ -125,7 +158,6 @@
         </div>
     </div>
 </footer>
-
 
 <script src="js/bootstrap.bundle.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

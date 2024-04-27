@@ -51,14 +51,6 @@ function createCard(imageSrcs, objectName, objectPrice, objectColor, objectSize)
         `;
 }
 
-function createProducts(){
-    // TU sa z db bude brat info
-    for(let i = 1; i <= 32; i++){
-        products.push(new Product(["img/productsHomePage/shirt3.jpg", "img/productsHomePage/shirt3.jpg", "img/productsHomePage/shirt3.jpg"],  "Card " + i * 5,(35 - i) * 10, "Black","t-shirt", ["S","L"]))
-        products.push(new Product(["img/productsHomePage/hoodie1.png", "img/productsHomePage/hoodie1.png", "img/productsHomePage/hoodie1.png"],  "Card " + i + i * 7,(35 - i) * 10, "White","sweatshirt", ["M","XL"]))
-
-    }
-}
 function printProducts(){
     let count = 0;
     let start = page;
@@ -76,36 +68,6 @@ function printProducts(){
 
 }
 
-function validateSelectedImages(event, targetId) {
-    let input = event.target;
-    let files = input.files;
-    let imagesCount = 0;
-    let imgDivs = ["imgdiv0", "imgdiv1", "imgdiv2"]
-
-    for (let i = 0; i < files.length; i++) {
-        let file = files[i];
-        let reader = new FileReader();
-        if (files) {
-            let count = i;
-            const fileReader = new FileReader();
-            fileReader.readAsDataURL(file);
-            fileReader.addEventListener("load", function () {
-                document.getElementById(imgDivs[count]).innerHTML = '<img src="' + this.result + '" alt="choosen uploaded img" class="img-fluid maxWidth"/>';
-                imageSrcArray.push(this.result)
-            });
-        }
-    }
-    let infoDiv = document.getElementById('infoimg');
-
-    if (imagesCount !== 3) {
-        let infoDiv = document.getElementById('infoimg');
-        infoDiv.innerHTML = "Please select 3 images.";
-        input.value = '';
-    } else {
-        infoDiv.innerHTML = "";
-        document.getElementById('infoimg').innerHTML = "3 images choosen"
-    }
-}
 
 function redirectToProductModify(product) {
     // Update the DOM with the product data
@@ -130,50 +92,6 @@ function redirectToProductModify(product) {
 }
 
 
-
-function deleteProduct(){
-    let new_products = []
-    for(let i=0;i<products.length;i++){
-        if(products[i].objectName !== productSelectedName){
-            new_products.push(products[i])
-        }
-    }
-    products = new_products
-    document.getElementById("infoUpdate").innerHTML= "product deleted"
-}
-
-function updateProduct() {
-    let name = document.getElementById("nameInputModify").value
-    let price = document.getElementById("priceInputModify").value
-    let checkboxes = document.querySelectorAll('.formSizeModify')
-    let sizes = []
-    let checkedCheckboxes = [];
-    checkboxes.forEach(function(checkbox) {
-        if (checkbox.checked) {
-            checkedCheckboxes.push(checkbox.id);
-        }
-        checkbox.checked = false;
-    });
-    if(checkedCheckboxes.includes("SwitchSM"))
-        sizes.push("S")
-    if(checkedCheckboxes.includes("SwitchMM"))
-        sizes.push("M")
-    if(checkedCheckboxes.includes("SwitchLM"))
-        sizes.push("L")
-    if(checkedCheckboxes.includes("SwitchXLM"))
-        sizes.push("XL")
-    console.log(sizes)
-    for(let i=0;i<products.length;i++){
-        if(products[i].objectName === productSelectedName){
-            products[i].objectName = name;
-            productSelectedName = name;
-            products[i].objectPrice = price;
-            products[i].objectSizes = sizes
-        }
-    }
-    document.getElementById("infoUpdate").innerHTML= "product updated"
-    redirectToProductModify(productSelectedName)
-}
 
 function addProduct(){
     if(imageSrcArray.length !== 3){
@@ -240,24 +158,4 @@ function addProduct(){
     select.selectedIndex = 0;
     printProducts()
 
-}
-
-function changeImg1(event, targetId,index){
-    let input = event.target;
-    let files = input.files;
-    var file = files[0];
-    let divs = ["imgDiv3", "imgDiv4", "imgDiv5"]
-
-    const fileReader = new FileReader();
-    fileReader.readAsDataURL(file);
-    fileReader.addEventListener("load", function () {
-        for(let i=0;i<products.length;i++){
-            if(products[i].objectName === productSelectedName){
-                products[i].imageSrc[index] = this.result
-                console.log(this.result)
-                document.getElementById(divs[index]).innerHTML = '<img src="' + products[i].imageSrc[index] + '" alt="choosen uploaded img" class="img-fluid maxWidth"/>';
-            }
-        }
-    });
-    redirectToProductModify(productSelectedName)
 }

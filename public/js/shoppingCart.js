@@ -1,12 +1,12 @@
-
-let shoppingCart =[];
+let shoppingCartItemsIDs = [];
 // Sample shopping cart items
-shoppingCart = [
-    { productName: 'T-shirt',ID:12, quantity: 2, price: 20,size:"L", image: 'img/productsHomePage/hoodie1.png' },
-    { productName: 'Sweatshirt',ID:15622, quantity: 1, price: 30,size:"M", image: 'img/productsHomePage/hoodie1.png' },
-    { productName: 'Sweatshirt',ID:1642, quantity: 1, price: 30,size:"XL", image: 'img/productsHomePage/hoodie1.png' },
-    { productName: 'Sweatshirt',ID:152, quantity: 1, price: 35,size:"S", image: 'img/productsHomePage/hoodie1.png' },
-    ]
+//getAllCartItems()
+let shoppingCart = [];
+
+
+
+
+
 
 function updateCartDisplay() {
     let cartItemsHtml = '';
@@ -30,7 +30,7 @@ function updateCartDisplay() {
 
                             <p class="card-text">Quantity: ${item.quantity}</p>
                             <p class="card-text">Size: ${item.size}</p>
-                            <p class="card-text">Price: $${item.price*item.quantity}</p>
+                            <p class="card-text">Price: $${item.price * item.quantity}</p>
                         </div>
                     </div>
                     <div class="d-flex">
@@ -53,7 +53,7 @@ function updateCartDisplay() {
     let checkoutTotalSum = '';
     if (shoppingCart.length > 0) { // Cart has items
         let sum = 0;
-        for (let i=0; i<shoppingCart.length; i++){
+        for (let i = 0; i < shoppingCart.length; i++) {
             sum += shoppingCart[i].price * shoppingCart[i].quantity;
         }
         checkoutTotalSum += `
@@ -77,7 +77,7 @@ function updateCartDisplay() {
     }
 
     // Update the shopping cart display
-    document.getElementById('shoppingCartItems').innerHTML = cartItemsHtml + checkoutTotalSum  ;
+    document.getElementById('shoppingCartItems').innerHTML = cartItemsHtml + checkoutTotalSum;
 }
 
 // Function to generate quantity options for dropdown menu
@@ -90,15 +90,18 @@ function generateQuantityOptions(index) {
 }
 
 // Function to remove item from the shopping cart
-function removeItem(index) {
-    shoppingCart.splice(index, 1);
-    updateCartDisplay();
+function removeItem(id) {
+    localStorage.removeItem('cartItem' + id)
 }
 
 // Function to change quantity of an item in the shopping cart
 function changeQuantity(index, quantity) {
     shoppingCart[index].quantity = quantity;
     updateCartDisplay();
+}
+
+function setQuantity(id) {
+    document.getElementById('quantity').innerHTML = 'Quantity:' + localStorage.getItem('cartItem' + id)
 }
 
 function checkout() {
@@ -135,6 +138,19 @@ function checkout() {
     checkoutWindow.document.write('</body></html>');
 }
 
-
+function updateQuantityWithInput(id) {
+    updateQuantity(id, localStorage.getItem('newQuantity'));
+}
+function removeProduct($id){
+    window.location.href = "/delete/" + $id
+}
+function updateQuantity($id, $quantity){
+    window.location.href = "/cart/update/" + $id + "/" + $quantity;
+}
+function saveQuantity($id){
+    const newname = 'dd' + $id
+    const quantity = document.getElementById(newname).value;
+    localStorage.setItem('newQuantity', quantity);
+}
 // When the page loads, update the shopping cart display
-window.onload = updateCartDisplay;
+//window.onload = updateCartDisplay;

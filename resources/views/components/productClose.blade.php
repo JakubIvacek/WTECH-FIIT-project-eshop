@@ -8,6 +8,19 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/style.css">
 </head>
+<script>
+    // Save item id and count into local storage if added into cart
+    function saveItemLocalStorage() {
+        var selectedOption = document.getElementById('dd').value;
+        var product = localStorage.getItem('cartItem' + localStorage.getItem('product'))
+        if(!product){
+            localStorage.setItem('cartItem' + localStorage.getItem('product'), selectedOption);
+        }else{
+            localStorage.setItem('cartItem' + localStorage.getItem('product'), selectedOption);
+        }
+        window.location.reload()
+    }
+</script>
 <body>
 <!-- HEADER -->
 <header class="header container-fluid bg-dark justify-content-center align-items-center text-light pb-5">
@@ -79,6 +92,68 @@
         </div>
     </div>
 </section>
+<section>
+    <div class="container-fluid row justify-content-center pb-3">
+        <div class="col-4">
+            <a href="#" class="">
+                <button class="bg-warning btn btn-warning btn-lg fw-bold w-100" type="button" data-toggle="modal" data-target="#exampleModal">
+                    <span class="biggerInput fw-bold">Add to cart</span>
+                </button>
+            </a>
+
+            <!-- Modal -->
+            <div class="modal p-5" id="exampleModal" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <p class="modal-title h2 fw-bold">Select product count</p>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p class="h2 fw-bold">How many to add to the cart</p>
+                            <div class="input-group mb-3">
+                                <label for="dd"></label><select class="custom-select biggerInput border-0 border-bottom border-end border-black border-4" id="dd">
+                                    <option selected>select here</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="4">5</option>
+                                </select>
+                            </div>
+                            <div class="input-group mb-3">
+                                <label for="size"></label><select class="custom-select biggerInput border-0 border-bottom border-end border-black border-4" id="size">
+                                    <option selected>select size</option>
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                            </div>
+                        <div class="modal-footer">
+                            <!-- Add to cart button -->
+                            <button id="addToCartBtn" class="bg-warning btn btn-warning btn-lg fw-bold w-100" type="button" onclick="addToCart()">
+                                <span class="biggerInput fw-bold">Add to cart</span>
+                            </button>
+                            <button type="button" class="ps-5 btn btn-secondary bg-dark mobileBiggerSmall fw-bold" data-dismiss="modal">Back</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-4">
+            <a href="products.html" class="">
+                <button type="button" class="btn btn-lg fw-bold w-100 bg-dark text-white" >
+                    <span class="biggerInput fw-bold">Back</span>
+                </button>
+            </a>
+        </div>
+    </div>
+    </div>
+</section>
 
 <!-- FOOTER  -->
 <footer class="container-fluid bg-dark text-light align-items-center pb-5">
@@ -124,13 +199,31 @@
         </div>
     </div>
 </footer>
-
-<script src="js/own_js.js"></script>
-<script src="js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script>
     //createProducts()
     //printCards()
     //writePageNum()
+    const ddSelect = document.getElementById('dd');
+    const sizeSelect = document.getElementById('size');
+
+    // Event listener for the dropdown select
+    ddSelect.addEventListener('change', function () {
+        localStorage.setItem('ddSelection', ddSelect.value);
+    });
+
+    // Event listener for the size select
+    sizeSelect.addEventListener('change', function () {
+        localStorage.setItem('sizeSelection', sizeSelect.value);
+    });
+    function addToCart(){
+        const id  = localStorage.getItem('product');
+        const sizeSelection = localStorage.getItem('sizeSelection');
+        const contSelection = localStorage.getItem('ddSelection');
+        window.location.href = 'cart/' + id + '/' + contSelection + '/' + sizeSelection
+    }
 </script>
 </body>
 </html>

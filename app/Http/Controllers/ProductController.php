@@ -172,6 +172,27 @@ class ProductController extends Controller
         return view('/product/show', ['product' => $product]);
     }
 
+    public function cart(Request $request)
+    {
+        // Retrieve and parse JSON data from the request body
+        $requestData = $request->json()->all();
+
+        // Check if 'ids' key exists in the request data
+        if(isset($requestData['ids'])) {
+            // Retrieve IDs from the request data
+            $ids = $requestData['ids'];
+
+            // Perform your logic here to fetch products based on the IDs
+            $products = Product::with('sizes')->whereIn('id', $ids)->get();
+
+            // Return the fetched products
+            return $products;
+        } else {
+            // Handle case where 'ids' key is missing from request data
+            return response()->json(['error' => 'IDs not provided'], 400);
+        }
+    }
+
     public function returnProduct($id)
     {
         $product = Product::with('sizes')->with('images')->findOrFail($id);

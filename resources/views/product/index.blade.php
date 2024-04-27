@@ -51,7 +51,8 @@
 </x-product>
 <script>
     function redirectToProductCloseup(productId) {
-        window.location.href = '/products/' + productId; // Modify the URL structure as per your application
+        window.location.href = '/products/' + productId;
+        localStorage.setItem('product', productId);
     }
 </script>
 

@@ -1,4 +1,6 @@
 <?php
+
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProductController;
@@ -24,7 +26,10 @@ Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::post('/admin/add', [ProductController::class, 'store'])->name('admin.products.store');
 Route::put('/admin/modify', [ProductController::class, 'update'])->name('admin.modify');
 
-
+Route::get('/cart', [CartController::class, 'index']);
+Route::get('products/cart/{id}/{count}/{size}', [CartController::class, 'addToCart'])->name('addProduct.to.cart');
+Route::get('/delete/{id}', [CartController::class, 'deleteProduct'])->name('delete.cart.product');
+Route::get('/cart/update/{id}/{quantity}', [CartController::class, 'updateQuantity'])->name('quantity.cart.product');
 Route::get('/checkout',function (){
     return view('checkout');
 });
