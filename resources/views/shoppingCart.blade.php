@@ -113,6 +113,12 @@
         </div>
     </div>
 </section>
+<a href="/checkout">
+    <button class="bg-warning btn btn-warning btn-lg fw-bold w-25" type="button">
+        <span class="biggerInput fw-bold">Checkout</span>
+    </button>
+</a>
+
 
 <!-- FOOTER  -->
 <footer class="container-fluid bg-dark text-light align-items-center pb-5">

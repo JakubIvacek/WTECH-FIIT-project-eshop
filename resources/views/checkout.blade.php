@@ -125,36 +125,6 @@
 
                         <h5 class="card-title mb-3">Shipping info</h5>
 
-                        <div class="row mb-3">
-                            <div class="col-lg-6 mb-3">
-                                <!-- Default checked radio -->
-                                <div class="form-check h-100 border rounded-3" id="deliveryOptionFast">
-                                    <div class="p-3">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                               id="flexRadioDefault1" checked/>
-                                        <label class="form-check-label" for="flexRadioDefault1">
-                                            Express delivery <br/>
-                                            <small class="text-muted">3-4 days </small>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 mb-3">
-                                <!-- Default radio -->
-                                <div class="form-check h-100 border rounded-3" id="deliveryOptionStandard">
-                                    <div class="p-3">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                               id="flexRadioDefault2"/>
-                                        <label class="form-check-label" for="flexRadioDefault2">
-                                            Standard delivery <br/>
-                                            <small class="text-muted">7-10 days </small>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
                         <div class="row">
                             <div class="col-md-8 mb-3">
                                 <label for="streetName" class="form-label">Street Name</label>
@@ -233,20 +203,21 @@
                     <h6 class="mb-3">Summary</h6>
                     <div class="d-flex justify-content-between">
                         <p class="mb-2">Total price:</p>
-                        <p class="mb-2">$195.90</p>
-                    </div>
-                    <div class="d-flex justify-content-between">
-                        <p class="mb-2">Discount:</p>
-                        <p class="mb-2 text-danger">- $60.00</p>
-                    </div>
-                    <div class="d-flex justify-content-between">
-                        <p class="mb-2">Shipping cost:</p>
-                        <p class="mb-2">+ $14.00</p>
+                        @if(session('cart'))
+                            @php
+                                $total = 0;
+                                foreach(session('cart') as $id => $details) {
+                                    $total += $details['price'] * $details['count'];
+                                }
+                                echo '<p class="mb-2">$' . $total . '</p>';
+                            @endphp
+                        @endif
                     </div>
                     <hr/>
                     <div class="d-flex justify-content-between">
-                        <p class="mb-2">Total price:</p>
-                        <p class="mb-2 fw-bold">$149.90</p>
+
+
+
                     </div>
 
                     <div class="input-group mt-3 mb-4">
@@ -256,62 +227,27 @@
 
                     <hr/>
                     <h6 class="text-dark my-4">Items in cart</h6>
+                    @if(session('cart'))
+                        @foreach(session('cart') as $id => $details)
+                            <div class="d-flex align-items-center mb-4">
+                                <div class="me-3 position-relative">
+                                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill badge-secondary">1</span>
+                                    <img src="{{asset($details['imgsrc'])}}" style="height: 96px; width: 96px;" class="img-sm rounded border"/>
+                                </div>
+                                <div class="">
+                                    <a href="#" class="nav-link">{{$details['name']}} <br/>{{$details['size']}} - {{$details['count']}}x </a>
+                                    <div class="price text-muted">Total: {{($details['count'] * $details['price'])}} € </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    @endif
 
-                    <div class="d-flex align-items-center mb-4">
-                        <div class="me-3 position-relative">
-              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill badge-secondary">
-                1
-              </span>
-                            <img src="img/productsHomePage/hoodie1.png"
-                                 style="height: 96px; width: 96px;" class="img-sm rounded border"/>
-                        </div>
-                        <div class="">
-                            <a href="#" class="nav-link">
-                                T-shirt <br/>
-                                L
-                            </a>
-                            <div class="price text-muted">Total: $295.99</div>
-                        </div>
-                    </div>
-
-                    <div class="d-flex align-items-center mb-4">
-                        <div class="me-3 position-relative">
-              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill badge-secondary">
-                1
-              </span>
-                            <img src="img/productsHomePage/hoodie1.png"
-                                 style="height: 96px; width: 96px;" class="img-sm rounded border"/>
-                        </div>
-                        <div class="">
-                            <a href="#" class="nav-link">
-                                T-shirt <br/>
-                                M
-                            </a>
-                            <div class="price text-muted">Total: $217.99</div>
-                        </div>
-                    </div>
-
-                    <div class="d-flex align-items-center mb-4">
-                        <div class="me-3 position-relative">
-              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill badge-secondary">
-                3
-              </span>
-                            <img src="img/productsHomePage/hoodie1.png"
-                                 style="height: 96px; width: 96px;" class="img-sm rounded border"/>
-                        </div>
-                        <div class="">
-                            <a href="#" class="nav-link">T-shirt</a>
-                            XXL</br>
-
-                            <div class="price text-muted">Total: $910.00</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div class="float-end mt-5 justify-content-center">
                 <button class="btn btn-lg btn-dark border">Cancel</button>
                 <button class="btn btn-lg btn-warning shadow-0 border">Continue</button>
             </div>
+        </div>
+        </div>
         </div>
     </div>
 </section>

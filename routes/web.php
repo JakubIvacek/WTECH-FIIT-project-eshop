@@ -51,3 +51,6 @@ Route::get('/profileChange',function (){
 Route::get('/shoppingCart',function (){
     return view('shoppingCart');
 });
+Route::get('/checkout',function (){
+    return view('checkout');
+});
