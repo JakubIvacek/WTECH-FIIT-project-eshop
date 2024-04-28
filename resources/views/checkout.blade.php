@@ -88,6 +88,9 @@
                 <!-- Checkout -->
                 <div class=" profile-section mb-5">
                     <div class="p-4 ">
+                        <form action="{{ route('submit') }}" method="POST" enctype="form-data">
+                            @csrf
+                            @method('POST')
                         <h5 class="card-title mb-3">Guest checkout</h5>
                         <div class="row">
                             <div class="col-md-6 mb-3">
@@ -150,15 +153,7 @@
                                        placeholder="Enter postal code" required>
                                 <span id="postalCodeError" class="text-danger"></span>
                             </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="profile-section">
-                    <div class="p-4 mt-1">
-                        <!-- Payment Options -->
-                        <h5 class="card-title">Payment Options</h5>
-                        <form id="paymentForm">
+                            <h5 class="card-title">Payment Options</h5>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="paymentOption" value="cashOnDelivery" id="cashOnDelivery" checked>
                                 <label class="form-check-label" for="cashOnDelivery">
@@ -171,32 +166,27 @@
                                     Online Payment
                                 </label>
                             </div>
-                        </form>
-                        <!-- Online Payment Inputs -->
-                        <div id="onlinePaymentInputs" class="mt-3" style="display: none;">
                             <div class="mb-3">
                                 <label for="cardNumber" class="form-label">Card Number</label>
                                 <input type="text" class="form-control" id="cardNumber" placeholder="XXXX-XXXX-XXXX-XXXX" pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}" required>
                             </div>
-                            <div class="row">
-                                <div class="col">
-                                    <div class="mb-3">
-                                        <label for="expiryDate" class="form-label">Expiry Date</label>
-                                        <input type="text" class="form-control" id="expiryDate" placeholder="MM/YY" pattern="^(0[1-9]|1[0-2])\/?([0-9]{2})$" required>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="mb-3">
-                                        <label for="cvv" class="form-label">CVV</label>
-                                        <input type="text" class="form-control" id="cvv" placeholder="XXX" pattern="[0-9]{3}" required>
-                                    </div>
+                            <div class="col">
+                                <div class="mb-3">
+                                    <label for="expiryDate" class="form-label">Expiry Date</label>
+                                    <input type="text" class="form-control" id="expiryDate" placeholder="MM/YY" pattern="^(0[1-9]|1[0-2])\/?([0-9]{2})$" required>
                                 </div>
                             </div>
-                            <!-- Other card details -->
+                            <div class="col">
+                                <div class="mb-3">
+                                    <label for="cvv" class="form-label">CVV</label>
+                                    <input type="text" class="form-control" id="cvv" placeholder="XXX" pattern="[0-9]{3}" required>
+                                </div>
+                            </div>
                         </div>
+                            <button type="submit"  class="btn btn-lg btn-warning shadow-0 border">Submit</button>
+                        </form>
                     </div>
                 </div>
-
             </div>
             <div class="col-xl-4 col-lg-12 d-flex justify-content-center justify-content-xl-end">
                 <div class="ms-lg-4 mt-4 mt-lg-0" style="max-width: 320px;">
@@ -244,7 +234,6 @@
 
             <div class="float-end mt-5 justify-content-center">
                 <button class="btn btn-lg btn-dark border">Cancel</button>
-                <button class="btn btn-lg btn-warning shadow-0 border">Continue</button>
             </div>
         </div>
         </div>

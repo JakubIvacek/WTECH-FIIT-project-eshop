@@ -34,7 +34,7 @@ Route::get('/cart/display', [CartController::class, 'loggedInPrint']);
 Route::get('/checkout',function (){
     return view('checkout');
 });
-
+Route::post('/confirm/order', [CartController::class, 'confirmOrder'])->name('submit');
 Route::get('/orders',function (){
     return view('orders');
 });
