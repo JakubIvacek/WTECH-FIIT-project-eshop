@@ -5,6 +5,7 @@
       <tool tool_name="PHPUnit">
         <cache>
           <versions>
+            <info id="LocalC:\Users\ivace\OneDrive\Documents\GitHub\WTECH-FIIT-project-eshop\vendor\autoload.php" version="10.5.17" />
             <info id="LocalC:\Users\ivace\OneDrive\Počítač\example-app\vendor\autoload.php" version="10.5.17" />
           </versions>
         </cache>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
 {
@@ -15,7 +16,8 @@ class CartController extends Controller
         $product = Product::findOrFail($id);
         $cart = session()->get('cart', []);
         if(isset($cart[$id])){
-            $cart[$id]['count'] += $count;
+            $cart[$id]['count'] = $count;
+            $cart[$id]['size'] = $size;
         }else{
             $cart[$id] = [
                 "id" => $product->id,
@@ -25,6 +27,27 @@ class CartController extends Controller
                 "imgsrc" => $product->images()->first()->imgsrc,
                 "price" => $product->price
             ];
+        }
+        if(Auth::check()){
+            $userCart = Auth::user()->carts;
+            $existingCartItem = $userCart->where('product', $product->id)->first();
+            if ($existingCartItem) {
+                // Update the existing cart item if needed
+                $existingCartItem->update([
+                    'size' => $size,
+                    'count' => $count,
+                ]);
+            } else {
+                Auth::user()->carts()->create(
+                    [  'product' => $product->id,
+                        'name' => $product->name ,
+                        'size' => $size,
+                        'count' => $count,
+                        'imgsrc'=> $product->images()->first()->imgsrc,
+                        'price' => $product->price
+                    ]
+                );
+            }
         }
         session()->put('cart',$cart);
         return redirect()->back()->with('success');
@@ -37,6 +60,13 @@ class CartController extends Controller
                 unset($cart[$request->id]);
                 session()->put('cart', $cart);
             }
+            if(Auth::check()){
+                $userCart = Auth::user()->carts;
+                $existingCartItem = $userCart->where('product', $request->id)->first();
+                if ($existingCartItem) {
+                    Auth::user()->carts()->where('product', $request->id)->delete();
+                }
+            }
             return redirect()->back()->with('success');
         }
     }
@@ -46,7 +76,20 @@ class CartController extends Controller
             $cart[$id]['count'] = $quantity;
             session()->put('cart', $cart);
         }
+        if(Auth::check()){
+            $userCart = Auth::user()->carts;
+            $existingCartItem = $userCart->where('product', $id)->first();
+            if ($existingCartItem) {
+                $existingCartItem->update([
+                    'count' => $quantity,
+                ]);
+            }
+        }
         return redirect()->back()->with('success');
+    }
+    public function loggedInPrint(){
+        $items_string = Auth::user()->cart()->first()->description;
+        return redirect()->intended('/get/cartItems');
     }
 }
 

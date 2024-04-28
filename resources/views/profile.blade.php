@@ -8,27 +8,27 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-<!-- HEADER -->
-<header class="header container-fluid bg-dark justify-content-center align-items-center text-light pb-3">
+<header class="header container-fluid bg-dark justify-content-center align-items-center text-light">
     <div class="row justify-content-center align-items-center d-flex">
         <div class="col-3 mt-3">
             <a href="/" class="navbar-brand mt-3">
-                <img class="rounded-4 smaller" src="img/iconsHomePage/icon.png" alt="" height="85">
+                <img class="rounded-4 smaller" src="img/iconsHomePage/icon.png" alt="logo picture" title="picture of our logo" height="85">
             </a>
         </div>
         <div class="col-4 h4 mt-4">
             <nav class=" navbar navbar-dark bg-dark">
                 <div class="container-fluid navSize">
                     <ul class="navbar-nav d-flex flex-row align-items-center">
-                        <li class="nav-item " style="margin-right: 14px;">
+                        <li class="nav-item" style="margin-right: 14px;">
                             <a href="/" class="nav-link" aria-current="page">
-                                <p class="customColor mobileBiggerLink">Home</p>
+                                <p class="text-warning mobileBiggerLink">Home</p>
                             </a>
                         </li>
                         <li class="nav-item mr-8">
-                            <a href="/products" class="nav-link active">
+                            <a href="/products" class="nav-link">
                                 <p class="mobileBiggerLink customColor">
-                                    Products</p>
+                                    Products
+                                </p>
                             </a>
                         </li>
                     </ul>
@@ -39,8 +39,7 @@
             <div class="row ms-5">
                 <div class="col-8">
                     <div class="input-group footerSub footerForm">
-                        <input id="formSearch" type="text" class="form-control" placeholder="enter search"
-                               aria-label="Search query" aria-describedby="basic-addon2">
+                        <input id="formSearch" type="text" class="form-control" placeholder="enter search" aria-label="Search query" aria-describedby="basic-addon2">
                         <div class="input-group-append">
                             <button class="btn btn-outline-secondary" type="button">
                                 <img src="img/iconsHomePage/right-arrow.jpg" alt="icon" width="40px">
@@ -56,7 +55,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/orders" class="navbar-brand">
+                            <a href="/shoppingCart" class="navbar-brand">
                                 <img src="img/iconsHomePage/icons8-cart-64.png" alt="" height="69">
                             </a>
                         </li>
@@ -66,7 +65,6 @@
         </div>
     </div>
 </header>
-
 <!--BODY-->
 <div class="container">
     <div id="feature" class="justify-content-center container-fluid  text-dark">

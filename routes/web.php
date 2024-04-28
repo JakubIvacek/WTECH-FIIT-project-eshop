@@ -30,6 +30,7 @@ Route::get('/cart', [CartController::class, 'index']);
 Route::get('products/cart/{id}/{count}/{size}', [CartController::class, 'addToCart'])->name('addProduct.to.cart');
 Route::get('/delete/{id}', [CartController::class, 'deleteProduct'])->name('delete.cart.product');
 Route::get('/cart/update/{id}/{quantity}', [CartController::class, 'updateQuantity'])->name('quantity.cart.product');
+Route::get('/cart/display', [CartController::class, 'loggedInPrint']);
 Route::get('/checkout',function (){
     return view('checkout');
 });
@@ -50,4 +51,3 @@ Route::get('/profileChange',function (){
 Route::get('/shoppingCart',function (){
     return view('shoppingCart');
 });
-

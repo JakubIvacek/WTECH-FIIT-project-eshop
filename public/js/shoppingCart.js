@@ -105,33 +105,25 @@ function setQuantity(id) {
 }
 
 function checkout() {
-    // Get the container of shopping cart items
     const shoppingCartContainer = document.getElementById('shoppingCartItems');
 
-    // Clone the container to preserve the original content
     const checkoutContainer = shoppingCartContainer.cloneNode(true);
 
-    // Replace each shopping cart item with a simplified version for checkout
     const items = checkoutContainer.getElementsByClassName('card mb-3');
     for (let item of items) {
-        // Remove unnecessary elements from the checkout item
         const body = item.querySelector('.card-body');
         const dropdown = body.querySelector('.dropdown');
         const removeButton = body.querySelector('.btn-dark');
         dropdown.remove();
         removeButton.remove();
 
-        // Modify the remaining content for simplicity
         const title = body.querySelector('.card-title');
         title.textContent = 'Product: ' + title.textContent;
         const price = body.querySelector('.card-text:last-child');
         price.textContent = price.textContent.replace('Price: ', 'Total Price: ');
     }
 
-    // Get the HTML content of the modified shopping cart container
     const checkoutHTML = checkoutContainer.innerHTML;
-
-    // Open checkout.blade.php in a new window or tab and write the modified content
     const checkoutWindow = window.open('checkout.html', '_blank');
     checkoutWindow.document.write('<html><head><title>Checkout</title></head><body>');
     checkoutWindow.document.write(checkoutHTML);
@@ -151,6 +143,9 @@ function saveQuantity($id){
     const newname = 'dd' + $id
     const quantity = document.getElementById(newname).value;
     localStorage.setItem('newQuantity', quantity);
+}
+function printLoggedInUserItems(){
+    window.location.href = "/cart/display";
 }
 // When the page loads, update the shopping cart display
 //window.onload = updateCartDisplay;

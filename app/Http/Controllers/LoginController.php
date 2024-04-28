@@ -2,6 +2,8 @@
 // app/Http/Controllers/LoginController.php
 namespace App\Http\Controllers;
 
+use App\Models\Cart;
+use App\Models\Item;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Response;
@@ -24,11 +26,53 @@ class LoginController extends Controller
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
-            if(Auth::user()->role === 'admin'){
+            if (Auth::user()->role === 'admin') {
                 return redirect()->intended('/admin');
-            }else
-            return redirect()->intended('/profile');
+            } else {
+                $userCart = Auth::user()->carts;
+                $user = Auth::user();
+                $cart = session()->get('cart', []);
+                $content = "";
+                if(session('cart') !== null){
+                    foreach (session('cart') as $id => $item) {
+                        $existingCartItem = $userCart->where('product', ((string) $item['id']))->first();
+                        if ($existingCartItem) {
+                            // Update the existing cart item if needed
+                            $existingCartItem->update([
+                                'size' => $item['size'],
+                                'count' => $item['count'],
+                            ]);
+                        } else {
+                            Auth::user()->carts()->create(
+                                [  'product' => $item['id'],
+                                    'name' => $item['name'] ,
+                                    'size' => $item['size'],
+                                    'count' => $item['count'],
+                                    'imgsrc'=> $item['imgsrc'],
+                                    'price' => $item['price']]
+                            );
+                        }
+                }
+                }
+                $user->save();
+
+                $userCart = Auth::user()->carts;
+                foreach ($userCart as $item) {
+                    $cart[((integer) $item->product)] = [
+                        "id" => $item->product,
+                        "count" => $item->count,
+                        "name" => $item->name,
+                        "size" => $item->size,
+                        "imgsrc" => $item->imgsrc,
+                        "price" => $item->price
+                    ];
+                }
+                session()->put('cart', $cart);
+                return redirect()->intended('/profile');
+            }
         }
+
+        // Authentication failed
         return back()->withErrors(['email' => 'Invalid email or password'])->withInput();
     }
 
