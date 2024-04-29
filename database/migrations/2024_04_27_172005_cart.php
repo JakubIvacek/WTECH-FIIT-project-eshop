@@ -37,6 +37,7 @@ return new class extends Migration
             $table->string('ExpiryDate')->nullable();
             $table->string('CVV')->nullable();
             $table->string('paymentOption')->nullable();
+            $table->string('deliveryOption')->nullable();
             $table->timestamps();
         });
         Schema::create('items', function (Blueprint $table) {
@@ -59,5 +60,6 @@ return new class extends Migration
     {
         Schema::dropIfExists('carts');
         Schema::dropIfExists('orders');
+        Schema::dropIfExists('items');
     }
 };

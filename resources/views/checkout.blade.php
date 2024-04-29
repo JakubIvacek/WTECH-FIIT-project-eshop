@@ -153,6 +153,19 @@
                                        placeholder="Enter postal code" required>
                                 <span id="postalCodeError" class="text-danger"></span>
                             </div>
+                            <h5 class="card-title">Deliver Options</h5>
+                            <div class="form-check2">
+                                <input class="form-check-input" type="radio" name="deliveryOption" value="packeta" id="packeta" checked>
+                                <label class="form-check-label" for="packeta">
+                                    Packeta
+                                </label>
+                            </div>
+                            <div class="form-check2">
+                                <input class="form-check-input" type="radio" name="deliveryOption" value="courier" id="courier">
+                                <label class="form-check-label" for="courier">
+                                    Courier
+                                </label>
+                            </div>
                             <h5 class="card-title">Payment Options</h5>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="paymentOption" value="cashOnDelivery" id="cashOnDelivery" checked>
@@ -166,21 +179,20 @@
                                     Online Payment
                                 </label>
                             </div>
-                            <div class="mb-3">
+                            <div class="mb-3 col-md-6">
                                 <label for="cardNumber" class="form-label">Card Number</label>
-                                <input type="text" class="form-control" id="cardNumber" placeholder="XXXX-XXXX-XXXX-XXXX" pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}" required>
+                                <input  class="form-control" id="cardNumber" name="cardNumber"
+                                       placeholder="XXXX XXXX XXXX XXXX" required>
                             </div>
-                            <div class="col">
-                                <div class="mb-3">
-                                    <label for="expiryDate" class="form-label">Expiry Date</label>
-                                    <input type="text" class="form-control" id="expiryDate" placeholder="MM/YY" pattern="^(0[1-9]|1[0-2])\/?([0-9]{2})$" required>
-                                </div>
+                            <div class="mb-3 col-md-6">
+                                <label for="expiryDate" class="form-label">Phone Number</label>
+                                <input class="form-control" id="expiryDate" name="expiryDate"
+                                       placeholder="XX/XX" required>
                             </div>
-                            <div class="col">
-                                <div class="mb-3">
-                                    <label for="cvv" class="form-label">CVV</label>
-                                    <input type="text" class="form-control" id="cvv" placeholder="XXX" pattern="[0-9]{3}" required>
-                                </div>
+                            <div class="mb-3 col-md-6">
+                                <label for="cvv" class="form-label">Phone Number</label>
+                                <input  class="form-control" id="cvv" name="cvv"
+                                       placeholder="XXX" required>
                             </div>
                         </div>
                             <button type="submit"  class="btn btn-lg btn-warning shadow-0 border">Submit</button>
@@ -233,7 +245,9 @@
                     @endif
 
             <div class="float-end mt-5 justify-content-center">
+                <a href="/shoppingCart">
                 <button class="btn btn-lg btn-dark border">Cancel</button>
+                </a>
             </div>
         </div>
         </div>

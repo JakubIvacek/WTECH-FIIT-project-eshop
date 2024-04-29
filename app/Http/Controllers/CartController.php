@@ -83,8 +83,8 @@ class CartController extends Controller
         $order->town = $request->input('town');
         $order->postalCode = $request->input('postalCode');
         $order->paymentOption = $request->input('paymentOption');
+        $order->deliveryOption = $request->input('deliveryOption');
         $order->user_id = Auth::user()->id;
-
         // If payment option is online payment, save additional payment info
         if ($request->input('paymentOption') === 'onlinePayment') {
             $order->cardNumber = $request->input('cardNumber');
