@@ -10,11 +10,11 @@
                         </div>
                         <!-- Second slide -->
                         <div class="carousel-item">
-                            <img src="{{ asset($product->images->first()->imgsrc) }}" class="d-block w-100" alt="product image second slide">
+                            <img src="{{ asset($product->images[1]->imgsrc) }}" class="d-block w-100" alt="product image second slide">
                         </div>
                         <!-- Second slide -->
                         <div class="carousel-item">
-                            <img src="{{ asset($product->images->first()->imgsrc) }}" class="d-block w-100" alt="product image third slide">
+                            <img src="{{ asset($product->images[2]->imgsrc) }}" class="d-block w-100" alt="product image third slide">
                         </div>
                     </div>
                     <!-- Carousel controls -->
@@ -34,8 +34,8 @@
                         <img src="{{ asset($product->images->first()->imgsrc) }}" class="d-block img-fluid" alt="product first image">
                     </li>
                     <li>
-                        <img src="{{ asset($product->images->first()->imgsrc) }}" class="d-block w-50" alt="product second image">
-                        <img src="{{ asset($product->images->first()->imgsrc) }}" class="d-block w-50" alt="product third image">
+                        <img src="{{ asset($product->images[1]->imgsrc) }}" class="d-block w-50" alt="product second image">
+                        <img src="{{ asset($product->images[2]->imgsrc) }}" class="d-block w-50" alt="product third image">
                     </li>
 
                 </ul>
@@ -48,11 +48,15 @@
                 </div>
                 <ul class="ps-2 list-group list-group-flush border-0 mobileBiggerCloseup mobileBiggerCloseup2">
                     <li class="list-group-item border-0 no-underline">
-                        Sizes :<p>
+                        <label for="Size"></label>
+                        <select class="custom-select biggerInput border-0 border-bottom border-end border-black border-4" id="size">
+                            <option selected>select size</option>
                             @foreach ($product->sizes as $size)
-                                {{ $size->size }}
+                                @if($size->count > 0)
+                                    <option value="{{ $size->size }}">{{ $size->size }}</option>
+                                @endif
                             @endforeach
-                        </p>
+                        </select>
                     </li>
                     <li class="list-group-item border-0">Price :{{ $product->price}} € </li>
                 </ul>

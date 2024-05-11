@@ -50,7 +50,7 @@
                 <div class="col-4 justify-content-end">
                     <ul class="navbar-nav flex-row ">
                         <li class="nav-item">
-                            <a href="/login." class="navbar-brand">
+                            <a href="/login" class="navbar-brand">
                                 <img src="img/iconsHomePage/login.png" alt="" height="60">
                             </a>
                         </li>
@@ -76,21 +76,33 @@
                     <div class="col-md-6 mb-3">
                         <label for="name" class="form-label">First Name</label>
                         <input type="text" class="form-control" id="name" name="name" placeholder="Enter your first name" required>
+                        @error('name')
+                        <span class="text-danger">{{ $message }}</span>
+                        @enderror
                     </div>
                     <div class="col-md-6 mb-3">
                         <label for="surname" class="form-label">Last Name</label>
                         <input type="text" class="form-control" id="surname" name="surname" placeholder="Enter your last name" required>
+                        @error('surname')
+                        <span class="text-danger">{{ $message }}</span>
+                        @enderror
                     </div>
                 </div>
 
                 <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
                     <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                    @error('email')
+                    <span class="text-danger">{{ $message }}</span>
+                    @enderror
                 </div>
                 <div class="mb-3">
                     <label for="password" class="form-label">Password</label>
                     <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password (at least 8 characters with a number)" required>
                     <span id="passwordError" class="text-danger"></span>
+                    @error('password')
+                    <span class="text-danger">{{ $message }}</span>
+                    @enderror
                 </div>
                 <div class="mb-3">
                     <label for="repeatPassword" class="form-label">Repeat Password</label>
@@ -100,27 +112,42 @@
                     <div class="col-md-8 mb-3">
                         <label for="street" class="form-label">Street Name</label>
                         <input type="text" class="form-control" id="street" name="street" placeholder="Enter street name" required>
+                        @error('street')
+                        <span class="text-danger">{{ $message }}</span>
+                        @enderror
                     </div>
                     <div class="col-md-4 mb-3">
                         <label for="street_num" class="form-label">Street Number</label>
                         <input type="text" class="form-control" id="street_num" name="street_num" placeholder="Enter street number" required>
                         <span id="streetNumberError" class="text-danger"></span>
+                        @error('street_num')
+                        <span class="text-danger">{{ $message }}</span>
+                        @enderror
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-8 mb-3">
                         <label for="town" class="form-label">Town</label>
                         <input type="text" class="form-control" id="town" name="town" placeholder="Enter town" required>
+                        @error('town')
+                        <span class="text-danger">{{ $message }}</span>
+                        @enderror
                     </div>
                     <div class="col-md-4 mb-3">
                         <label for="postalCode" class="form-label">Postal Code</label>
                         <input type="text" class="form-control" id="postalCode" name="postalCode" placeholder="Enter postal code" required>
                         <span id="postalCodeError" class="text-danger"></span>
+                        @error('postalCode')
+                        <span class="text-danger">{{ $message }}</span>
+                        @enderror
                     </div>
                 </div>
                 <div class="mb-3">
                     <label for="phone" class="form-label">Phone Number</label>
                     <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter your phone number" required>
+                    @error('phone')
+                    <span class="text-danger">{{ $message }}</span>
+                    @enderror
                 </div>
                 <div class="mb-3 form-check">
                     <input type="checkbox" class="form-check-input" id="exampleCheck1" required>

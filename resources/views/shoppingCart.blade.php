@@ -111,7 +111,7 @@
             </div>
                         @if(session('cart') && count(session('cart')) >= 1)
                         <a href="/checkout">
-                            <button class="bg-warning btn btn-warning btn-lg fw-bold w-25 mt-5" type="button">
+                            <button class="bg-warning btn btn-warning btn-lg fw-bold w-100 mt-5" type="button">
                                 <span class="biggerInput fw-bold">Checkout</span>
                             </button>
                         </a>

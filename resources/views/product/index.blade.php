@@ -25,7 +25,9 @@
                                     <p>
 
                                     @foreach ($product->sizes as $size)
-                                            {{ $size->size }}
+                                            @if($size->count > 0)
+                                                {{ $size->size }}
+                                            @endif
                                     @endforeach
                                     </p>
                                 </li>

@@ -123,15 +123,7 @@
                                     <option value="4">5</option>
                                 </select>
                             </div>
-                            <div class="input-group mb-3">
-                                <label for="size"></label><select class="custom-select biggerInput border-0 border-bottom border-end border-black border-4" id="size">
-                                    <option selected>select size</option>
-                                    <option value="S">S</option>
-                                    <option value="M">M</option>
-                                    <option value="L">L</option>
-                                    <option value="XL">XL</option>
-                                </select>
-                            </div>
+
                         <div class="modal-footer">
                             <!-- Add to cart button -->
                             <button id="addToCartBtn" class="bg-warning btn btn-warning btn-lg fw-bold w-100" type="button" onclick="addToCart()">
@@ -144,8 +136,8 @@
             </div>
 
         </div>
-        <div class="col-4">
-            <a href="products.html" class="">
+        <div class="col-12">
+            <a href="/products" class="">
                 <button type="button" class="btn btn-lg fw-bold w-100 bg-dark text-white" >
                     <span class="biggerInput fw-bold">Back</span>
                 </button>

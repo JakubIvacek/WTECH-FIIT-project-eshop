@@ -53,12 +53,21 @@
                     @method('PUT')
                     <div class="input-group mb-3">
                         <input id="priceInputMod" name="id" type="text" class="form-control biggerInput" placeholder="Enter id here" aria-label="Product ID" aria-describedby="basic-addon2">
+                        @error('id')
+                        <span class="text-danger">{{ $message }}</span>
+                        @enderror
                     </div>
                     <div class="input-group mb-3">
                         <input id="nameInputMod" name="name" type="text" class="form-control biggerInput" placeholder="Enter name here" aria-label="Product Name" aria-describedby="basic-addon1">
+                        @error('name')
+                        <span class="text-danger">{{ $message }}</span>
+                        @enderror
                     </div>
                     <div class="input-group mb-3">
                         <input id="priceInputMod" name="price" type="text" class="form-control biggerInput" placeholder="Enter price here" aria-label="Product Price" aria-describedby="basic-addon2">
+                        @error('price')
+                        <span class="text-danger">{{ $message }}</span>
+                        @enderror
                     </div>
                     <div class="row align-items-center">
                         <div class="col w-50 h3">
@@ -67,18 +76,30 @@
                                 <div class="input-group mb-3">
                                     <span class="input-group-text">S</span>
                                     <input type="text" class="form-control" aria-label="Size S" name="size_S">
+                                    @error('size_S')
+                                    <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                 </div>
                                 <div class="input-group mb-3">
                                     <span class="input-group-text">M</span>
                                     <input type="text" class="form-control" aria-label="Size M" name="size_M">
+                                    @error('size_M')
+                                    <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                 </div>
                                 <div class="input-group mb-3">
                                     <span class="input-group-text">L</span>
                                     <input type="text" class="form-control" aria-label="Size L" name="size_L">
+                                    @error('size_L')
+                                    <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                 </div>
                                 <div class="input-group mb-3">
                                     <span class="input-group-text">XL</span>
                                     <input type="text" class="form-control" aria-label="Size XL" name="size_XL">
+                                    @error('size_XL')
+                                    <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                 </div>
                             </div>
                         </div>
@@ -87,6 +108,9 @@
                             <div class="btn btn-primary btn-rounded mobileBiggerSmall fw-bold bg-dark">
                                 <label class="form-label text-white m-1" for="customFile2">Choose files</label>
                                 <input type="file" class="form-control" id="customFile2" name="photos[]" multiple />
+                                @error('photos')
+                                <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
                             <button type="submit" class="btn btn-warning text-dark mobileBiggerSmall fw-bold">Update product</button>
                         </div>
@@ -136,9 +160,15 @@
                     @csrf
                     <div class="input-group mb-3 w-75 biggerInput">
                         <input id="nameInput" name="name" type="text" class="form-control biggerInput" placeholder="enter name here" aria-label="Product Name" aria-describedby="basic-addon1">
+                        @error('name')
+                        <span class="text-danger">{{ $message }}</span>
+                        @enderror
                     </div>
                     <div class="input-group mb-3 w-75 biggerInput">
                         <input id="priceInput" name="price" type="text" class="form-control biggerInput" placeholder="enter price here" aria-label="Product Price" aria-describedby="basic-addon2">
+                        @error('price')
+                        <span class="text-danger">{{ $message }}</span>
+                        @enderror
                     </div>
                     <div class="row align-items-center">
                         <div class="col-4 ps-3 h3">
@@ -146,18 +176,30 @@
                             <div class="input-group mb-3">
                                 <span class="input-group-text">S</span>
                                 <input type="text" class="form-control" aria-label="Size S" name="size_S">
+                                @error('size_S')
+                                <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
                             <div class="input-group mb-3">
                                 <span class="input-group-text">M</span>
                                 <input type="text" class="form-control" aria-label="Size M" name="size_M">
+                                @error('size_M')
+                                <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
                             <div class="input-group mb-3">
                                 <span class="input-group-text">L</span>
                                 <input type="text" class="form-control" aria-label="Size L" name="size_L">
+                                @error('size_L')
+                                <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
                             <div class="input-group mb-3">
                                 <span class="input-group-text">XL</span>
                                 <input type="text" class="form-control" aria-label="Size XL" name="size_XL">
+                                @error('size_XL')
+                                <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
                         </div>
                         <div class="col-6">
@@ -173,6 +215,9 @@
                             <div class="form-check form-switch h3">
                                 <input class="form-check-input bigger-checkbox formType" type="checkbox" id="SwitchTSHIRT" value="t-shirt" name="type">
                                 <label class="form-check-label" for="SwitchTSHIRT">T-shirt</label>
+                                @error('type')
+                                <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
                             <div class="form-check form-switch h3">
                                 <input class="form-check-input bigger-checkbox formType" type="checkbox" id="SwitchHOODIE" value="sweatshirt" name="type">
@@ -185,6 +230,9 @@
                         <div class="btn btn-primary btn-rounded mobileBiggerSmall fw-bold bg-dark">
                             <label class="form-label text-white m-1" for="customFile2" >Choose files</label>
                             <input type="file" class="form-control" name="photos[]" multiple />
+                            @error('photos')
+                            <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                         <button type="submit" class="btn btn-warning mobileBiggerSmall fw-bold" onclick="addProduct()">Add product</button>
                     </div>

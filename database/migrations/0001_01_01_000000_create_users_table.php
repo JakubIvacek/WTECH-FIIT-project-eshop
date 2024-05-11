@@ -18,6 +18,10 @@ return new class extends Migration
             $table->string('email', 256);
             $table->string('phone', 13);
             $table->string('password', 100);
+            $table->string('street_name', 50)->nullable();
+            $table->string('street_number', 50)->nullable();
+            $table->string('town', 50)->nullable();
+            $table->string('postal_code', 20)->nullable();
             $table->timestamp('edited_at');
             $table->enum('role', ['admin', 'user','moderator']);
             $table->rememberToken();

@@ -72,24 +72,66 @@ class CartController extends Controller
         }
     }
     public function confirmOrder(Request $request){
-        $order = new Order();
-        // Assign data from request to the order model properties
-        $order->firstName = $request->input('firstName');
-        $order->lastName = $request->input('lastName');
-        $order->email = $request->input('email');
-        $order->phone = $request->input('phone');
-        $order->street = $request->input('streetName');
-        $order->streetNumber = $request->input('streetNumber');
-        $order->town = $request->input('town');
-        $order->postalCode = $request->input('postalCode');
-        $order->paymentOption = $request->input('paymentOption');
-        $order->deliveryOption = $request->input('deliveryOption');
-        $order->user_id = Auth::user()->id;
-        // If payment option is online payment, save additional payment info
+        $rules = [
+            'phone' => 'required|string|max:13',
+            'paymentOption' => 'required|in:cashOnDelivery,onlinePayment',
+            'deliveryOption' => 'required|in:packeta,courier',
+        ];
+
+        // If user is not authenticated, additional validation rules for guest checkout
+        if (!Auth::check()) {
+            $rules += [
+                'email' => 'required|email',
+                'firstName' => 'required|string|max:50',
+                'lastName' => 'required|string|max:50',
+                'streetName' => 'required|string|max:50',
+                'streetNumber' => 'required|string|max:50',
+                'town' => 'required|string|max:50',
+                'postalCode' => 'required|string|max:20',
+            ];
+        }
         if ($request->input('paymentOption') === 'onlinePayment') {
-            $order->cardNumber = $request->input('cardNumber');
-            $order->ExpiryDate = $request->input('expiryDate');
-            $order->CVV = $request->input('cvv');
+            $rules += [
+                'cardNumber' => 'required|numeric|digits_between:12,19',
+                'expiryDate' => 'required|date_format:m/y',
+                'cvv' => 'required|numeric|digits:3',
+            ];
+        }
+        $validatedData = $request->validate($rules);
+
+        $order = new Order();
+        $order->phone = $validatedData['phone'];
+        $order->paymentOption = $validatedData['paymentOption'];
+        $order->deliveryOption = $validatedData['deliveryOption'];
+
+        if (!Auth::check()){
+            $order->email = $validatedData['email'];
+            $order->firstName = $validatedData['firstName'];
+            $order->lastName = $validatedData['lastName'];
+            $order->street = $validatedData['streetName'];
+            $order->streetNumber = $validatedData['streetNumber'];
+            $order->town = $validatedData['town'];
+            $order->postalCode = $validatedData['postalCode'];
+        }else{
+            $order->email = Auth::user()->email;
+            $order->firstName = Auth::user()->name;
+            $order->lastName = Auth::user()->surname;
+            $order->street = Auth::user()->street_name;
+            $order->streetNumber = Auth::user()->street_number;
+            $order->town = Auth::user()->town;
+            $order->postalCode = Auth::user()->postal_code;
+        }
+
+        if (Auth::check()) {
+            $order->user_id = Auth::user()->id;
+        } else {
+            $order->user_id = null; // Set user_id to null for guest users
+        }
+        // If payment option is online payment, save additional payment info
+        if ($validatedData['paymentOption'] === 'onlinePayment') {
+            $order->cardNumber = $validatedData['cardNumber'];
+            $order->ExpiryDate = $validatedData['expiryDate'];
+            $order->CVV = $validatedData['cvv'];
         }
 
         $order->save();
@@ -104,16 +146,25 @@ class CartController extends Controller
                         'count' => $item['count'],
                         'imgsrc'=> $item['imgsrc'],
                         'price' => $item['price'],
-                        'user_id' => Auth::user()->id,
+                        'user_id' => (Auth::check()) ? Auth::user()->id : null,
                         'order_id' => $order->id
                     ]
                 );
+                $size = $item['size'];
+                $product = Product::findOrFail($item['id']); // Assuming there's a Product model
+                $productSize = $product->sizes()->where('size', $size)->first();
+                if ($productSize) {
+                    $productSize->count -= $item['count'];
+                    $productSize->save();
+                }
             }
         }
         //vymazem session a kosik zaznamy
-        $userCart = Auth::user()->carts;
-        foreach ($userCart as $item) {
-            $item->delete();
+        if(Auth::user()){
+            $userCart = Auth::user()->carts;
+            foreach ($userCart as $item) {
+                $item->delete();
+            }
         }
         session()->put('cart', []);
         //presmerovanie home

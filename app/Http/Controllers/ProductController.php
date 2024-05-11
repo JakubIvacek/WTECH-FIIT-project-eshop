@@ -71,13 +71,27 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        // Validation rules
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
+            'price' => 'required|numeric|min:0',
+            'color' => 'required|string|max:255',
+            'type' => 'required|in:t-shirt,sweatshirt',
+            'photos' => 'required|array|size:3',
+            'photos.*' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            'size_S' => 'required|integer|min:0',
+            'size_M' => 'required|integer|min:0',
+            'size_L' => 'required|integer|min:0',
+            'size_XL' => 'required|integer|min:0',
+        ]);
+
         // Create a new product
         $product = new Product();
-        $product->name = $request->name;
-        $product->price = $request->price;
+        $product->name = $validatedData['name'];
+        $product->price = $validatedData['price'];
         $product->description = "description";
-        $product->color = $request->color;
-        $product->category = $request->type;
+        $product->color = $validatedData['color'];
+        $product->category = $validatedData['type'];
         $product->save();
 
         // Handle product images upload files
@@ -98,7 +112,7 @@ class ProductController extends Controller
             if ($request->has($sizeInputName)) {
                 $product->sizes()->create([
                     'size' => $size,
-                    'count' => $request->$sizeInputName,
+                    'count' => $validatedData[$sizeInputName], // Use the validated data
                 ]);
             }
         }
@@ -112,16 +126,25 @@ class ProductController extends Controller
      */
     public function update(Request $request)
     {
-        $product = Product::find($request->id);
+        // Validation rules
+        $validatedData = $request->validate([
+            'id' => 'required|exists:products,id',
+            'name' => 'required|string|max:255',
+            'price' => 'required|numeric|min:0',
+            'photos' => 'required|array|size:3',
+            'photos.*' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            'size_S' => 'required|integer|min:0',
+            'size_M' => 'required|integer|min:0',
+            'size_L' => 'required|integer|min:0',
+            'size_XL' => 'required|integer|min:0',
+        ]);
 
-        // Check if the product exists
-        if (!$product) {
-            return response()->json(['error' => 'Product not found'], 404);
-        }
+        $product = Product::find($validatedData['id']);
 
         // Update the product attributes based on the request data
-        $product->name = $request->name;
-        $product->price = $request->price;
+        $product->name = $validatedData['name'];
+        $product->price = $validatedData['price'];
+
         // Handle product sizes
         $sizes = ['S', 'M', 'L', 'XL'];
         foreach ($sizes as $size) {
@@ -130,17 +153,18 @@ class ProductController extends Controller
                 // Update existing size count if exist
                 $productSize = $product->sizes()->where('size', $size)->first();
                 if ($productSize) {
-                    $productSize->count = $request->$sizeInputName;
+                    $productSize->count = $validatedData[$sizeInputName];
                     $productSize->save();
                 } else {
                     // Create new size entry
                     $product->sizes()->create([
                         'size' => $size,
-                        'count' => $request->$sizeInputName,
+                        'count' => $validatedData[$sizeInputName],
                     ]);
                 }
             }
         }
+
         // Handle image uploads
         if ($request->hasFile('photos')) {
             // Delete existing images
@@ -157,6 +181,7 @@ class ProductController extends Controller
                 $product->images()->create(['imgsrc' => $relativePath]);
             }
         }
+
         // Save the updated product
         $product->save();
 
