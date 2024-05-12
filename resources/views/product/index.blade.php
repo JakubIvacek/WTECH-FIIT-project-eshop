@@ -47,8 +47,9 @@
         @endforeach
 
     </ul>
-
-    {{ $products->links() }}
+    <div class="w-100 d-flex justify-content-center">
+        {{ $products->links() }}
+    </div>
 
 </x-product>
 <script>

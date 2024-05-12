@@ -35,20 +35,15 @@
                 </div>
             </nav>
         </div>
-        <div class="col-xl-5 col-lg-6">
+        <div class="col-xl-5 col-lg-6 pt-5"  >
             <div class="row ms-5">
                 <div class="col-8">
-                    <div class="input-group footerSub footerForm">
-                        <input id="formSearch" type="text" class="form-control" placeholder="enter search" aria-label="Search query" aria-describedby="basic-addon2">
-                        <div class="input-group-append">
-                            <button class="btn btn-outline-secondary" type="button">
-                                <img src="img/iconsHomePage/right-arrow.jpg" alt="icon" width="40px">
-                            </button>
-                        </div>
+                    <div class="input-group footerSub footerForm ">
+                        <livewire:search-products/>
                     </div>
                 </div>
                 <div class="col-4 justify-content-end">
-                    <ul class="navbar-nav flex-row ">
+                    <ul class="navbar-nav flex-row">
                         <li class="nav-item">
                             <a href="/login" class="navbar-brand">
                                 <img src="img/iconsHomePage/login.png" alt="" height="60">

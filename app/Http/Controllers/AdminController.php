@@ -13,7 +13,7 @@ class AdminController extends Controller
     {
         if (Auth::check() && Auth::user()->role === 'admin') {
             $query = Product::query();
-            $products = $query->paginate(15);
+            $products = $query->paginate(12);
 
             return view('admin', ['products' => $products]);
         } else {

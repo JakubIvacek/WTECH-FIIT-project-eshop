@@ -43,7 +43,9 @@
 
                 </ul>
             </div>
-            {{ $products->links() }}
+            <div class="w-100 d-flex justify-content-center">
+                {{ $products->links() }}
+            </div>
         </div>
         <div class="row pb-5 justify-content-center text-center bg-dark text-light">
             <div class="col-6">

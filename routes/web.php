@@ -38,7 +38,7 @@ Route::post('/confirm/order', [CartController::class, 'confirmOrder'])->name('su
 Route::get('/orders',function (){
     return view('orders');
 });
-
+Route::get('/closeup/{productName}', [HomeController::class, 'closeup'])->name('closeup');
 
 Route::get('/profile',function (){
     return view('profile');

@@ -73,7 +73,7 @@ class ProductController extends Controller
     {
         // Validation rules
         $validatedData = $request->validate([
-            'name' => 'required|string|max:255',
+            'name' => 'required|string|max:255|unique:products,name',
             'price' => 'required|numeric|min:0',
             'color' => 'required|string|max:255',
             'type' => 'required|in:t-shirt,sweatshirt',
