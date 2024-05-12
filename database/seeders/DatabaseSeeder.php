@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
     {
         User::factory(1)->create();
         Product::factory(2)->create();
-        Image::factory(5)->create();
+        Image::factory(10)->create();
         Size::factory(5)->create();
     }
 }

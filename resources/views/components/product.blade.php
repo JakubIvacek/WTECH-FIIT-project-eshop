@@ -128,6 +128,7 @@
                                 <option value="2">M</option>
                                 <option value="3">L</option>
                                 <option value="4">XL</option>
+                                <option value="5">All</option>
                             </select>
                         </div>
                     </div>
@@ -139,6 +140,7 @@
                             <option value="3">White</option>
                             <option value="4">Blue</option>
                             <option value="5">Other</option>
+                            <option value="6">All</option>
                         </select>
                     </div>
                 </div>

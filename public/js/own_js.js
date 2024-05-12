@@ -67,56 +67,6 @@ function writePageNum(){
 }
 
 
-function getCards(type, cardsHTML){
-    let count = 0;
-    let start = page;
-    //ORDERING PRODUCTS IF NEEDED
-    let products_sorted = [];
-    if (order === "LH") {
-        products_sorted = products.sort((a, b) => a.objectPrice - b.objectPrice);
-
-    } else if (order === "HL") {
-        products_sorted = products.sort((a, b) => b.objectPrice - a.objectPrice);
-
-    } else if (order === "AB") {
-        products_sorted= products.sort((a, b) => {
-            if (a.objectName < b.objectName) return -1;
-            if (a.objectName > b.objectName) return 1;
-            return 0;
-        });
-    } else if (order === "none") {
-        products_sorted = products;
-    }
-    products_sorted.forEach(product => {
-        console.log(product.objectName + ": $" + product.objectPrice);
-    });
-    //FILTER PRODUCTS IN ORDER IF NEEDED
-    let products_filtered=[]
-    for (let i = 0; i < products_sorted.length; i++){
-        console.log(products[i].objectName)
-        if ((products_sorted[i].objectType === type || type === "all") && // FILTER PRODUCT TYPE
-            (size_filter === "none" || products_sorted[i].objectSizes.includes(size_filter)) && (products_sorted[i].objectColor === color_filter || color_filter === "none")
-            &&  (price_filter === 0 || price_filter >= products_sorted[i].objectPrice)) // FILTER PRICE
-            {
-            if (count >= (start* 12) && count <= (start*12) + 11) {
-                products_filtered.push(products_sorted[i])
-            }
-            count++;
-        }
-    }
-    for (let i = 0; i < products_filtered.length; i++) {
-        cardsHTML += createCard(products_filtered[i].imageSrc, products_filtered[i].objectName,
-            products_filtered[i].objectPrice, products_filtered[i].objectColor, products_filtered[i].objectSizes);
-    }
-    return cardsHTML
-}
-function printCards(){
-    let cardsHTML = '<ul class="list-unstyled d-flex flex-wrap justify-content-center">';
-    cardsHTML = getCards(product, cardsHTML)
-    cardsHTML += '</ul>';
-    const cardContainer = document.getElementById('cardContainer');
-    cardContainer.innerHTML = cardsHTML;
-}
 document.getElementById('priceRange').addEventListener('input', function() {
     var selectedPrice = this.value;
     document.getElementById('selectedPrice').textContent = selectedPrice;
@@ -143,40 +93,21 @@ function changeToAll(){
 }*/
 // Function to filter products by the "T-shirts" category
 function changeToShirts() {
-    // Hide all products initially
-    document.querySelectorAll('.card').forEach(card => {
-        card.style.display = 'none';
-    });
-
-    // Show only products with category "t-shirt"
-    document.querySelectorAll('.card').forEach(card => {
-        if (card.dataset.category === 't-shirt') {
-            card.style.display = 'block';
-        }
-    });
+    window.location.href = '/products?type=t-shirt';
 }
 
 // Function to filter products by the "Sweatshirts" category
 function changeToSweatshirts() {
-    // Hide all products initially
-    document.querySelectorAll('.card').forEach(card => {
-        card.style.display = 'none';
-    });
-
-    // Show only products with category "sweatshirt"
-    document.querySelectorAll('.card').forEach(card => {
-        if (card.dataset.category === 'sweatshirt') {
-            card.style.display = 'block';
-        }
-    });
+    window.location.href = '/products?type=sweatshirt';
 }
 
 // Function to display all products
 function changeToAll() {
-    // Show all products
-    document.querySelectorAll('.card').forEach(card => {
-        card.style.display = 'block';
-    });
+    window.location.href = '/products';
+}
+function filterPrice() {
+    var selectedPrice = document.getElementById('priceRange').value;
+    window.location.href = '/products?price=' + selectedPrice;
 }
 
 
@@ -201,11 +132,6 @@ document.getElementById('selectOrder').addEventListener('change', function() {
     window.location.href = '/products?sort=' + selectedValue;
 });
 
-function filterPrice() {
-    var selectedPrice = document.getElementById('priceRange').value;
-    window.location.href = '/products?price=' + selectedPrice;
-}
-
 // COLOR INPUT SELECT
 document.getElementById("selectColor").addEventListener("change", function() {
     let selectedValue = this.value;
@@ -226,10 +152,16 @@ document.getElementById("selectColor").addEventListener("change", function() {
         case "5":
             color_filter = "Other"
             break;
+        case "6":
+            color_filter = "All"
+            break;
         default:
             color_filter = "none"
             break;
     }
+    if (color_filter === "All"){
+        window.location.href = '/products'
+    }else
     window.location.href = '/products?color=' + color_filter;
 });
 document.getElementById('selectSize').addEventListener('change', function() {
@@ -249,11 +181,16 @@ document.getElementById('selectSize').addEventListener('change', function() {
         case "4":
             size_filter = "XL";
             break;
+        case "5":
+            size_filter = "All"
+            break;
         default:
             size_filter = "";
             break;
     }
-
+    if (size_filter === "All"){
+        window.location.href = '/products'
+    }else
     window.location.href = '/products?size=' + size_filter;
 });
 

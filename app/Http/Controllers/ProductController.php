@@ -23,7 +23,7 @@ class ProductController extends Controller
         // Color Filtering
         if ($request->has('color')) {
             $color = $request->input('color');
-            $query->where('color', strtolower($color));
+            $query->where('color', $color);
         }
         // Size Filtering
         if ($request->has('size')) {
@@ -51,6 +51,9 @@ class ProductController extends Controller
                     $query->orderBy('name', 'asc');
                     break;
             }
+        }
+        if($request->has('type')){
+            $query->where('category', $request->input('type'));
         }
 
         $products = $query->paginate(15);

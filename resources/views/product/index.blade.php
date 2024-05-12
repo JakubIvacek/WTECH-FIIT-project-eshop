@@ -48,7 +48,7 @@
 
     </ul>
     <div class="w-100 d-flex justify-content-center">
-        {{ $products->links() }}
+        {{ $products->appends(request()->input())->links() }}
     </div>
 
 </x-product>
