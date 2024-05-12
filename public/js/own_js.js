@@ -91,6 +91,24 @@ function changeToAll(){
     writePageNum()
 }
 }*/
+
+
+
+// PRICE FILTERING
+function updateSelectedPrice() {
+    page=0
+    writePageNum()
+    document.getElementById('selectedPrice').textContent = document.getElementById('priceRange').value;
+    page=0
+}
+
+// Event listener for the range input change event
+document.getElementById('priceRange').addEventListener('input', updateSelectedPrice);
+
+
+function redirectToProductCloseup(productName) {
+    window.location.href = `productCloseup.html?productName=${productName}`;
+}
 // Function to filter products by the "T-shirts" category
 function changeToShirts() {
     window.location.href = '/products?type=t-shirt';
@@ -108,23 +126,6 @@ function changeToAll() {
 function filterPrice() {
     var selectedPrice = document.getElementById('priceRange').value;
     window.location.href = '/products?price=' + selectedPrice;
-}
-
-
-// PRICE FILTERING
-function updateSelectedPrice() {
-    page=0
-    writePageNum()
-    document.getElementById('selectedPrice').textContent = document.getElementById('priceRange').value;
-    page=0
-}
-
-// Event listener for the range input change event
-document.getElementById('priceRange').addEventListener('input', updateSelectedPrice);
-
-
-function redirectToProductCloseup(productName) {
-    window.location.href = `productCloseup.html?productName=${productName}`;
 }
 
 document.getElementById('selectOrder').addEventListener('change', function() {
